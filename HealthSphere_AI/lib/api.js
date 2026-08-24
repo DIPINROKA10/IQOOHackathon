@@ -592,7 +592,7 @@ export async function handleApi(req, res, pathname, query, body) {
     const params = m.slice(1);
     const needsAuth = r.opts.auth !== false;
     const user = getAuthedUser(req);
-    if (needsAuth && !user) return send(res, 401, { error: 'Please sign in.' });
+    if (needsAuth && !user) { send(res, 401, { error: 'Please sign in.' }); return true; }
     try {
       await r.handler(req, res, { params, query, body, user, req });
     } catch (e) {

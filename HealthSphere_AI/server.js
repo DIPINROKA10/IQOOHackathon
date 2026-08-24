@@ -17,7 +17,9 @@ const MIME = {
 
 ensureSeed();
 
-const server = http.createServer(async (req, res) => {
+const server = http.createServer(handler);
+
+export default async function handler(req, res) {
   try {
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     const pathname = decodeURIComponent(url.pathname);
@@ -38,7 +40,7 @@ const server = http.createServer(async (req, res) => {
     console.error('[server]', e);
     try { json(res, 500, { error: 'Internal server error' }); } catch { /* noop */ }
   }
-});
+}
 
 function readJson(req, limit) {
   return new Promise((resolve, reject) => {
@@ -103,4 +105,9 @@ function listen(port, attempts = 10) {
   });
 }
 
-listen(PORT);
+// Local / traditional hosting: start the HTTP server.
+// On Vercel (process.env.VERCEL) this module is imported by api/index.js and
+// invoked as a serverless handler instead — listening would crash the lambda.
+if (!process.env.VERCEL) {
+  listen(PORT);
+}

@@ -3,7 +3,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DATA_DIR = process.env.HealthSphere_DATA_DIR || path.join(ROOT, 'data');
+// Writable storage location:
+// - HealthSphere_DATA_DIR / DATA_DIR env override
+// - Vercel lambdas: read-only FS except /tmp (ephemeral — demo re-seeds per cold start)
+// - Local dev: ./data next to the project root
+const DATA_DIR = process.env.HealthSphere_DATA_DIR
+  || process.env.DATA_DIR
+  || (process.env.VERCEL ? '/tmp/healthsphere-data' : path.join(ROOT, 'data'));
 const DB_PATH = path.join(DATA_DIR, 'db.json');
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
 

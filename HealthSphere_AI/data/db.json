@@ -1,58 +1,44 @@
 {
  "users": [
   {
-   "id": "usr_70c999c140e56cd6",
+   "id": "usr_34748ffbf236c244",
    "email": "demo@healthsphere.ai",
    "name": "Arjun Mehta",
-   "passwordSalt": "0f891d0d87545cf2cb091a144f5e633c",
-   "passwordHash": "05fb3c200afde7becda4f8ba789cbb2928a83171ae471bbed805319b1097998b39432bf7dc5185a9ca2b1ae84ae151d1d9fccbca90bc7d0e924af8a77895c33c",
-   "createdAt": "2026-08-24T19:12:49.489Z"
+   "passwordSalt": "701717b1ac606419ff8142ab5c7ea113",
+   "passwordHash": "7e34cfd72724800ee4b73e466957ed6aa876e9abd35fadd3f00cda20887002c2b110779178fe52ea48175f7814b44a61e8e4afafa4392191fe9d4be7df6e6a3d",
+   "createdAt": "2026-08-24T20:01:32.284Z"
   },
   {
-   "id": "usr_48101ed46ead586d",
-   "email": "judge-1787598805630@healthsphere.ai",
+   "id": "usr_d85f5c4bfc6bbfa9",
+   "email": "judge-1787601725518@healthsphere.ai",
    "name": "Judge Account",
-   "passwordSalt": "4fad8df963ed79ea272288c43ef2a5db",
-   "passwordHash": "84679ffacd1a6c4d73bf65a9e8846c8fe9b2152b2aea73a00b443dd5a6f5bda4089a4df096c0e4a77873a4c358a0d07bbbe7dfec22e79ed8ba542f83d31e5be7",
-   "createdAt": "2026-08-24T19:13:25.686Z"
-  },
-  {
-   "id": "usr_db9cf4f4475dd061",
-   "email": "dipinroka24@gmail.com",
-   "name": "DipinRoka",
-   "passwordSalt": "ec0b160b7779f92bdd9917275076e5a2",
-   "passwordHash": "1059650bb95d01144ef5eb69109ad1977516be488378feae1cc30fdde1d8755131de3a4266fc308022d077f12d5ad0abfdd9981a121fd01b1e30f9575c7208ce",
-   "createdAt": "2026-08-24T19:14:07.117Z"
+   "passwordSalt": "367f06d5af6428427378f0a928fb43d1",
+   "passwordHash": "cba9152bb7b540c9fd4fe6ad4d28bd5c4fb446cc624cb39d53046e9438d887f11bf84f3cb39d05b8ba8e73891486fb4dabf6c02a252ea0b92b28afc5e53c6caf",
+   "createdAt": "2026-08-24T20:02:05.852Z"
   }
  ],
  "sessions": [
   {
-   "token": "c74ab6aef7ee2300f865761b2faa09dbe8a48d697af1b1a80de77316ed4e96b1",
-   "userId": "usr_70c999c140e56cd6",
-   "createdAt": "2026-08-24T19:12:53.491Z",
-   "expiresAt": "2026-08-31T19:12:53.491Z"
+   "token": "87ee6482ab719f56352414496c2c57f49e2875e35f1b78723294dab94e186f03",
+   "userId": "usr_34748ffbf236c244",
+   "createdAt": "2026-08-24T20:01:36.538Z",
+   "expiresAt": "2026-08-31T20:01:36.538Z"
   },
   {
-   "token": "59b13de78e53e4d4ddde5977d3311da58e34881a3b95b5dc658f5750c4f686c3",
-   "userId": "usr_48101ed46ead586d",
-   "createdAt": "2026-08-24T19:13:25.753Z",
-   "expiresAt": "2026-08-31T19:13:25.753Z"
+   "token": "dbb491e09a5ca0b6c755af2d2b616cf7aa0ec817a622af5c2d255634229f8fe0",
+   "userId": "usr_d85f5c4bfc6bbfa9",
+   "createdAt": "2026-08-24T20:02:05.977Z",
+   "expiresAt": "2026-08-31T20:02:05.977Z"
   },
   {
-   "token": "545d8435b4ee5d15f99c646b2e2a0eab7173faf2967b0591bc647ec01aa0ae06",
-   "userId": "usr_70c999c140e56cd6",
-   "createdAt": "2026-08-24T19:13:30.878Z",
-   "expiresAt": "2026-08-31T19:13:30.878Z"
-  },
-  {
-   "token": "c8cefb6438035632da8b0884f5e40bea0ff0b7f264093dfcc3dd6f279e5dbef7",
-   "userId": "usr_db9cf4f4475dd061",
-   "createdAt": "2026-08-24T19:14:07.185Z",
-   "expiresAt": "2026-08-31T19:14:07.185Z"
+   "token": "7f2e1d2ce3e97035594baf7cf875fad0755547f116bacbde5394e1b7a728d5c1",
+   "userId": "usr_34748ffbf236c244",
+   "createdAt": "2026-08-24T20:02:25.234Z",
+   "expiresAt": "2026-08-31T20:02:25.234Z"
   }
  ],
  "profiles": {
-  "usr_70c999c140e56cd6": {
+  "usr_34748ffbf236c244": {
    "dob": "1988-04-12",
    "sex": "male",
    "heightCm": 172,
@@ -84,13 +70,12 @@
     "Maintain healthy weight"
    ]
   },
-  "usr_48101ed46ead586d": {},
-  "usr_db9cf4f4475dd061": {}
+  "usr_d85f5c4bfc6bbfa9": {}
  },
  "families": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "id": "fam_9ba1a3626e315f06",
+    "id": "fam_bea84db41a6a38fa",
     "relation": "Grandfather",
     "name": "Ramesh Mehta",
     "ageOrYear": "~84",
@@ -109,10 +94,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-21T19:12:49.494Z"
+    "recordedAt": "2026-08-21T20:01:32.301Z"
    },
    {
-    "id": "fam_727c381f38a1ffde",
+    "id": "fam_18d59151827a1647",
     "relation": "Father",
     "name": "Suresh Mehta",
     "ageOrYear": "61",
@@ -131,10 +116,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-20T19:12:49.494Z"
+    "recordedAt": "2026-08-20T20:01:32.301Z"
    },
    {
-    "id": "fam_1100511389b54adb",
+    "id": "fam_a6774dd4f756964f",
     "relation": "Mother",
     "name": "Nirmala Mehta",
     "ageOrYear": "58",
@@ -149,10 +134,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-19T19:12:49.494Z"
+    "recordedAt": "2026-08-19T20:01:32.302Z"
    },
    {
-    "id": "fam_4649d476c3099399",
+    "id": "fam_87a8ae533b1c31cd",
     "relation": "Uncle",
     "name": "Mahesh Mehta",
     "ageOrYear": "57",
@@ -167,10 +152,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-18T19:12:49.494Z"
+    "recordedAt": "2026-08-18T20:01:32.302Z"
    },
    {
-    "id": "fam_9e5e207a33e8ef87",
+    "id": "fam_3b24bac71828bc14",
     "relation": "Sister",
     "name": "Priya Shah",
     "ageOrYear": "33",
@@ -180,10 +165,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-17T19:12:49.494Z"
+    "recordedAt": "2026-08-17T20:01:32.302Z"
    },
    {
-    "id": "fam_f87d3ce96035b54d",
+    "id": "fam_7dd409fe60c7c432",
     "relation": "Aunt",
     "name": "Sunita",
     "ageOrYear": "",
@@ -193,16 +178,15 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-24T19:13:25.601Z"
+    "recordedAt": "2026-08-24T20:02:05.388Z"
    }
   ],
-  "usr_48101ed46ead586d": [],
-  "usr_db9cf4f4475dd061": []
+  "usr_d85f5c4bfc6bbfa9": []
  },
  "reports": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "id": "rep_1f9d7ac72d50f9ec",
+    "id": "rep_1c2f51eae75f26a3",
     "filename": "health-check-2025.txt",
     "storedName": null,
     "mime": "text/plain",
@@ -355,12 +339,12 @@
       }
      ],
      "flags": [],
-     "extractedAt": "2026-08-24T19:12:49.505Z"
+     "extractedAt": "2026-08-24T20:01:32.320Z"
     },
     "summaryText": "Processed 9 value(s); 4 outside their typical band.\n• Fasting blood glucose: 104 mg/dL (high)\n• Total cholesterol: 210 mg/dL (high)\n• LDL cholesterol: 126 mg/dL (high)\n• AST (SGOT): 104 U/L (high)\nInformational summary — please discuss results with a qualified professional."
    },
    {
-    "id": "rep_d3babc0f72110670",
+    "id": "rep_91a1cf6119698ab2",
     "filename": "metabolic-panel-aug2026.txt",
     "storedName": null,
     "mime": "text/plain",
@@ -543,17 +527,17 @@
       }
      ],
      "flags": [],
-     "extractedAt": "2026-08-24T19:12:49.512Z"
+     "extractedAt": "2026-08-24T20:01:32.330Z"
     },
     "summaryText": "Processed 10 value(s); 9 outside their typical band.\n• HbA1c: 6 % (high)\n• Fasting blood glucose: 112 mg/dL (high)\n• Total cholesterol: 218 mg/dL (high)\n• LDL cholesterol: 131 mg/dL (high)\n• Triglycerides: 158 mg/dL (high)\nInformational summary — please discuss results with a qualified professional."
    },
    {
-    "id": "rep_a8caa206d575bac6",
+    "id": "rep_aacd4eb3fe846ba1",
     "filename": "Pasted report text",
     "storedName": null,
     "mime": "text/plain",
     "size": 150,
-    "uploadedAt": "2026-08-24T19:12:53.642Z",
+    "uploadedAt": "2026-08-24T20:01:36.785Z",
     "status": "processed",
     "pipeline": [
      {
@@ -653,18 +637,17 @@
      "flags": [
       "possible_prompt_injection_ignored"
      ],
-     "extractedAt": "2026-08-24T19:12:53.642Z"
+     "extractedAt": "2026-08-24T20:01:36.785Z"
     },
     "summaryText": "Report dated 22 Aug 2026 · Apex Pathology Laboratory\nHbA1c (6.2 %) is above the laboratory's usual band — this reflects average blood sugar over the past ~3 months.\nLDL cholesterol (145 mg/dL) is above the laboratory's usual band — this \"bad\" cholesterol that can build up in arteries.\nSystolic blood pressure (142 mmHg) is above the laboratory's usual band — this pressure when the heart beats.\nDiastolic blood pressure (91 mmHg) is above the laboratory's usual band — this pressure between heartbeats.\nInterpretation depends on your clinical context. Please discuss these results with a qualified healthcare professional — this summary is informational, not a diagnosis."
    }
   ],
-  "usr_48101ed46ead586d": [],
-  "usr_db9cf4f4475dd061": []
+  "usr_d85f5c4bfc6bbfa9": []
  },
  "metrics": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "id": "met_a952e49d33773169",
+    "id": "met_9147f7957512e24f",
     "key": "weight_kg",
     "value": 82,
     "unit": "kg",
@@ -673,7 +656,7 @@
     "label": null
    },
    {
-    "id": "met_6a58a80031e52f39",
+    "id": "met_18a887d58bcb60bb",
     "key": "weight_kg",
     "value": 80.5,
     "unit": "kg",
@@ -682,7 +665,7 @@
     "label": null
    },
    {
-    "id": "met_dae41e697149d470",
+    "id": "met_10bc2347cb500d54",
     "key": "weight_kg",
     "value": 79.5,
     "unit": "kg",
@@ -691,7 +674,7 @@
     "label": null
    },
    {
-    "id": "met_51e8cf0412f5c7c7",
+    "id": "met_24f8b6b88b5a66fa",
     "key": "weight_kg",
     "value": 78.8,
     "unit": "kg",
@@ -700,7 +683,7 @@
     "label": null
    },
    {
-    "id": "met_672911e7b4e9b366",
+    "id": "met_70232956d0fe755f",
     "key": "weight_kg",
     "value": 78,
     "unit": "kg",
@@ -709,7 +692,7 @@
     "label": null
    },
    {
-    "id": "met_b02a0759fff1cad7",
+    "id": "met_f13c189a52005faf",
     "key": "hba1c",
     "value": 5.4,
     "unit": "%",
@@ -718,7 +701,7 @@
     "label": null
    },
    {
-    "id": "met_ad189550e8892a23",
+    "id": "met_6d4150b9ae42192a",
     "key": "hba1c",
     "value": 5.7,
     "unit": "%",
@@ -727,7 +710,7 @@
     "label": null
    },
    {
-    "id": "met_dd2b8d127479f0e6",
+    "id": "met_58dd1642e09fea66",
     "key": "hba1c",
     "value": 6,
     "unit": "%",
@@ -736,7 +719,7 @@
     "label": null
    },
    {
-    "id": "met_9284b154689877dc",
+    "id": "met_84059f117d828bd6",
     "key": "glucose_fasting",
     "value": 98,
     "unit": "mg/dL",
@@ -745,7 +728,7 @@
     "label": null
    },
    {
-    "id": "met_b5c55d80b1e612ba",
+    "id": "met_ddeee5a984148177",
     "key": "glucose_fasting",
     "value": 104,
     "unit": "mg/dL",
@@ -754,7 +737,7 @@
     "label": null
    },
    {
-    "id": "met_00dfc450c2591421",
+    "id": "met_d63e282659de5594",
     "key": "glucose_fasting",
     "value": 112,
     "unit": "mg/dL",
@@ -763,7 +746,7 @@
     "label": null
    },
    {
-    "id": "met_815baaead8375e3e",
+    "id": "met_21b49b65443e4ef2",
     "key": "total_cholesterol",
     "value": 205,
     "unit": "mg/dL",
@@ -772,7 +755,7 @@
     "label": null
    },
    {
-    "id": "met_1bbf944e421e6e05",
+    "id": "met_33eedf23ea0c3f82",
     "key": "total_cholesterol",
     "value": 210,
     "unit": "mg/dL",
@@ -781,7 +764,7 @@
     "label": null
    },
    {
-    "id": "met_0b3aacbea0f3ee5a",
+    "id": "met_d6076ef4be0f4d44",
     "key": "total_cholesterol",
     "value": 218,
     "unit": "mg/dL",
@@ -790,7 +773,7 @@
     "label": null
    },
    {
-    "id": "met_58a551bb4cee0638",
+    "id": "met_4c7e08f869d4456f",
     "key": "ldl",
     "value": 118,
     "unit": "mg/dL",
@@ -799,7 +782,7 @@
     "label": null
    },
    {
-    "id": "met_8595a7ca5d6a81c0",
+    "id": "met_0a82412c7138cc18",
     "key": "ldl",
     "value": 126,
     "unit": "mg/dL",
@@ -808,7 +791,7 @@
     "label": null
    },
    {
-    "id": "met_8c300d99667fb629",
+    "id": "met_7e41e869205e780e",
     "key": "ldl",
     "value": 131,
     "unit": "mg/dL",
@@ -817,7 +800,7 @@
     "label": null
    },
    {
-    "id": "met_370c39d35ce06c9e",
+    "id": "met_cfc875c1bc1302c2",
     "key": "hdl",
     "value": 46,
     "unit": "mg/dL",
@@ -826,7 +809,7 @@
     "label": null
    },
    {
-    "id": "met_2cb3b89e3a9f06d4",
+    "id": "met_47d211f4c04c74ba",
     "key": "hdl",
     "value": 44,
     "unit": "mg/dL",
@@ -835,7 +818,7 @@
     "label": null
    },
    {
-    "id": "met_b3c63beb7a6828fb",
+    "id": "met_5e667e969f4cbb2d",
     "key": "hdl",
     "value": 42,
     "unit": "mg/dL",
@@ -844,7 +827,7 @@
     "label": null
    },
    {
-    "id": "met_39a29535d97c48e2",
+    "id": "met_3a5e4dfaaa7c67b0",
     "key": "triglycerides",
     "value": 138,
     "unit": "mg/dL",
@@ -853,7 +836,7 @@
     "label": null
    },
    {
-    "id": "met_5c549c0b59323d8f",
+    "id": "met_4ebcbc6100e9d993",
     "key": "triglycerides",
     "value": 142,
     "unit": "mg/dL",
@@ -862,7 +845,7 @@
     "label": null
    },
    {
-    "id": "met_3c5516f20f822b66",
+    "id": "met_83304c4a159e317e",
     "key": "triglycerides",
     "value": 158,
     "unit": "mg/dL",
@@ -871,7 +854,7 @@
     "label": null
    },
    {
-    "id": "met_400b2bdd700c8f14",
+    "id": "met_111ad0a94d50de3c",
     "key": "bp_systolic",
     "value": 128,
     "unit": "mmHg",
@@ -880,7 +863,7 @@
     "label": null
    },
    {
-    "id": "met_082e30d67f461563",
+    "id": "met_2b719b2a5bc17550",
     "key": "bp_systolic",
     "value": 130,
     "unit": "mmHg",
@@ -889,7 +872,7 @@
     "label": null
    },
    {
-    "id": "met_a70c6ccb270618a1",
+    "id": "met_860ceb79d56f9f9f",
     "key": "bp_systolic",
     "value": 134,
     "unit": "mmHg",
@@ -898,7 +881,7 @@
     "label": null
    },
    {
-    "id": "met_c29c17334e09dd0e",
+    "id": "met_56481789b914208a",
     "key": "bp_systolic",
     "value": 138,
     "unit": "mmHg",
@@ -907,7 +890,7 @@
     "label": null
    },
    {
-    "id": "met_676f10ecc80e658a",
+    "id": "met_891d36bb10a0c616",
     "key": "bp_diastolic",
     "value": 84,
     "unit": "mmHg",
@@ -916,7 +899,7 @@
     "label": null
    },
    {
-    "id": "met_a277a14151754534",
+    "id": "met_ebca16d74ba5d08b",
     "key": "bp_diastolic",
     "value": 85,
     "unit": "mmHg",
@@ -925,7 +908,7 @@
     "label": null
    },
    {
-    "id": "met_a1b07ca8f9400f4b",
+    "id": "met_2b68371b8a511eda",
     "key": "bp_diastolic",
     "value": 86,
     "unit": "mmHg",
@@ -934,7 +917,7 @@
     "label": null
    },
    {
-    "id": "met_5e8ad751393fc459",
+    "id": "met_2900cc3270212abd",
     "key": "bp_diastolic",
     "value": 88,
     "unit": "mmHg",
@@ -943,7 +926,7 @@
     "label": null
    },
    {
-    "id": "met_6ba35e9297ad4ec5",
+    "id": "met_85e3d2572c1b77f8",
     "key": "heart_rate",
     "value": 74,
     "unit": "bpm",
@@ -952,7 +935,7 @@
     "label": null
    },
    {
-    "id": "met_b07f02458df45eb0",
+    "id": "met_4d722cffbab53868",
     "key": "tsh",
     "value": 2.3,
     "unit": "µIU/mL",
@@ -961,7 +944,7 @@
     "label": null
    },
    {
-    "id": "met_5cb50ccc65083163",
+    "id": "met_0c02a24260e82522",
     "key": "tsh",
     "value": 2.1,
     "unit": "µIU/mL",
@@ -970,7 +953,7 @@
     "label": null
    },
    {
-    "id": "met_749f2acb752d1b26",
+    "id": "met_4876f549a387d8e7",
     "key": "hemoglobin",
     "value": 14.2,
     "unit": "g/dL",
@@ -979,7 +962,7 @@
     "label": null
    },
    {
-    "id": "met_54ca159445a618b7",
+    "id": "met_5e9d6065e2f2b284",
     "key": "vitamin_d",
     "value": 18,
     "unit": "ng/mL",
@@ -988,7 +971,7 @@
     "label": null
    },
    {
-    "id": "met_d473ab0147e9f335",
+    "id": "met_6dfc3673fcd55541",
     "key": "creatinine",
     "value": 0.9,
     "unit": "mg/dL",
@@ -997,449 +980,447 @@
     "label": null
    },
    {
-    "id": "met_cd15c236f4ed2d93",
+    "id": "met_d8d073815de1b77a",
     "key": "hba1c",
     "value": 6.2,
     "unit": "%",
     "date": "2026-08-22",
-    "source": "report:rep_a8caa206d575bac6",
+    "source": "report:rep_aacd4eb3fe846ba1",
     "flag": "high",
     "label": "HbA1c — %"
    },
    {
-    "id": "met_f762ec446002c1f8",
+    "id": "met_4f985cd999700b19",
     "key": "ldl",
     "value": 145,
     "unit": "mg/dL",
     "date": "2026-08-22",
-    "source": "report:rep_a8caa206d575bac6",
+    "source": "report:rep_aacd4eb3fe846ba1",
     "flag": "high",
     "label": "LDL cholesterol — mg/dL"
    },
    {
-    "id": "met_5869490f690a2711",
+    "id": "met_79663c6856c2c0f6",
     "key": "bp_systolic",
     "value": 142,
     "unit": "mmHg",
     "date": "2026-08-22",
-    "source": "report:rep_a8caa206d575bac6",
+    "source": "report:rep_aacd4eb3fe846ba1",
     "flag": "high",
     "label": "Systolic blood pressure — mmHg"
    },
    {
-    "id": "met_f1f017b54f68bb2e",
+    "id": "met_17e3eb566fcdd73a",
     "key": "bp_diastolic",
     "value": 91,
     "unit": "mmHg",
     "date": "2026-08-22",
-    "source": "report:rep_a8caa206d575bac6",
+    "source": "report:rep_aacd4eb3fe846ba1",
     "flag": "high",
     "label": "Diastolic blood pressure — mmHg"
    }
   ],
-  "usr_48101ed46ead586d": [],
-  "usr_db9cf4f4475dd061": []
+  "usr_d85f5c4bfc6bbfa9": []
  },
  "logs": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "id": "log_4767734e9e583b00",
+    "id": "log_a1613f870c2fbb00",
     "type": "exercise_minutes",
     "value": 0,
     "date": "2026-08-08"
    },
    {
-    "id": "log_f20b25f190537547",
+    "id": "log_1e482dbbbda6984f",
     "type": "sleep_hours",
     "value": 7,
     "date": "2026-08-08"
    },
    {
-    "id": "log_0d62130607747da0",
+    "id": "log_9d4f0786d8c9d3de",
     "type": "hydration_liters",
     "value": 2.5,
     "date": "2026-08-08"
    },
    {
-    "id": "log_d31e47d1a9851953",
+    "id": "log_cda8c327e9951a85",
     "type": "mood_score",
     "value": 4,
     "date": "2026-08-08"
    },
    {
-    "id": "log_6641a30557f22651",
+    "id": "log_319902007741973b",
     "type": "exercise_minutes",
     "value": 25,
     "date": "2026-08-09"
    },
    {
-    "id": "log_77b3256a354829ec",
+    "id": "log_010e13d41fc6a153",
     "type": "sleep_hours",
     "value": 6,
     "date": "2026-08-09"
    },
    {
-    "id": "log_1207c8d16a58d3e6",
+    "id": "log_e3344b788669b532",
     "type": "hydration_liters",
     "value": 1.8,
     "date": "2026-08-09"
    },
    {
-    "id": "log_097151723134250b",
+    "id": "log_0f8d8c7a9d773813",
     "type": "mood_score",
     "value": 3,
     "date": "2026-08-09"
    },
    {
-    "id": "log_ab4f902618ab48a4",
+    "id": "log_b7909aca3d8dff4c",
     "type": "exercise_minutes",
     "value": 20,
     "date": "2026-08-10"
    },
    {
-    "id": "log_5fd8a2672d3e3c8b",
+    "id": "log_196506fc17f32dce",
     "type": "sleep_hours",
     "value": 6.5,
     "date": "2026-08-10"
    },
    {
-    "id": "log_71b5e851e77406c7",
+    "id": "log_bc14dee041d6a3b5",
     "type": "hydration_liters",
     "value": 2.2,
     "date": "2026-08-10"
    },
    {
-    "id": "log_5bba18d665325c68",
+    "id": "log_d627c6db10185817",
     "type": "mood_score",
     "value": 4,
     "date": "2026-08-10"
    },
    {
-    "id": "log_14c2def697bfeb64",
+    "id": "log_87f3dae2c4a0493a",
     "type": "exercise_minutes",
     "value": 0,
     "date": "2026-08-11"
    },
    {
-    "id": "log_97c35a0e6a43e9ba",
+    "id": "log_c9dbf49360a17c70",
     "type": "sleep_hours",
     "value": 6.2,
     "date": "2026-08-11"
    },
    {
-    "id": "log_3dc461be7873b85e",
+    "id": "log_f4c8a1080c4cd844",
     "type": "hydration_liters",
     "value": 2.1,
     "date": "2026-08-11"
    },
    {
-    "id": "log_42de3d1c068a4dec",
+    "id": "log_5b972879bdc536c4",
     "type": "mood_score",
     "value": 3,
     "date": "2026-08-11"
    },
    {
-    "id": "log_7e48df28faf637dc",
+    "id": "log_0928863c8d958a33",
     "type": "exercise_minutes",
     "value": 20,
     "date": "2026-08-12"
    },
    {
-    "id": "log_a8cf273f94d28fa3",
+    "id": "log_f5fde88174265c5c",
     "type": "sleep_hours",
     "value": 7.2,
     "date": "2026-08-12"
    },
    {
-    "id": "log_f8a7a9b714731995",
+    "id": "log_64e8d2d6b91f1733",
     "type": "hydration_liters",
     "value": 2.4,
     "date": "2026-08-12"
    },
    {
-    "id": "log_016db285c4d52450",
+    "id": "log_152590df914c74fe",
     "type": "mood_score",
     "value": 5,
     "date": "2026-08-12"
    },
    {
-    "id": "log_cd990a10c67f7040",
+    "id": "log_2f0762db1c0f13e9",
     "type": "exercise_minutes",
     "value": 35,
     "date": "2026-08-13"
    },
    {
-    "id": "log_3dd0d9a727a05718",
+    "id": "log_950534c312acdb03",
     "type": "sleep_hours",
     "value": 6.8,
     "date": "2026-08-13"
    },
    {
-    "id": "log_48d3d6b0c3d1a3f9",
+    "id": "log_686e83fd44785b8b",
     "type": "hydration_liters",
     "value": 1.6,
     "date": "2026-08-13"
    },
    {
-    "id": "log_c4784215d8962e64",
+    "id": "log_f825950f0e62b974",
     "type": "mood_score",
     "value": 4,
     "date": "2026-08-13"
    },
    {
-    "id": "log_1173df1f17b3f21b",
+    "id": "log_a660c963fc1a46c8",
     "type": "exercise_minutes",
     "value": 30,
     "date": "2026-08-14"
    },
    {
-    "id": "log_b291f3d424888949",
+    "id": "log_9502ff836fff7f8c",
     "type": "sleep_hours",
     "value": 5.8,
     "date": "2026-08-14"
    },
    {
-    "id": "log_af97c5bd3eceb037",
+    "id": "log_bec5abd9a9662bd6",
     "type": "hydration_liters",
     "value": 2,
     "date": "2026-08-14"
    },
    {
-    "id": "log_c2a443b1b4528eab",
+    "id": "log_0637006390d683c8",
     "type": "mood_score",
     "value": 3,
     "date": "2026-08-14"
    },
    {
-    "id": "log_4cc1bf018a7db715",
+    "id": "log_91b0c55b062306ea",
     "type": "exercise_minutes",
     "value": 0,
     "date": "2026-08-15"
    },
    {
-    "id": "log_9007b72060fd47de",
+    "id": "log_96293e60d5184376",
     "type": "sleep_hours",
     "value": 7,
     "date": "2026-08-15"
    },
    {
-    "id": "log_cf10226f1fff1a15",
+    "id": "log_5d6b68b69a45c231",
     "type": "hydration_liters",
     "value": 2.5,
     "date": "2026-08-15"
    },
    {
-    "id": "log_25fd06ab90a20d2f",
+    "id": "log_f9267b6049e7340a",
     "type": "mood_score",
     "value": 4,
     "date": "2026-08-15"
    },
    {
-    "id": "log_3cf2f94b66d9a710",
+    "id": "log_6d73e215228b9446",
     "type": "exercise_minutes",
     "value": 25,
     "date": "2026-08-16"
    },
    {
-    "id": "log_c3e19012acef0561",
+    "id": "log_95f533737582bdfb",
     "type": "sleep_hours",
     "value": 6,
     "date": "2026-08-16"
    },
    {
-    "id": "log_cfe38e167036a1f2",
+    "id": "log_a1ae92ea4612dee0",
     "type": "hydration_liters",
     "value": 1.8,
     "date": "2026-08-16"
    },
    {
-    "id": "log_d5712327e864b29c",
+    "id": "log_02af66dc0a402c98",
     "type": "mood_score",
     "value": 3,
     "date": "2026-08-16"
    },
    {
-    "id": "log_b8e83c6bf0a4590b",
+    "id": "log_eaef7b4f6df66d65",
     "type": "exercise_minutes",
     "value": 20,
     "date": "2026-08-17"
    },
    {
-    "id": "log_439b997b3d88058e",
+    "id": "log_5e9dbe45ef42be5e",
     "type": "sleep_hours",
     "value": 6.5,
     "date": "2026-08-17"
    },
    {
-    "id": "log_4b3b54a281ff9e5a",
+    "id": "log_8ace515a038f4fc6",
     "type": "hydration_liters",
     "value": 2.2,
     "date": "2026-08-17"
    },
    {
-    "id": "log_274fbae76ef7707c",
+    "id": "log_2810717a0bcdfdd6",
     "type": "mood_score",
     "value": 4,
     "date": "2026-08-17"
    },
    {
-    "id": "log_e53659f7fc75468b",
+    "id": "log_8adb40a4e8ed96cf",
     "type": "exercise_minutes",
     "value": 0,
     "date": "2026-08-18"
    },
    {
-    "id": "log_8a07b5ef5b1f4146",
+    "id": "log_563fcee568f2aad3",
     "type": "sleep_hours",
     "value": 6.2,
     "date": "2026-08-18"
    },
    {
-    "id": "log_b39fcf69bc3de2e9",
+    "id": "log_9f9f15c0f200303c",
     "type": "hydration_liters",
     "value": 2.1,
     "date": "2026-08-18"
    },
    {
-    "id": "log_aef3efff62f0f785",
+    "id": "log_8370025ea28e36dd",
     "type": "mood_score",
     "value": 3,
     "date": "2026-08-18"
    },
    {
-    "id": "log_18da5a2d9c2dab89",
+    "id": "log_14a3369be91449bf",
     "type": "exercise_minutes",
     "value": 20,
     "date": "2026-08-19"
    },
    {
-    "id": "log_ae54c98453a7767c",
+    "id": "log_cd98bfb8f7056d19",
     "type": "sleep_hours",
     "value": 7.2,
     "date": "2026-08-19"
    },
    {
-    "id": "log_90c9486b57a66494",
+    "id": "log_983be816908dd2ad",
     "type": "hydration_liters",
     "value": 2.4,
     "date": "2026-08-19"
    },
    {
-    "id": "log_f998c4b683bc4b2f",
+    "id": "log_851d60afa63d7fff",
     "type": "mood_score",
     "value": 5,
     "date": "2026-08-19"
    },
    {
-    "id": "log_2bc7a25375ca4b21",
+    "id": "log_98280edbb320db73",
     "type": "exercise_minutes",
     "value": 35,
     "date": "2026-08-20"
    },
    {
-    "id": "log_df24a648b7738fd2",
+    "id": "log_4e3ea81fafa6150a",
     "type": "sleep_hours",
     "value": 6.8,
     "date": "2026-08-20"
    },
    {
-    "id": "log_c201f7a4257ea86c",
+    "id": "log_102e5284bce0022e",
     "type": "hydration_liters",
     "value": 1.6,
     "date": "2026-08-20"
    },
    {
-    "id": "log_371d98e5fcf15fda",
+    "id": "log_0c4a95500e662a43",
     "type": "mood_score",
     "value": 4,
     "date": "2026-08-20"
    },
    {
-    "id": "log_00b55bb53db8a689",
+    "id": "log_edcabab93a146c5f",
     "type": "exercise_minutes",
     "value": 30,
     "date": "2026-08-21"
    },
    {
-    "id": "log_d2b959b20a32f664",
+    "id": "log_08a2b5a01bce418d",
     "type": "sleep_hours",
     "value": 5.8,
     "date": "2026-08-21"
    },
    {
-    "id": "log_74bf915b33dedf15",
+    "id": "log_8dfc246661a59cb0",
     "type": "hydration_liters",
     "value": 2,
     "date": "2026-08-21"
    },
    {
-    "id": "log_f268f8d29031af1d",
+    "id": "log_e5005d664cfbbb69",
     "type": "mood_score",
     "value": 3,
     "date": "2026-08-21"
    },
    {
-    "id": "log_4744ec67c561e2ff",
+    "id": "log_c01e83d5ac80fc89",
     "type": "exercise_minutes",
     "value": 0,
     "date": "2026-08-22"
    },
    {
-    "id": "log_3211f2df9dc028b3",
+    "id": "log_705bf2ae19f08d77",
     "type": "sleep_hours",
     "value": 7,
     "date": "2026-08-22"
    },
    {
-    "id": "log_81f36f67e8be6a6c",
+    "id": "log_178464202d89c76b",
     "type": "hydration_liters",
     "value": 2.5,
     "date": "2026-08-22"
    },
    {
-    "id": "log_e2835bcfbf3016a5",
+    "id": "log_542db2872ec406b1",
     "type": "mood_score",
     "value": 4,
     "date": "2026-08-22"
    },
    {
-    "id": "log_b4eab3974e60e6fc",
+    "id": "log_edb3e52f443d32db",
     "type": "exercise_minutes",
     "value": 25,
     "date": "2026-08-23"
    },
    {
-    "id": "log_b9789c321b0a89b4",
+    "id": "log_8d7a3af6e4e09f66",
     "type": "sleep_hours",
     "value": 6,
     "date": "2026-08-23"
    },
    {
-    "id": "log_0646d0b5bd97c7b7",
+    "id": "log_e99d3924869aa897",
     "type": "hydration_liters",
     "value": 1.8,
     "date": "2026-08-23"
    },
    {
-    "id": "log_ed2cae1d1d85981c",
+    "id": "log_5c55cd066df13ce2",
     "type": "mood_score",
     "value": 3,
     "date": "2026-08-23"
    },
    {
-    "id": "log_b3f446b3711232ef",
+    "id": "log_a76331aec102291f",
     "type": "exercise_minutes",
     "value": 45,
     "date": "2026-08-24"
    }
   ],
-  "usr_48101ed46ead586d": [],
-  "usr_db9cf4f4475dd061": []
+  "usr_d85f5c4bfc6bbfa9": []
  },
  "plans": {
-  "usr_70c999c140e56cd6": {
+  "usr_34748ffbf236c244": {
    "activity": {
-    "generatedAt": "2026-08-24T19:12:53.706Z",
+    "generatedAt": "2026-08-24T20:01:36.875Z",
     "goal": "Improve stamina",
     "weeklyTargetMinutes": 150,
     "weeks": [
@@ -1523,7 +1504,7 @@
     ]
    },
    "nutrition": {
-    "generatedAt": "2026-08-24T19:12:53.707Z",
+    "generatedAt": "2026-08-24T20:01:36.875Z",
     "preference": "vegetarian",
     "estimatedDailyCalories": 1896,
     "tdeeEstimate": 2296,
@@ -1653,9 +1634,9 @@
   }
  },
  "doctors": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "id": "doc_78bcebb2647661dd",
+    "id": "doc_8ec7866b1366c3f4",
     "name": "Dr. Kavita Rao",
     "role": "Family Doctor",
     "specialty": "General Physician",
@@ -1665,7 +1646,7 @@
     "addedAt": "2025-01-10T10:00:00Z"
    },
    {
-    "id": "doc_c2633997cd502ac6",
+    "id": "doc_e1d1b53388547bdc",
     "name": "Dr. Sameer Menon",
     "role": "Specialist",
     "specialty": "Cardiologist",
@@ -1675,23 +1656,22 @@
     "addedAt": "2025-06-14T10:00:00Z"
    },
    {
-    "id": "doc_c482ddbe6711a420",
+    "id": "doc_28216451f1e2f3a7",
     "name": "Dr. Test",
     "role": "Specialist",
     "specialty": "Dermatologist",
     "phone": "+91 90000 00000",
     "clinic": "",
     "notes": "",
-    "addedAt": "2026-08-24T19:12:53.769Z"
+    "addedAt": "2026-08-24T20:01:36.946Z"
    }
   ],
-  "usr_48101ed46ead586d": [],
-  "usr_db9cf4f4475dd061": []
+  "usr_d85f5c4bfc6bbfa9": []
  },
  "contacts": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "id": "ct_4b01de00f0983257",
+    "id": "ct_0bcf8edcb60db3c2",
     "name": "Suresh Mehta",
     "relation": "Father",
     "phone": "+91 98200 77889",
@@ -1699,7 +1679,7 @@
     "priority": 1
    },
    {
-    "id": "ct_5c09000a0c0586fd",
+    "id": "ct_7fc3ad284104e266",
     "name": "Nirmala Mehta",
     "relation": "Mother",
     "phone": "+91 98200 99001",
@@ -1707,7 +1687,7 @@
     "priority": 1
    },
    {
-    "id": "ct_c7e00307bd0e5de6",
+    "id": "ct_f03ce842809bf4d3",
     "name": "Anjali Mehta",
     "relation": "Spouse",
     "phone": "+91 98200 55447",
@@ -1715,7 +1695,7 @@
     "priority": 2
    },
    {
-    "id": "ct_0905ab79ea589ce6",
+    "id": "ct_5626ba31726a89e8",
     "name": "Rohit Kumar",
     "relation": "Friend",
     "phone": "+91 98200 33221",
@@ -1725,10 +1705,10 @@
   ]
  },
  "reminders": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "id": "rem_013553f352894e35",
-    "userId": "usr_70c999c140e56cd6",
+    "id": "rem_f6e4412965922ee6",
+    "userId": "usr_34748ffbf236c244",
     "title": "Follow up on HbA1c trend with your doctor",
     "type": "health",
     "dueDate": "2026-09-03",
@@ -1736,12 +1716,12 @@
     "status": "active",
     "source": "auto:hba1c_followup",
     "repeatable": false,
-    "createdAt": "2026-08-24T19:12:49.577Z",
+    "createdAt": "2026-08-24T20:01:32.532Z",
     "actionLog": []
    },
    {
-    "id": "rem_5851a7cf2146f61a",
-    "userId": "usr_70c999c140e56cd6",
+    "id": "rem_1ec4869a32ec3aae",
+    "userId": "usr_34748ffbf236c244",
     "title": "Record a blood-pressure reading",
     "type": "measurement",
     "dueDate": "2026-08-29",
@@ -1749,22 +1729,22 @@
     "status": "completed",
     "source": "auto:bp_check",
     "repeatable": false,
-    "createdAt": "2026-08-24T19:12:49.577Z",
+    "createdAt": "2026-08-24T20:01:32.532Z",
     "actionLog": [
      {
-      "ts": "2026-08-24T19:12:53.726Z",
+      "ts": "2026-08-24T20:01:36.895Z",
       "action": "snooze",
       "detail": "+5d"
      },
      {
-      "ts": "2026-08-24T19:12:53.735Z",
+      "ts": "2026-08-24T20:01:36.909Z",
       "action": "complete"
      }
     ]
    },
    {
-    "id": "rem_c9e944900369537d",
-    "userId": "usr_70c999c140e56cd6",
+    "id": "rem_0d310a4a1a4370c8",
+    "userId": "usr_34748ffbf236c244",
     "title": "Weekly health review — check insights & lifestyle plan",
     "type": "lifestyle",
     "dueDate": "2026-08-30",
@@ -1772,18 +1752,18 @@
     "status": "active",
     "source": "auto:weekly_review",
     "repeatable": false,
-    "createdAt": "2026-08-24T19:12:49.577Z",
+    "createdAt": "2026-08-24T20:01:32.533Z",
     "actionLog": []
    },
    {
-    "id": "rem_e8babccfe3f781c2",
+    "id": "rem_1e2123d2150338b1",
     "userId": {
-     "id": "usr_70c999c140e56cd6",
+     "id": "usr_34748ffbf236c244",
      "email": "demo@healthsphere.ai",
      "name": "Arjun Mehta",
-     "passwordSalt": "0f891d0d87545cf2cb091a144f5e633c",
-     "passwordHash": "05fb3c200afde7becda4f8ba789cbb2928a83171ae471bbed805319b1097998b39432bf7dc5185a9ca2b1ae84ae151d1d9fccbca90bc7d0e924af8a77895c33c",
-     "createdAt": "2026-08-24T19:12:49.489Z"
+     "passwordSalt": "701717b1ac606419ff8142ab5c7ea113",
+     "passwordHash": "7e34cfd72724800ee4b73e466957ed6aa876e9abd35fadd3f00cda20887002c2b110779178fe52ea48175f7814b44a61e8e4afafa4392191fe9d4be7df6e6a3d",
+     "createdAt": "2026-08-24T20:01:32.284Z"
     },
     "title": "Discuss HbA1c trend & family history with Dr. Kavita Rao",
     "type": "followup",
@@ -1792,18 +1772,18 @@
     "status": "active",
     "source": "auto:hba1c_followup",
     "repeatable": false,
-    "createdAt": "2026-08-24T19:12:49.577Z",
+    "createdAt": "2026-08-24T20:01:32.533Z",
     "actionLog": []
    },
    {
-    "id": "rem_0ee72fb28deaa715",
+    "id": "rem_ef6ca1561b80b714",
     "userId": {
-     "id": "usr_70c999c140e56cd6",
+     "id": "usr_34748ffbf236c244",
      "email": "demo@healthsphere.ai",
      "name": "Arjun Mehta",
-     "passwordSalt": "0f891d0d87545cf2cb091a144f5e633c",
-     "passwordHash": "05fb3c200afde7becda4f8ba789cbb2928a83171ae471bbed805319b1097998b39432bf7dc5185a9ca2b1ae84ae151d1d9fccbca90bc7d0e924af8a77895c33c",
-     "createdAt": "2026-08-24T19:12:49.489Z"
+     "passwordSalt": "701717b1ac606419ff8142ab5c7ea113",
+     "passwordHash": "7e34cfd72724800ee4b73e466957ed6aa876e9abd35fadd3f00cda20887002c2b110779178fe52ea48175f7814b44a61e8e4afafa4392191fe9d4be7df6e6a3d",
+     "createdAt": "2026-08-24T20:01:32.284Z"
     },
     "title": "Record blood pressure",
     "type": "measurement",
@@ -1812,12 +1792,12 @@
     "status": "active",
     "source": "auto:bp_check",
     "repeatable": true,
-    "createdAt": "2026-08-24T19:12:49.578Z",
+    "createdAt": "2026-08-24T20:01:32.533Z",
     "actionLog": []
    },
    {
-    "id": "rem_274dda43558c1ca4",
-    "userId": "usr_70c999c140e56cd6",
+    "id": "rem_27d9c273f2a88ebf",
+    "userId": "usr_34748ffbf236c244",
     "title": "Book eye checkup",
     "type": "health",
     "dueDate": "2026-09-15",
@@ -1825,29 +1805,14 @@
     "status": "active",
     "source": "user",
     "repeatable": false,
-    "createdAt": "2026-08-24T19:12:53.743Z",
+    "createdAt": "2026-08-24T20:01:36.919Z",
     "actionLog": []
    }
   ],
-  "usr_48101ed46ead586d": [],
-  "usr_db9cf4f4475dd061": [
-   {
-    "id": "rem_86f4f81f8aa96f8b",
-    "userId": "usr_db9cf4f4475dd061",
-    "title": "Weekly health review — check insights & lifestyle plan",
-    "type": "lifestyle",
-    "dueDate": "2026-08-30",
-    "notes": "",
-    "status": "active",
-    "source": "auto:weekly_review",
-    "repeatable": false,
-    "createdAt": "2026-08-24T19:14:26.312Z",
-    "actionLog": []
-   }
-  ]
+  "usr_d85f5c4bfc6bbfa9": []
  },
  "settings": {
-  "usr_70c999c140e56cd6": {
+  "usr_34748ffbf236c244": {
    "consents": {
     "contactsImport": true,
     "location": true,
@@ -1864,21 +1829,7 @@
     "analyticsOptOut": true
    }
   },
-  "usr_48101ed46ead586d": {
-   "consents": {
-    "contactsImport": false,
-    "location": false,
-    "shareReports": false,
-    "familyView": false
-   },
-   "notifications": {
-    "health": true,
-    "lifestyle": true,
-    "healthcare": true,
-    "emergency": true
-   }
-  },
-  "usr_db9cf4f4475dd061": {
+  "usr_d85f5c4bfc6bbfa9": {
    "consents": {
     "contactsImport": false,
     "location": false,
@@ -1894,83 +1845,71 @@
   }
  },
  "audit": {
-  "usr_70c999c140e56cd6": [
+  "usr_34748ffbf236c244": [
    {
-    "ts": "2026-08-24T19:12:49.581Z",
+    "ts": "2026-08-24T20:01:32.537Z",
     "action": "seed",
     "detail": "Demo data created"
    },
    {
-    "ts": "2026-08-24T19:12:53.496Z",
+    "ts": "2026-08-24T20:01:36.543Z",
     "action": "login",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T19:12:53.643Z",
+    "ts": "2026-08-24T20:01:36.787Z",
     "action": "report_manual_entry",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T19:12:53.707Z",
+    "ts": "2026-08-24T20:01:36.875Z",
     "action": "lifestyle_plan_regenerated",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T19:12:53.726Z",
+    "ts": "2026-08-24T20:01:36.895Z",
     "action": "reminder_snooze",
     "detail": "Record a blood-pressure reading"
    },
    {
-    "ts": "2026-08-24T19:12:53.735Z",
+    "ts": "2026-08-24T20:01:36.909Z",
     "action": "reminder_complete",
     "detail": "Record a blood-pressure reading"
    },
    {
-    "ts": "2026-08-24T19:12:53.759Z",
+    "ts": "2026-08-24T20:01:36.934Z",
     "action": "contacts_imported",
     "detail": "0 contact(s)"
    },
    {
-    "ts": "2026-08-24T19:13:25.593Z",
+    "ts": "2026-08-24T20:02:05.332Z",
     "action": "emergency_card_accessed",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T19:13:25.602Z",
+    "ts": "2026-08-24T20:02:05.388Z",
     "action": "family_member_added",
     "detail": "Aunt"
    },
    {
-    "ts": "2026-08-24T19:13:25.616Z",
+    "ts": "2026-08-24T20:02:05.470Z",
     "action": "settings_updated",
     "detail": "consents"
    },
    {
-    "ts": "2026-08-24T19:13:25.625Z",
+    "ts": "2026-08-24T20:02:05.501Z",
     "action": "data_exported",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T19:13:30.881Z",
+    "ts": "2026-08-24T20:02:25.237Z",
     "action": "login",
     "detail": ""
-   },
-   {
-    "ts": "2026-08-24T19:13:44.634Z",
-    "action": "emergency_card_accessed",
-    "detail": ""
    }
   ],
-  "usr_48101ed46ead586d": [
+  "usr_d85f5c4bfc6bbfa9": [
    {
-    "ts": "2026-08-24T19:13:25.692Z",
-    "action": "account_created",
-    "detail": ""
-   }
-  ],
-  "usr_db9cf4f4475dd061": [
-   {
-    "ts": "2026-08-24T19:14:07.121Z",
+    "ts": "2026-08-24T20:02:05.893Z",
     "action": "account_created",
     "detail": ""
    }

@@ -90,14 +90,28 @@ export const FACILITIES = [
   F('Kochi', 'Lulu Pharmacy', 'pharmacy', 'Edappally', 'Kochi 682024', '+91 484 400 0004', '9:00–22:00', ['Pharmacy'])
 ];
 
+/* Offline results are only meaningful within this range of the origin.
+   Beyond it we switch to the nearest city's dataset instead of showing
+   hospitals hundreds of kilometres away as "closest". */
+const SAMPLE_RADIUS_KM = 60;
+
 export function searchFacilities({ lat, lng, city, type = '', q = '', maxResults = 12 }) {
   let list = FACILITIES.slice();
   if (type && type !== 'all') list = list.filter(f => f.type === type);
   if (q) list = list.filter(f => (f.name + f.city + f.services.join(' ') + f.address).toLowerCase().includes(q.toLowerCase()));
   if (lat != null && lng != null) {
     for (const f of list) f.distanceKm = Math.round(haversine(lat, lng, f.lat, f.lng) * 10) / 10;
-    list.sort((a, b) => a.distanceKm - b.distanceKm);
-    return list.slice(0, maxResults);
+    const near = list.filter(f => f.distanceKm <= SAMPLE_RADIUS_KM);
+    if (near.length) {
+      near.sort((a, b) => a.distanceKm - b.distanceKm);
+      return near.slice(0, maxResults);
+    }
+    // Nothing within range — surface the nearest city's facilities instead.
+    const nearestCity = CITIES.slice()
+      .sort((a, b) => haversine(lat, lng, a.lat, a.lng) - haversine(lat, lng, b.lat, b.lng))[0];
+    return list.filter(f => f.city === nearestCity.name)
+      .sort((a, b) => a.distanceKm - b.distanceKm)
+      .slice(0, maxResults);
   }
   if (city) list = list.filter(f => f.city === city);
   return list.slice(0, maxResults);
@@ -154,7 +168,9 @@ function orderedMirrors() {
   return [...OVERPASS_URLS.slice(preferredMirror), ...OVERPASS_URLS.slice(0, preferredMirror)];
 }
 
-async function overpassQuery(query, timeoutMs = 10000) {
+/* Overpass can legitimately take 10–20s for an around() query; aborting at
+   10s killed every attempt and silently degraded to the sample dataset. */
+async function overpassQuery(query, timeoutMs = 25000) {
   for (const base of orderedMirrors()) {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -184,14 +200,14 @@ export async function fetchNearbyLive({ lat, lng, type = 'all', q = '', radiusM 
     const bboxParts = TYPE_FILTER.all.map(f =>
       `node(around:${radiusM},${lat},${lng})${f};way(around:${radiusM},${lat},${lng})${f};`
     ).join('');
-    const query = `[out:json][timeout:8];(${bboxParts});out center tags 160;`;
+    const query = `[out:json][timeout:25];(${bboxParts});out center tags 160;`;
 
     let data;
     try {
       data = await serialized(() => overpassQuery(query));
       cooldownUntil = 0;
     } catch (e) {
-      cooldownUntil = Date.now() + 90 * 1000;
+      cooldownUntil = Date.now() + 45 * 1000;
       throw e;
     }
 

@@ -1,0 +1,1979 @@
+{
+ "users": [
+  {
+   "id": "usr_70c999c140e56cd6",
+   "email": "demo@healthsphere.ai",
+   "name": "Arjun Mehta",
+   "passwordSalt": "0f891d0d87545cf2cb091a144f5e633c",
+   "passwordHash": "05fb3c200afde7becda4f8ba789cbb2928a83171ae471bbed805319b1097998b39432bf7dc5185a9ca2b1ae84ae151d1d9fccbca90bc7d0e924af8a77895c33c",
+   "createdAt": "2026-08-24T19:12:49.489Z"
+  },
+  {
+   "id": "usr_48101ed46ead586d",
+   "email": "judge-1787598805630@healthsphere.ai",
+   "name": "Judge Account",
+   "passwordSalt": "4fad8df963ed79ea272288c43ef2a5db",
+   "passwordHash": "84679ffacd1a6c4d73bf65a9e8846c8fe9b2152b2aea73a00b443dd5a6f5bda4089a4df096c0e4a77873a4c358a0d07bbbe7dfec22e79ed8ba542f83d31e5be7",
+   "createdAt": "2026-08-24T19:13:25.686Z"
+  },
+  {
+   "id": "usr_db9cf4f4475dd061",
+   "email": "dipinroka24@gmail.com",
+   "name": "DipinRoka",
+   "passwordSalt": "ec0b160b7779f92bdd9917275076e5a2",
+   "passwordHash": "1059650bb95d01144ef5eb69109ad1977516be488378feae1cc30fdde1d8755131de3a4266fc308022d077f12d5ad0abfdd9981a121fd01b1e30f9575c7208ce",
+   "createdAt": "2026-08-24T19:14:07.117Z"
+  }
+ ],
+ "sessions": [
+  {
+   "token": "c74ab6aef7ee2300f865761b2faa09dbe8a48d697af1b1a80de77316ed4e96b1",
+   "userId": "usr_70c999c140e56cd6",
+   "createdAt": "2026-08-24T19:12:53.491Z",
+   "expiresAt": "2026-08-31T19:12:53.491Z"
+  },
+  {
+   "token": "59b13de78e53e4d4ddde5977d3311da58e34881a3b95b5dc658f5750c4f686c3",
+   "userId": "usr_48101ed46ead586d",
+   "createdAt": "2026-08-24T19:13:25.753Z",
+   "expiresAt": "2026-08-31T19:13:25.753Z"
+  },
+  {
+   "token": "545d8435b4ee5d15f99c646b2e2a0eab7173faf2967b0591bc647ec01aa0ae06",
+   "userId": "usr_70c999c140e56cd6",
+   "createdAt": "2026-08-24T19:13:30.878Z",
+   "expiresAt": "2026-08-31T19:13:30.878Z"
+  },
+  {
+   "token": "c8cefb6438035632da8b0884f5e40bea0ff0b7f264093dfcc3dd6f279e5dbef7",
+   "userId": "usr_db9cf4f4475dd061",
+   "createdAt": "2026-08-24T19:14:07.185Z",
+   "expiresAt": "2026-08-31T19:14:07.185Z"
+  }
+ ],
+ "profiles": {
+  "usr_70c999c140e56cd6": {
+   "dob": "1988-04-12",
+   "sex": "male",
+   "heightCm": 172,
+   "weightKg": 78,
+   "bloodGroup": "A+",
+   "allergies": [
+    "Penicillin"
+   ],
+   "conditions": [
+    "Prehypertension"
+   ],
+   "medications": [
+    {
+     "name": "None recorded"
+    }
+   ],
+   "lifestyle": {
+    "activityLevel": "light",
+    "smoking": "never",
+    "alcohol": "occasional",
+    "sleepHours": 6.5,
+    "dietPreference": "vegetarian"
+   },
+   "foodPreference": "vegetarian",
+   "restrictions": [],
+   "goals": [
+    "Improve stamina",
+    "Better sleep",
+    "Maintain healthy weight"
+   ]
+  },
+  "usr_48101ed46ead586d": {},
+  "usr_db9cf4f4475dd061": {}
+ },
+ "families": {
+  "usr_70c999c140e56cd6": [
+   {
+    "id": "fam_9ba1a3626e315f06",
+    "relation": "Grandfather",
+    "name": "Ramesh Mehta",
+    "ageOrYear": "~84",
+    "conditions": [
+     {
+      "name": "Type 2 Diabetes",
+      "diagAge": 62
+     },
+     {
+      "name": "Hypertension",
+      "diagAge": 58
+     }
+    ],
+    "surgeries": [],
+    "cancerHistory": false,
+    "geneticConditions": [],
+    "events": [],
+    "notes": "",
+    "recordedAt": "2026-08-21T19:12:49.494Z"
+   },
+   {
+    "id": "fam_727c381f38a1ffde",
+    "relation": "Father",
+    "name": "Suresh Mehta",
+    "ageOrYear": "61",
+    "conditions": [
+     {
+      "name": "Hypertension",
+      "diagAge": 48
+     },
+     {
+      "name": "High cholesterol",
+      "diagAge": 52
+     }
+    ],
+    "surgeries": [],
+    "cancerHistory": false,
+    "geneticConditions": [],
+    "events": [],
+    "notes": "",
+    "recordedAt": "2026-08-20T19:12:49.494Z"
+   },
+   {
+    "id": "fam_1100511389b54adb",
+    "relation": "Mother",
+    "name": "Nirmala Mehta",
+    "ageOrYear": "58",
+    "conditions": [
+     {
+      "name": "Hypothyroidism",
+      "diagAge": 45
+     }
+    ],
+    "surgeries": [],
+    "cancerHistory": false,
+    "geneticConditions": [],
+    "events": [],
+    "notes": "",
+    "recordedAt": "2026-08-19T19:12:49.494Z"
+   },
+   {
+    "id": "fam_4649d476c3099399",
+    "relation": "Uncle",
+    "name": "Mahesh Mehta",
+    "ageOrYear": "57",
+    "conditions": [
+     {
+      "name": "Type 2 Diabetes",
+      "diagAge": 55
+     }
+    ],
+    "surgeries": [],
+    "cancerHistory": false,
+    "geneticConditions": [],
+    "events": [],
+    "notes": "",
+    "recordedAt": "2026-08-18T19:12:49.494Z"
+   },
+   {
+    "id": "fam_9e5e207a33e8ef87",
+    "relation": "Sister",
+    "name": "Priya Shah",
+    "ageOrYear": "33",
+    "conditions": [],
+    "surgeries": [],
+    "cancerHistory": false,
+    "geneticConditions": [],
+    "events": [],
+    "notes": "",
+    "recordedAt": "2026-08-17T19:12:49.494Z"
+   },
+   {
+    "id": "fam_f87d3ce96035b54d",
+    "relation": "Aunt",
+    "name": "Sunita",
+    "ageOrYear": "",
+    "conditions": [],
+    "surgeries": [],
+    "cancerHistory": false,
+    "geneticConditions": [],
+    "events": [],
+    "notes": "",
+    "recordedAt": "2026-08-24T19:13:25.601Z"
+   }
+  ],
+  "usr_48101ed46ead586d": [],
+  "usr_db9cf4f4475dd061": []
+ },
+ "reports": {
+  "usr_70c999c140e56cd6": [
+   {
+    "id": "rep_1f9d7ac72d50f9ec",
+    "filename": "health-check-2025.txt",
+    "storedName": null,
+    "mime": "text/plain",
+    "size": 292,
+    "uploadedAt": "2025-02-12T09:20:00.000Z",
+    "status": "processed",
+    "pipeline": [
+     {
+      "stage": "File validation",
+      "status": "ok",
+      "detail": "health-check-2025.txt · 0 KB"
+     },
+     {
+      "stage": "OCR / document parsing",
+      "status": "ok",
+      "detail": "Plain text ingested"
+     },
+     {
+      "stage": "Safety pre-check",
+      "status": "ok",
+      "detail": "No embedded instruction content honored"
+     },
+     {
+      "stage": "Medical entity extraction",
+      "status": "ok",
+      "detail": "9 analytes recognized"
+     },
+     {
+      "stage": "Value normalization & reference ranges",
+      "status": "ok",
+      "detail": "4 value(s) outside typical reference band"
+     },
+     {
+      "stage": "Structured health data",
+      "status": "ok",
+      "detail": "Saved to your health graph"
+     }
+    ],
+    "structured": {
+     "reportDate": "2025-02-10",
+     "labName": "Metro Diagnostics Laboratory",
+     "tests": [
+      {
+       "key": "hba1c",
+       "name": "HbA1c",
+       "value": 5.7,
+       "unit": "%",
+       "refLow": 4,
+       "refHigh": 5.7,
+       "flag": "normal",
+       "category": "Metabolic"
+      },
+      {
+       "key": "glucose_fasting",
+       "name": "Fasting blood glucose",
+       "value": 104,
+       "unit": "mg/dL",
+       "refLow": 70,
+       "refHigh": 99,
+       "flag": "high",
+       "category": "Metabolic"
+      },
+      {
+       "key": "total_cholesterol",
+       "name": "Total cholesterol",
+       "value": 210,
+       "unit": "mg/dL",
+       "refLow": 100,
+       "refHigh": 200,
+       "flag": "high",
+       "category": "Lipid"
+      },
+      {
+       "key": "ldl",
+       "name": "LDL cholesterol",
+       "value": 126,
+       "unit": "mg/dL",
+       "refLow": 40,
+       "refHigh": 100,
+       "flag": "high",
+       "category": "Lipid"
+      },
+      {
+       "key": "hdl",
+       "name": "HDL cholesterol",
+       "value": 44,
+       "unit": "mg/dL",
+       "refLow": 40,
+       "refHigh": 90,
+       "flag": "normal",
+       "category": "Lipid"
+      },
+      {
+       "key": "triglycerides",
+       "name": "Triglycerides",
+       "value": 142,
+       "unit": "mg/dL",
+       "refLow": 40,
+       "refHigh": 150,
+       "flag": "normal",
+       "category": "Lipid"
+      },
+      {
+       "key": "creatinine",
+       "name": "Serum creatinine",
+       "value": 0.9,
+       "unit": "mg/dL",
+       "refLow": 0.6,
+       "refHigh": 1.3,
+       "flag": "normal",
+       "category": "Kidney"
+      },
+      {
+       "key": "ast",
+       "name": "AST (SGOT)",
+       "value": 104,
+       "unit": "U/L",
+       "refLow": 5,
+       "refHigh": 40,
+       "flag": "high",
+       "category": "Liver"
+      },
+      {
+       "key": "tsh",
+       "name": "TSH",
+       "value": 2.3,
+       "unit": "µIU/mL",
+       "refLow": 0.4,
+       "refHigh": 4,
+       "flag": "normal",
+       "category": "Thyroid"
+      }
+     ],
+     "observations": [
+      {
+       "key": "glucose_fasting",
+       "message": "Fasting blood glucose is above the typical range (104 mg/dL, usual band 70–99)."
+      },
+      {
+       "key": "total_cholesterol",
+       "message": "Total cholesterol is above the typical range (210 mg/dL, usual band 100–200)."
+      },
+      {
+       "key": "ldl",
+       "message": "LDL cholesterol is above the typical range (126 mg/dL, usual band 40–100)."
+      },
+      {
+       "key": "ast",
+       "message": "AST (SGOT) is above the typical range (104 U/L, usual band 5–40)."
+      }
+     ],
+     "flags": [],
+     "extractedAt": "2026-08-24T19:12:49.505Z"
+    },
+    "summaryText": "Processed 9 value(s); 4 outside their typical band.\n• Fasting blood glucose: 104 mg/dL (high)\n• Total cholesterol: 210 mg/dL (high)\n• LDL cholesterol: 126 mg/dL (high)\n• AST (SGOT): 104 U/L (high)\nInformational summary — please discuss results with a qualified professional."
+   },
+   {
+    "id": "rep_d3babc0f72110670",
+    "filename": "metabolic-panel-aug2026.txt",
+    "storedName": null,
+    "mime": "text/plain",
+    "size": 345,
+    "uploadedAt": "2026-08-21T07:45:00.000Z",
+    "status": "processed",
+    "pipeline": [
+     {
+      "stage": "File validation",
+      "status": "ok",
+      "detail": "metabolic-panel-aug2026.txt · 0 KB"
+     },
+     {
+      "stage": "OCR / document parsing",
+      "status": "ok",
+      "detail": "Plain text ingested"
+     },
+     {
+      "stage": "Safety pre-check",
+      "status": "ok",
+      "detail": "No embedded instruction content honored"
+     },
+     {
+      "stage": "Medical entity extraction",
+      "status": "ok",
+      "detail": "10 analytes recognized"
+     },
+     {
+      "stage": "Value normalization & reference ranges",
+      "status": "ok",
+      "detail": "9 value(s) outside typical reference band"
+     },
+     {
+      "stage": "Structured health data",
+      "status": "ok",
+      "detail": "Saved to your health graph"
+     }
+    ],
+    "structured": {
+     "reportDate": "2026-08-20",
+     "labName": "Genome Health Laboratory",
+     "tests": [
+      {
+       "key": "hba1c",
+       "name": "HbA1c",
+       "value": 6,
+       "unit": "%",
+       "refLow": 4,
+       "refHigh": 5.7,
+       "flag": "high",
+       "category": "Metabolic"
+      },
+      {
+       "key": "glucose_fasting",
+       "name": "Fasting blood glucose",
+       "value": 112,
+       "unit": "mg/dL",
+       "refLow": 70,
+       "refHigh": 99,
+       "flag": "high",
+       "category": "Metabolic"
+      },
+      {
+       "key": "total_cholesterol",
+       "name": "Total cholesterol",
+       "value": 218,
+       "unit": "mg/dL",
+       "refLow": 100,
+       "refHigh": 200,
+       "flag": "high",
+       "category": "Lipid"
+      },
+      {
+       "key": "ldl",
+       "name": "LDL cholesterol",
+       "value": 131,
+       "unit": "mg/dL",
+       "refLow": 40,
+       "refHigh": 100,
+       "flag": "high",
+       "category": "Lipid"
+      },
+      {
+       "key": "hdl",
+       "name": "HDL cholesterol",
+       "value": 42,
+       "unit": "mg/dL",
+       "refLow": 40,
+       "refHigh": 90,
+       "flag": "normal",
+       "category": "Lipid"
+      },
+      {
+       "key": "triglycerides",
+       "name": "Triglycerides",
+       "value": 158,
+       "unit": "mg/dL",
+       "refLow": 40,
+       "refHigh": 150,
+       "flag": "high",
+       "category": "Lipid"
+      },
+      {
+       "key": "ast",
+       "name": "AST (SGOT)",
+       "value": 112,
+       "unit": "U/L",
+       "refLow": 5,
+       "refHigh": 40,
+       "flag": "high",
+       "category": "Liver"
+      },
+      {
+       "key": "vitamin_d",
+       "name": "Vitamin D (25-OH)",
+       "value": 18,
+       "unit": "ng/mL",
+       "refLow": 30,
+       "refHigh": 100,
+       "flag": "low",
+       "category": "Nutrition"
+      },
+      {
+       "key": "bp_systolic",
+       "name": "Systolic blood pressure",
+       "value": 138,
+       "unit": "mmHg",
+       "refLow": 90,
+       "refHigh": 120,
+       "flag": "high",
+       "category": "Vitals"
+      },
+      {
+       "key": "bp_diastolic",
+       "name": "Diastolic blood pressure",
+       "value": 88,
+       "unit": "mmHg",
+       "refLow": 60,
+       "refHigh": 80,
+       "flag": "high",
+       "category": "Vitals"
+      }
+     ],
+     "observations": [
+      {
+       "key": "hba1c",
+       "message": "HbA1c is above the typical range (6 %, usual band 4–5.7)."
+      },
+      {
+       "key": "glucose_fasting",
+       "message": "Fasting blood glucose is above the typical range (112 mg/dL, usual band 70–99)."
+      },
+      {
+       "key": "total_cholesterol",
+       "message": "Total cholesterol is above the typical range (218 mg/dL, usual band 100–200)."
+      },
+      {
+       "key": "ldl",
+       "message": "LDL cholesterol is above the typical range (131 mg/dL, usual band 40–100)."
+      },
+      {
+       "key": "triglycerides",
+       "message": "Triglycerides is above the typical range (158 mg/dL, usual band 40–150)."
+      },
+      {
+       "key": "ast",
+       "message": "AST (SGOT) is above the typical range (112 U/L, usual band 5–40)."
+      },
+      {
+       "key": "vitamin_d",
+       "message": "Vitamin D (25-OH) is below the typical range (18 ng/mL, usual band 30–100)."
+      },
+      {
+       "key": "bp_systolic",
+       "message": "Systolic blood pressure is above the typical range (138 mmHg, usual band 90–120)."
+      },
+      {
+       "key": "bp_diastolic",
+       "message": "Diastolic blood pressure is above the typical range (88 mmHg, usual band 60–80)."
+      }
+     ],
+     "flags": [],
+     "extractedAt": "2026-08-24T19:12:49.512Z"
+    },
+    "summaryText": "Processed 10 value(s); 9 outside their typical band.\n• HbA1c: 6 % (high)\n• Fasting blood glucose: 112 mg/dL (high)\n• Total cholesterol: 218 mg/dL (high)\n• LDL cholesterol: 131 mg/dL (high)\n• Triglycerides: 158 mg/dL (high)\nInformational summary — please discuss results with a qualified professional."
+   },
+   {
+    "id": "rep_a8caa206d575bac6",
+    "filename": "Pasted report text",
+    "storedName": null,
+    "mime": "text/plain",
+    "size": 150,
+    "uploadedAt": "2026-08-24T19:12:53.642Z",
+    "status": "processed",
+    "pipeline": [
+     {
+      "stage": "File validation",
+      "status": "ok",
+      "detail": "manual-entry.txt · 0 KB"
+     },
+     {
+      "stage": "OCR / document parsing",
+      "status": "ok",
+      "detail": "Plain text ingested"
+     },
+     {
+      "stage": "Safety pre-check",
+      "status": "ok",
+      "detail": "Embedded instructions detected and ignored (prompt-injection guard)"
+     },
+     {
+      "stage": "Medical entity extraction",
+      "status": "ok",
+      "detail": "4 analytes recognized"
+     },
+     {
+      "stage": "Value normalization & reference ranges",
+      "status": "ok",
+      "detail": "4 value(s) outside typical reference band"
+     },
+     {
+      "stage": "Structured health data",
+      "status": "ok",
+      "detail": "Saved to your health graph"
+     }
+    ],
+    "structured": {
+     "reportDate": "2026-08-22",
+     "labName": "Apex Pathology Laboratory",
+     "tests": [
+      {
+       "key": "hba1c",
+       "name": "HbA1c",
+       "value": 6.2,
+       "unit": "%",
+       "refLow": 4,
+       "refHigh": 5.7,
+       "flag": "high",
+       "category": "Metabolic"
+      },
+      {
+       "key": "ldl",
+       "name": "LDL cholesterol",
+       "value": 145,
+       "unit": "mg/dL",
+       "refLow": 40,
+       "refHigh": 100,
+       "flag": "high",
+       "category": "Lipid"
+      },
+      {
+       "key": "bp_systolic",
+       "name": "Systolic blood pressure",
+       "value": 142,
+       "unit": "mmHg",
+       "refLow": 90,
+       "refHigh": 120,
+       "flag": "high",
+       "category": "Vitals"
+      },
+      {
+       "key": "bp_diastolic",
+       "name": "Diastolic blood pressure",
+       "value": 91,
+       "unit": "mmHg",
+       "refLow": 60,
+       "refHigh": 80,
+       "flag": "high",
+       "category": "Vitals"
+      }
+     ],
+     "observations": [
+      {
+       "key": "hba1c",
+       "message": "HbA1c is above the typical range (6.2 %, usual band 4–5.7)."
+      },
+      {
+       "key": "ldl",
+       "message": "LDL cholesterol is above the typical range (145 mg/dL, usual band 40–100)."
+      },
+      {
+       "key": "bp_systolic",
+       "message": "Systolic blood pressure is above the typical range (142 mmHg, usual band 90–120)."
+      },
+      {
+       "key": "bp_diastolic",
+       "message": "Diastolic blood pressure is above the typical range (91 mmHg, usual band 60–80)."
+      }
+     ],
+     "flags": [
+      "possible_prompt_injection_ignored"
+     ],
+     "extractedAt": "2026-08-24T19:12:53.642Z"
+    },
+    "summaryText": "Report dated 22 Aug 2026 · Apex Pathology Laboratory\nHbA1c (6.2 %) is above the laboratory's usual band — this reflects average blood sugar over the past ~3 months.\nLDL cholesterol (145 mg/dL) is above the laboratory's usual band — this \"bad\" cholesterol that can build up in arteries.\nSystolic blood pressure (142 mmHg) is above the laboratory's usual band — this pressure when the heart beats.\nDiastolic blood pressure (91 mmHg) is above the laboratory's usual band — this pressure between heartbeats.\nInterpretation depends on your clinical context. Please discuss these results with a qualified healthcare professional — this summary is informational, not a diagnosis."
+   }
+  ],
+  "usr_48101ed46ead586d": [],
+  "usr_db9cf4f4475dd061": []
+ },
+ "metrics": {
+  "usr_70c999c140e56cd6": [
+   {
+    "id": "met_a952e49d33773169",
+    "key": "weight_kg",
+    "value": 82,
+    "unit": "kg",
+    "date": "2024-01-15",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_6a58a80031e52f39",
+    "key": "weight_kg",
+    "value": 80.5,
+    "unit": "kg",
+    "date": "2024-09-02",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_dae41e697149d470",
+    "key": "weight_kg",
+    "value": 79.5,
+    "unit": "kg",
+    "date": "2025-05-11",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_51e8cf0412f5c7c7",
+    "key": "weight_kg",
+    "value": 78.8,
+    "unit": "kg",
+    "date": "2026-01-20",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_672911e7b4e9b366",
+    "key": "weight_kg",
+    "value": 78,
+    "unit": "kg",
+    "date": "2026-08-01",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_b02a0759fff1cad7",
+    "key": "hba1c",
+    "value": 5.4,
+    "unit": "%",
+    "date": "2024-03-15",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_ad189550e8892a23",
+    "key": "hba1c",
+    "value": 5.7,
+    "unit": "%",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_dd2b8d127479f0e6",
+    "key": "hba1c",
+    "value": 6,
+    "unit": "%",
+    "date": "2026-08-20",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_9284b154689877dc",
+    "key": "glucose_fasting",
+    "value": 98,
+    "unit": "mg/dL",
+    "date": "2024-03-15",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_b5c55d80b1e612ba",
+    "key": "glucose_fasting",
+    "value": 104,
+    "unit": "mg/dL",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_00dfc450c2591421",
+    "key": "glucose_fasting",
+    "value": 112,
+    "unit": "mg/dL",
+    "date": "2026-08-20",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_815baaead8375e3e",
+    "key": "total_cholesterol",
+    "value": 205,
+    "unit": "mg/dL",
+    "date": "2024-12-06",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_1bbf944e421e6e05",
+    "key": "total_cholesterol",
+    "value": 210,
+    "unit": "mg/dL",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_0b3aacbea0f3ee5a",
+    "key": "total_cholesterol",
+    "value": 218,
+    "unit": "mg/dL",
+    "date": "2026-08-20",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_58a551bb4cee0638",
+    "key": "ldl",
+    "value": 118,
+    "unit": "mg/dL",
+    "date": "2024-12-06",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_8595a7ca5d6a81c0",
+    "key": "ldl",
+    "value": 126,
+    "unit": "mg/dL",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_8c300d99667fb629",
+    "key": "ldl",
+    "value": 131,
+    "unit": "mg/dL",
+    "date": "2026-08-20",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_370c39d35ce06c9e",
+    "key": "hdl",
+    "value": 46,
+    "unit": "mg/dL",
+    "date": "2024-12-06",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_2cb3b89e3a9f06d4",
+    "key": "hdl",
+    "value": 44,
+    "unit": "mg/dL",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_b3c63beb7a6828fb",
+    "key": "hdl",
+    "value": 42,
+    "unit": "mg/dL",
+    "date": "2026-08-20",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_39a29535d97c48e2",
+    "key": "triglycerides",
+    "value": 138,
+    "unit": "mg/dL",
+    "date": "2024-12-06",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_5c549c0b59323d8f",
+    "key": "triglycerides",
+    "value": 142,
+    "unit": "mg/dL",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_3c5516f20f822b66",
+    "key": "triglycerides",
+    "value": 158,
+    "unit": "mg/dL",
+    "date": "2026-08-20",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_400b2bdd700c8f14",
+    "key": "bp_systolic",
+    "value": 128,
+    "unit": "mmHg",
+    "date": "2024-11-18",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_082e30d67f461563",
+    "key": "bp_systolic",
+    "value": 130,
+    "unit": "mmHg",
+    "date": "2025-06-14",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_a70c6ccb270618a1",
+    "key": "bp_systolic",
+    "value": 134,
+    "unit": "mmHg",
+    "date": "2025-12-09",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_c29c17334e09dd0e",
+    "key": "bp_systolic",
+    "value": 138,
+    "unit": "mmHg",
+    "date": "2026-07-22",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_676f10ecc80e658a",
+    "key": "bp_diastolic",
+    "value": 84,
+    "unit": "mmHg",
+    "date": "2024-11-18",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_a277a14151754534",
+    "key": "bp_diastolic",
+    "value": 85,
+    "unit": "mmHg",
+    "date": "2025-06-14",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_a1b07ca8f9400f4b",
+    "key": "bp_diastolic",
+    "value": 86,
+    "unit": "mmHg",
+    "date": "2025-12-09",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_5e8ad751393fc459",
+    "key": "bp_diastolic",
+    "value": 88,
+    "unit": "mmHg",
+    "date": "2026-07-22",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_6ba35e9297ad4ec5",
+    "key": "heart_rate",
+    "value": 74,
+    "unit": "bpm",
+    "date": "2026-07-22",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_b07f02458df45eb0",
+    "key": "tsh",
+    "value": 2.3,
+    "unit": "µIU/mL",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_5cb50ccc65083163",
+    "key": "tsh",
+    "value": 2.1,
+    "unit": "µIU/mL",
+    "date": "2026-03-30",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_749f2acb752d1b26",
+    "key": "hemoglobin",
+    "value": 14.2,
+    "unit": "g/dL",
+    "date": "2026-03-30",
+    "source": "manual",
+    "label": null
+   },
+   {
+    "id": "met_54ca159445a618b7",
+    "key": "vitamin_d",
+    "value": 18,
+    "unit": "ng/mL",
+    "date": "2026-08-20",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_d473ab0147e9f335",
+    "key": "creatinine",
+    "value": 0.9,
+    "unit": "mg/dL",
+    "date": "2025-02-10",
+    "source": "report",
+    "label": null
+   },
+   {
+    "id": "met_cd15c236f4ed2d93",
+    "key": "hba1c",
+    "value": 6.2,
+    "unit": "%",
+    "date": "2026-08-22",
+    "source": "report:rep_a8caa206d575bac6",
+    "flag": "high",
+    "label": "HbA1c — %"
+   },
+   {
+    "id": "met_f762ec446002c1f8",
+    "key": "ldl",
+    "value": 145,
+    "unit": "mg/dL",
+    "date": "2026-08-22",
+    "source": "report:rep_a8caa206d575bac6",
+    "flag": "high",
+    "label": "LDL cholesterol — mg/dL"
+   },
+   {
+    "id": "met_5869490f690a2711",
+    "key": "bp_systolic",
+    "value": 142,
+    "unit": "mmHg",
+    "date": "2026-08-22",
+    "source": "report:rep_a8caa206d575bac6",
+    "flag": "high",
+    "label": "Systolic blood pressure — mmHg"
+   },
+   {
+    "id": "met_f1f017b54f68bb2e",
+    "key": "bp_diastolic",
+    "value": 91,
+    "unit": "mmHg",
+    "date": "2026-08-22",
+    "source": "report:rep_a8caa206d575bac6",
+    "flag": "high",
+    "label": "Diastolic blood pressure — mmHg"
+   }
+  ],
+  "usr_48101ed46ead586d": [],
+  "usr_db9cf4f4475dd061": []
+ },
+ "logs": {
+  "usr_70c999c140e56cd6": [
+   {
+    "id": "log_4767734e9e583b00",
+    "type": "exercise_minutes",
+    "value": 0,
+    "date": "2026-08-08"
+   },
+   {
+    "id": "log_f20b25f190537547",
+    "type": "sleep_hours",
+    "value": 7,
+    "date": "2026-08-08"
+   },
+   {
+    "id": "log_0d62130607747da0",
+    "type": "hydration_liters",
+    "value": 2.5,
+    "date": "2026-08-08"
+   },
+   {
+    "id": "log_d31e47d1a9851953",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-08"
+   },
+   {
+    "id": "log_6641a30557f22651",
+    "type": "exercise_minutes",
+    "value": 25,
+    "date": "2026-08-09"
+   },
+   {
+    "id": "log_77b3256a354829ec",
+    "type": "sleep_hours",
+    "value": 6,
+    "date": "2026-08-09"
+   },
+   {
+    "id": "log_1207c8d16a58d3e6",
+    "type": "hydration_liters",
+    "value": 1.8,
+    "date": "2026-08-09"
+   },
+   {
+    "id": "log_097151723134250b",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-09"
+   },
+   {
+    "id": "log_ab4f902618ab48a4",
+    "type": "exercise_minutes",
+    "value": 20,
+    "date": "2026-08-10"
+   },
+   {
+    "id": "log_5fd8a2672d3e3c8b",
+    "type": "sleep_hours",
+    "value": 6.5,
+    "date": "2026-08-10"
+   },
+   {
+    "id": "log_71b5e851e77406c7",
+    "type": "hydration_liters",
+    "value": 2.2,
+    "date": "2026-08-10"
+   },
+   {
+    "id": "log_5bba18d665325c68",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-10"
+   },
+   {
+    "id": "log_14c2def697bfeb64",
+    "type": "exercise_minutes",
+    "value": 0,
+    "date": "2026-08-11"
+   },
+   {
+    "id": "log_97c35a0e6a43e9ba",
+    "type": "sleep_hours",
+    "value": 6.2,
+    "date": "2026-08-11"
+   },
+   {
+    "id": "log_3dc461be7873b85e",
+    "type": "hydration_liters",
+    "value": 2.1,
+    "date": "2026-08-11"
+   },
+   {
+    "id": "log_42de3d1c068a4dec",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-11"
+   },
+   {
+    "id": "log_7e48df28faf637dc",
+    "type": "exercise_minutes",
+    "value": 20,
+    "date": "2026-08-12"
+   },
+   {
+    "id": "log_a8cf273f94d28fa3",
+    "type": "sleep_hours",
+    "value": 7.2,
+    "date": "2026-08-12"
+   },
+   {
+    "id": "log_f8a7a9b714731995",
+    "type": "hydration_liters",
+    "value": 2.4,
+    "date": "2026-08-12"
+   },
+   {
+    "id": "log_016db285c4d52450",
+    "type": "mood_score",
+    "value": 5,
+    "date": "2026-08-12"
+   },
+   {
+    "id": "log_cd990a10c67f7040",
+    "type": "exercise_minutes",
+    "value": 35,
+    "date": "2026-08-13"
+   },
+   {
+    "id": "log_3dd0d9a727a05718",
+    "type": "sleep_hours",
+    "value": 6.8,
+    "date": "2026-08-13"
+   },
+   {
+    "id": "log_48d3d6b0c3d1a3f9",
+    "type": "hydration_liters",
+    "value": 1.6,
+    "date": "2026-08-13"
+   },
+   {
+    "id": "log_c4784215d8962e64",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-13"
+   },
+   {
+    "id": "log_1173df1f17b3f21b",
+    "type": "exercise_minutes",
+    "value": 30,
+    "date": "2026-08-14"
+   },
+   {
+    "id": "log_b291f3d424888949",
+    "type": "sleep_hours",
+    "value": 5.8,
+    "date": "2026-08-14"
+   },
+   {
+    "id": "log_af97c5bd3eceb037",
+    "type": "hydration_liters",
+    "value": 2,
+    "date": "2026-08-14"
+   },
+   {
+    "id": "log_c2a443b1b4528eab",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-14"
+   },
+   {
+    "id": "log_4cc1bf018a7db715",
+    "type": "exercise_minutes",
+    "value": 0,
+    "date": "2026-08-15"
+   },
+   {
+    "id": "log_9007b72060fd47de",
+    "type": "sleep_hours",
+    "value": 7,
+    "date": "2026-08-15"
+   },
+   {
+    "id": "log_cf10226f1fff1a15",
+    "type": "hydration_liters",
+    "value": 2.5,
+    "date": "2026-08-15"
+   },
+   {
+    "id": "log_25fd06ab90a20d2f",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-15"
+   },
+   {
+    "id": "log_3cf2f94b66d9a710",
+    "type": "exercise_minutes",
+    "value": 25,
+    "date": "2026-08-16"
+   },
+   {
+    "id": "log_c3e19012acef0561",
+    "type": "sleep_hours",
+    "value": 6,
+    "date": "2026-08-16"
+   },
+   {
+    "id": "log_cfe38e167036a1f2",
+    "type": "hydration_liters",
+    "value": 1.8,
+    "date": "2026-08-16"
+   },
+   {
+    "id": "log_d5712327e864b29c",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-16"
+   },
+   {
+    "id": "log_b8e83c6bf0a4590b",
+    "type": "exercise_minutes",
+    "value": 20,
+    "date": "2026-08-17"
+   },
+   {
+    "id": "log_439b997b3d88058e",
+    "type": "sleep_hours",
+    "value": 6.5,
+    "date": "2026-08-17"
+   },
+   {
+    "id": "log_4b3b54a281ff9e5a",
+    "type": "hydration_liters",
+    "value": 2.2,
+    "date": "2026-08-17"
+   },
+   {
+    "id": "log_274fbae76ef7707c",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-17"
+   },
+   {
+    "id": "log_e53659f7fc75468b",
+    "type": "exercise_minutes",
+    "value": 0,
+    "date": "2026-08-18"
+   },
+   {
+    "id": "log_8a07b5ef5b1f4146",
+    "type": "sleep_hours",
+    "value": 6.2,
+    "date": "2026-08-18"
+   },
+   {
+    "id": "log_b39fcf69bc3de2e9",
+    "type": "hydration_liters",
+    "value": 2.1,
+    "date": "2026-08-18"
+   },
+   {
+    "id": "log_aef3efff62f0f785",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-18"
+   },
+   {
+    "id": "log_18da5a2d9c2dab89",
+    "type": "exercise_minutes",
+    "value": 20,
+    "date": "2026-08-19"
+   },
+   {
+    "id": "log_ae54c98453a7767c",
+    "type": "sleep_hours",
+    "value": 7.2,
+    "date": "2026-08-19"
+   },
+   {
+    "id": "log_90c9486b57a66494",
+    "type": "hydration_liters",
+    "value": 2.4,
+    "date": "2026-08-19"
+   },
+   {
+    "id": "log_f998c4b683bc4b2f",
+    "type": "mood_score",
+    "value": 5,
+    "date": "2026-08-19"
+   },
+   {
+    "id": "log_2bc7a25375ca4b21",
+    "type": "exercise_minutes",
+    "value": 35,
+    "date": "2026-08-20"
+   },
+   {
+    "id": "log_df24a648b7738fd2",
+    "type": "sleep_hours",
+    "value": 6.8,
+    "date": "2026-08-20"
+   },
+   {
+    "id": "log_c201f7a4257ea86c",
+    "type": "hydration_liters",
+    "value": 1.6,
+    "date": "2026-08-20"
+   },
+   {
+    "id": "log_371d98e5fcf15fda",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-20"
+   },
+   {
+    "id": "log_00b55bb53db8a689",
+    "type": "exercise_minutes",
+    "value": 30,
+    "date": "2026-08-21"
+   },
+   {
+    "id": "log_d2b959b20a32f664",
+    "type": "sleep_hours",
+    "value": 5.8,
+    "date": "2026-08-21"
+   },
+   {
+    "id": "log_74bf915b33dedf15",
+    "type": "hydration_liters",
+    "value": 2,
+    "date": "2026-08-21"
+   },
+   {
+    "id": "log_f268f8d29031af1d",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-21"
+   },
+   {
+    "id": "log_4744ec67c561e2ff",
+    "type": "exercise_minutes",
+    "value": 0,
+    "date": "2026-08-22"
+   },
+   {
+    "id": "log_3211f2df9dc028b3",
+    "type": "sleep_hours",
+    "value": 7,
+    "date": "2026-08-22"
+   },
+   {
+    "id": "log_81f36f67e8be6a6c",
+    "type": "hydration_liters",
+    "value": 2.5,
+    "date": "2026-08-22"
+   },
+   {
+    "id": "log_e2835bcfbf3016a5",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-22"
+   },
+   {
+    "id": "log_b4eab3974e60e6fc",
+    "type": "exercise_minutes",
+    "value": 25,
+    "date": "2026-08-23"
+   },
+   {
+    "id": "log_b9789c321b0a89b4",
+    "type": "sleep_hours",
+    "value": 6,
+    "date": "2026-08-23"
+   },
+   {
+    "id": "log_0646d0b5bd97c7b7",
+    "type": "hydration_liters",
+    "value": 1.8,
+    "date": "2026-08-23"
+   },
+   {
+    "id": "log_ed2cae1d1d85981c",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-23"
+   },
+   {
+    "id": "log_b3f446b3711232ef",
+    "type": "exercise_minutes",
+    "value": 45,
+    "date": "2026-08-24"
+   }
+  ],
+  "usr_48101ed46ead586d": [],
+  "usr_db9cf4f4475dd061": []
+ },
+ "plans": {
+  "usr_70c999c140e56cd6": {
+   "activity": {
+    "generatedAt": "2026-08-24T19:12:53.706Z",
+    "goal": "Improve stamina",
+    "weeklyTargetMinutes": 150,
+    "weeks": [
+     {
+      "week": 1,
+      "focus": "Build consistent activity",
+      "items": [
+       {
+        "name": "Brisk walking",
+        "detail": "20 minutes × 4 days"
+       },
+       {
+        "name": "Mobility & stretching",
+        "detail": "10 minutes × 3 days"
+       },
+       {
+        "name": "Bodyweight strength",
+        "detail": "10 minutes × 2 days"
+       }
+      ]
+     },
+     {
+      "week": 2,
+      "focus": "Gradual progression",
+      "items": [
+       {
+        "name": "Brisk walking",
+        "detail": "23 minutes × 5 days"
+       },
+       {
+        "name": "Mobility & stretching",
+        "detail": "12 minutes × 3 days"
+       },
+       {
+        "name": "Bodyweight strength",
+        "detail": "12 minutes × 2 days"
+       }
+      ]
+     },
+     {
+      "week": 3,
+      "focus": "Gradual progression",
+      "items": [
+       {
+        "name": "Brisk walking",
+        "detail": "26 minutes × 5 days"
+       },
+       {
+        "name": "Mobility & stretching",
+        "detail": "13 minutes × 3 days"
+       },
+       {
+        "name": "Bodyweight strength",
+        "detail": "13 minutes × 3 days"
+       }
+      ]
+     },
+     {
+      "week": 4,
+      "focus": "Consolidate the habit",
+      "items": [
+       {
+        "name": "Brisk walking",
+        "detail": "29 minutes × 5 days"
+       },
+       {
+        "name": "Mobility & stretching",
+        "detail": "15 minutes × 3 days"
+       },
+       {
+        "name": "Bodyweight strength",
+        "detail": "15 minutes × 3 days"
+       }
+      ]
+     }
+    ],
+    "safetyNotes": [
+     "Start each session gently; stop if you feel unwell.",
+     "Because your profile includes cardiovascular/metabolic risk signals, review this plan with a healthcare professional before increasing intensity.",
+     "This is general guidance, not medical advice — adjust with professional input where relevant."
+    ]
+   },
+   "nutrition": {
+    "generatedAt": "2026-08-24T19:12:53.707Z",
+    "preference": "vegetarian",
+    "estimatedDailyCalories": 1896,
+    "tdeeEstimate": 2296,
+    "goal": "loss",
+    "hydrationTarget": "2.6 L/day",
+    "weekPlan": [
+     {
+      "day": "Mon",
+      "breakfast": [
+       "Oats With Milk, Banana & Nuts",
+       "~350 kcal"
+      ],
+      "lunch": [
+       "Rajma + Brown Rice + Salad",
+       "~520 kcal"
+      ],
+      "dinner": [
+       "Phulka + Palak Paneer + Salad",
+       "~450 kcal"
+      ],
+      "snacks": "Fruit / handful of nuts / buttermilk"
+     },
+     {
+      "day": "Tue",
+      "breakfast": [
+       "Vegetable Poha/Upma + Curd",
+       "~320 kcal"
+      ],
+      "lunch": [
+       "Paneer Bhurji + 2 Rotis + Veggies",
+       "~540 kcal"
+      ],
+      "dinner": [
+       "Moong Dal + Lauki Sabzi + Roti",
+       "~420 kcal"
+      ],
+      "snacks": "Fruit / handful of nuts / buttermilk"
+     },
+     {
+      "day": "Wed",
+      "breakfast": [
+       "Besan Chilla With Mint Chutney",
+       "~300 kcal"
+      ],
+      "lunch": [
+       "Dal Tadka + Rice + Bhindi",
+       "~500 kcal"
+      ],
+      "dinner": [
+       "Vegetable Soup + Grilled Paneer",
+       "~380 kcal"
+      ],
+      "snacks": "Fruit / handful of nuts / buttermilk"
+     },
+     {
+      "day": "Thu",
+      "breakfast": [
+       "Whole-Grain Toast, Peanut Butter & Fruit",
+       "~330 kcal"
+      ],
+      "lunch": [
+       "Chole + Rice + Cucumber Salad",
+       "~530 kcal"
+      ],
+      "dinner": [
+       "Egg-Less Veg Fried Rice (Less Oil)",
+       "~430 kcal"
+      ],
+      "snacks": "Fruit / handful of nuts / buttermilk"
+     },
+     {
+      "day": "Fri",
+      "breakfast": [
+       "Idli + Sambar",
+       "~300 kcal"
+      ],
+      "lunch": [
+       "Veg Pulao + Raita",
+       "~510 kcal"
+      ],
+      "dinner": [
+       "Tofu Stir-Fry + Quinoa",
+       "~440 kcal"
+      ],
+      "snacks": "Fruit / handful of nuts / buttermilk"
+     },
+     {
+      "day": "Sat",
+      "breakfast": [
+       "Greek Yogurt Bowl With Seeds & Berries",
+       "~340 kcal"
+      ],
+      "lunch": [
+       "Mixed-Dal Khichdi + Kadhi",
+       "~480 kcal"
+      ],
+      "dinner": [
+       "Masoor Dal + Bhindi + Roti",
+       "~430 kcal"
+      ],
+      "snacks": "Fruit / handful of nuts / buttermilk"
+     },
+     {
+      "day": "Sun",
+      "breakfast": [
+       "Sprouts Salad + Buttermilk",
+       "~290 kcal"
+      ],
+      "lunch": [
+       "Soya Chunks Curry + Rotis",
+       "~540 kcal"
+      ],
+      "dinner": [
+       "Light Khichdi + Curd",
+       "~400 kcal"
+      ],
+      "snacks": "Fruit / handful of nuts / buttermilk"
+     }
+    ],
+    "notes": [
+     "Excluding suggestions containing “penicillin” due to your recorded allergy.",
+     "Given your risk signals, favouring high-fibre carbohydrates, less added sugar and lower-salt cooking supports the guidance you receive clinically.",
+     "Portion guide: half the plate vegetables, a quarter protein, a quarter whole grains.",
+     "AI-generated nutrition ideas are educational — not medical nutrition therapy."
+    ]
+   }
+  }
+ },
+ "doctors": {
+  "usr_70c999c140e56cd6": [
+   {
+    "id": "doc_78bcebb2647661dd",
+    "name": "Dr. Kavita Rao",
+    "role": "Family Doctor",
+    "specialty": "General Physician",
+    "phone": "+91 98200 11223",
+    "clinic": "Sunrise Family Clinic, Andheri",
+    "notes": "Annual review each January",
+    "addedAt": "2025-01-10T10:00:00Z"
+   },
+   {
+    "id": "doc_c2633997cd502ac6",
+    "name": "Dr. Sameer Menon",
+    "role": "Specialist",
+    "specialty": "Cardiologist",
+    "phone": "+91 98200 44556",
+    "clinic": "Lifeline Heart Institute",
+    "notes": "Consulted 2025 for BP review",
+    "addedAt": "2025-06-14T10:00:00Z"
+   },
+   {
+    "id": "doc_c482ddbe6711a420",
+    "name": "Dr. Test",
+    "role": "Specialist",
+    "specialty": "Dermatologist",
+    "phone": "+91 90000 00000",
+    "clinic": "",
+    "notes": "",
+    "addedAt": "2026-08-24T19:12:53.769Z"
+   }
+  ],
+  "usr_48101ed46ead586d": [],
+  "usr_db9cf4f4475dd061": []
+ },
+ "contacts": {
+  "usr_70c999c140e56cd6": [
+   {
+    "id": "ct_4b01de00f0983257",
+    "name": "Suresh Mehta",
+    "relation": "Father",
+    "phone": "+91 98200 77889",
+    "notes": "Primary emergency contact",
+    "priority": 1
+   },
+   {
+    "id": "ct_5c09000a0c0586fd",
+    "name": "Nirmala Mehta",
+    "relation": "Mother",
+    "phone": "+91 98200 99001",
+    "notes": "",
+    "priority": 1
+   },
+   {
+    "id": "ct_c7e00307bd0e5de6",
+    "name": "Anjali Mehta",
+    "relation": "Spouse",
+    "phone": "+91 98200 55447",
+    "notes": "",
+    "priority": 2
+   },
+   {
+    "id": "ct_0905ab79ea589ce6",
+    "name": "Rohit Kumar",
+    "relation": "Friend",
+    "phone": "+91 98200 33221",
+    "notes": "Lives nearby",
+    "priority": 3
+   }
+  ]
+ },
+ "reminders": {
+  "usr_70c999c140e56cd6": [
+   {
+    "id": "rem_013553f352894e35",
+    "userId": "usr_70c999c140e56cd6",
+    "title": "Follow up on HbA1c trend with your doctor",
+    "type": "health",
+    "dueDate": "2026-09-03",
+    "notes": "",
+    "status": "active",
+    "source": "auto:hba1c_followup",
+    "repeatable": false,
+    "createdAt": "2026-08-24T19:12:49.577Z",
+    "actionLog": []
+   },
+   {
+    "id": "rem_5851a7cf2146f61a",
+    "userId": "usr_70c999c140e56cd6",
+    "title": "Record a blood-pressure reading",
+    "type": "measurement",
+    "dueDate": "2026-08-29",
+    "notes": "",
+    "status": "completed",
+    "source": "auto:bp_check",
+    "repeatable": false,
+    "createdAt": "2026-08-24T19:12:49.577Z",
+    "actionLog": [
+     {
+      "ts": "2026-08-24T19:12:53.726Z",
+      "action": "snooze",
+      "detail": "+5d"
+     },
+     {
+      "ts": "2026-08-24T19:12:53.735Z",
+      "action": "complete"
+     }
+    ]
+   },
+   {
+    "id": "rem_c9e944900369537d",
+    "userId": "usr_70c999c140e56cd6",
+    "title": "Weekly health review — check insights & lifestyle plan",
+    "type": "lifestyle",
+    "dueDate": "2026-08-30",
+    "notes": "",
+    "status": "active",
+    "source": "auto:weekly_review",
+    "repeatable": false,
+    "createdAt": "2026-08-24T19:12:49.577Z",
+    "actionLog": []
+   },
+   {
+    "id": "rem_e8babccfe3f781c2",
+    "userId": {
+     "id": "usr_70c999c140e56cd6",
+     "email": "demo@healthsphere.ai",
+     "name": "Arjun Mehta",
+     "passwordSalt": "0f891d0d87545cf2cb091a144f5e633c",
+     "passwordHash": "05fb3c200afde7becda4f8ba789cbb2928a83171ae471bbed805319b1097998b39432bf7dc5185a9ca2b1ae84ae151d1d9fccbca90bc7d0e924af8a77895c33c",
+     "createdAt": "2026-08-24T19:12:49.489Z"
+    },
+    "title": "Discuss HbA1c trend & family history with Dr. Kavita Rao",
+    "type": "followup",
+    "dueDate": "2026-09-03",
+    "notes": "",
+    "status": "active",
+    "source": "auto:hba1c_followup",
+    "repeatable": false,
+    "createdAt": "2026-08-24T19:12:49.577Z",
+    "actionLog": []
+   },
+   {
+    "id": "rem_0ee72fb28deaa715",
+    "userId": {
+     "id": "usr_70c999c140e56cd6",
+     "email": "demo@healthsphere.ai",
+     "name": "Arjun Mehta",
+     "passwordSalt": "0f891d0d87545cf2cb091a144f5e633c",
+     "passwordHash": "05fb3c200afde7becda4f8ba789cbb2928a83171ae471bbed805319b1097998b39432bf7dc5185a9ca2b1ae84ae151d1d9fccbca90bc7d0e924af8a77895c33c",
+     "createdAt": "2026-08-24T19:12:49.489Z"
+    },
+    "title": "Record blood pressure",
+    "type": "measurement",
+    "dueDate": "2026-08-26",
+    "notes": "",
+    "status": "active",
+    "source": "auto:bp_check",
+    "repeatable": true,
+    "createdAt": "2026-08-24T19:12:49.578Z",
+    "actionLog": []
+   },
+   {
+    "id": "rem_274dda43558c1ca4",
+    "userId": "usr_70c999c140e56cd6",
+    "title": "Book eye checkup",
+    "type": "health",
+    "dueDate": "2026-09-15",
+    "notes": "",
+    "status": "active",
+    "source": "user",
+    "repeatable": false,
+    "createdAt": "2026-08-24T19:12:53.743Z",
+    "actionLog": []
+   }
+  ],
+  "usr_48101ed46ead586d": [],
+  "usr_db9cf4f4475dd061": [
+   {
+    "id": "rem_86f4f81f8aa96f8b",
+    "userId": "usr_db9cf4f4475dd061",
+    "title": "Weekly health review — check insights & lifestyle plan",
+    "type": "lifestyle",
+    "dueDate": "2026-08-30",
+    "notes": "",
+    "status": "active",
+    "source": "auto:weekly_review",
+    "repeatable": false,
+    "createdAt": "2026-08-24T19:14:26.312Z",
+    "actionLog": []
+   }
+  ]
+ },
+ "settings": {
+  "usr_70c999c140e56cd6": {
+   "consents": {
+    "contactsImport": true,
+    "location": true,
+    "shareReports": false,
+    "familyView": true
+   },
+   "notifications": {
+    "health": true,
+    "lifestyle": true,
+    "healthcare": true,
+    "emergency": true
+   },
+   "privacy": {
+    "analyticsOptOut": true
+   }
+  },
+  "usr_48101ed46ead586d": {
+   "consents": {
+    "contactsImport": false,
+    "location": false,
+    "shareReports": false,
+    "familyView": false
+   },
+   "notifications": {
+    "health": true,
+    "lifestyle": true,
+    "healthcare": true,
+    "emergency": true
+   }
+  },
+  "usr_db9cf4f4475dd061": {
+   "consents": {
+    "contactsImport": false,
+    "location": false,
+    "shareReports": false,
+    "familyView": false
+   },
+   "notifications": {
+    "health": true,
+    "lifestyle": true,
+    "healthcare": true,
+    "emergency": true
+   }
+  }
+ },
+ "audit": {
+  "usr_70c999c140e56cd6": [
+   {
+    "ts": "2026-08-24T19:12:49.581Z",
+    "action": "seed",
+    "detail": "Demo data created"
+   },
+   {
+    "ts": "2026-08-24T19:12:53.496Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-24T19:12:53.643Z",
+    "action": "report_manual_entry",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-24T19:12:53.707Z",
+    "action": "lifestyle_plan_regenerated",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-24T19:12:53.726Z",
+    "action": "reminder_snooze",
+    "detail": "Record a blood-pressure reading"
+   },
+   {
+    "ts": "2026-08-24T19:12:53.735Z",
+    "action": "reminder_complete",
+    "detail": "Record a blood-pressure reading"
+   },
+   {
+    "ts": "2026-08-24T19:12:53.759Z",
+    "action": "contacts_imported",
+    "detail": "0 contact(s)"
+   },
+   {
+    "ts": "2026-08-24T19:13:25.593Z",
+    "action": "emergency_card_accessed",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-24T19:13:25.602Z",
+    "action": "family_member_added",
+    "detail": "Aunt"
+   },
+   {
+    "ts": "2026-08-24T19:13:25.616Z",
+    "action": "settings_updated",
+    "detail": "consents"
+   },
+   {
+    "ts": "2026-08-24T19:13:25.625Z",
+    "action": "data_exported",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-24T19:13:30.881Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-24T19:13:44.634Z",
+    "action": "emergency_card_accessed",
+    "detail": ""
+   }
+  ],
+  "usr_48101ed46ead586d": [
+   {
+    "ts": "2026-08-24T19:13:25.692Z",
+    "action": "account_created",
+    "detail": ""
+   }
+  ],
+  "usr_db9cf4f4475dd061": [
+   {
+    "ts": "2026-08-24T19:14:07.121Z",
+    "action": "account_created",
+    "detail": ""
+   }
+  ]
+ }
+}

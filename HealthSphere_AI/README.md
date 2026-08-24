@@ -10,7 +10,9 @@ Built from the *CareGraph AI* Product Requirements Document (v1.0) — implement
 
 ---
 
-## ▶️ Run it (zero dependencies)
+## ▶️ Quick start
+
+**Requirements:** Node.js ≥ 18 (built-in `fetch` used for live map data). Zero npm dependencies.
 
 ```bash
 cd HealthSphere_AI
@@ -24,12 +26,47 @@ Open **http://localhost:3000**
 | **Demo login** | `demo@healthsphere.ai` / `demo1234` |
 | **Or** | Click "⚡ Try the live demo" on the sign-in screen |
 
-Requires only Node.js ≥ 18. No `npm install`. No external APIs. Works fully offline.
-Reset demo data: `npm run reset` · Run test suites: `npm test`
-
 The demo account is pre-loaded with 2 years of realistic data: family history,
 37 health metrics (HbA1c 5.4 → 5.7 → 6.0 rising exactly as in the PRD scenario),
 processed lab reports, lifestyle logs, care team and emergency contacts.
+
+```bash
+npm run reset      # wipe & re-seed demo data
+npm test           # run extraction / trends / rules test suites
+```
+
+---
+
+## ✨ Features
+
+| Module | What you get |
+|---|---|
+| **Dashboard** | Unified health picture — signals, trends and next steps at a glance |
+| **My Profile** | Personal profile, vitals and long-term health metrics (PRD 8.2) |
+| **Family History** | Family health tree — 11 relationship types, conditions with diagnosis ages (PRD 8.3) |
+| **Medical Reports** | Upload PDFs/photos → automated extraction pipeline → plain-language explanation (PRD 8.4–8.6) |
+| **Timeline** | Filterable longitudinal health event timeline (PRD 8.8) |
+| **Insights & Risks** | Explainable risk signals, screening checklist, specialist suggestions (PRD 8.9–8.11) |
+| **Lifestyle Hub** | BMR/TDEE targets, activity plans, meal grids, hydration goals (PRD 8.13–8.15) |
+| **Reminders** | Auto-generated + manual reminders with snooze/complete/reschedule/disable (PRD 8.12) |
+| **Care Team** | Doctors and emergency contacts, consent-gated contact import (PRD 8.16–8.18) |
+| **Nearby Care** | Live hospitals/clinics/labs/pharmacies via OpenStreetMap around your location or any searched place (PRD 8.19) |
+| **Emergency Mode** | Full-screen red mode: 112 call button, family doctor, priority contacts, emergency card (PRD 8.20) |
+| **Settings & Privacy** | Consent toggles, notification prefs, password change, JSON data export, account deletion, audit log |
+
+### 📍 How Nearby Care works
+
+1. On open, the browser's native geolocation prompt appears (opt-in; coordinates are
+   used only to rank results and are never stored).
+2. The server queries the **Overpass API** (OpenStreetMap, no key required) for real
+   facilities within ~6 km, classifies them (hospital / clinic / lab / pharmacy /
+   emergency), de-duplicates and sorts by distance.
+3. Alternatively, search any place by name — geocoded via Nominatim.
+4. Results are cached in-memory for 10 minutes per rounded coordinate; type and name
+   filters are applied locally so filter changes never hit the network again.
+5. If Overpass is unreachable/slow, the app gracefully falls back to a bundled sample
+   dataset restricted to facilities within 60 km of the origin (or the nearest city's
+   set), clearly badged "Offline sample dataset".
 
 ---
 
@@ -71,38 +108,17 @@ report values + trends + lifestyle** into risk *signals* (never diagnoses), each
 "Why am I seeing this?" factor list. Maps signals to specialties worth *discussing*
 (Endocrinology, Cardiology…) plus an age/sex/family-aware screening checklist.
 
-### Safety Layer
-Strips diagnostic/prescription language from all AI output, enforces explainability
-(no factors → no signal), attaches disclaimers, and frames every action as
-*"discuss with a qualified healthcare professional."*
-
 ### Model 4 — Lifestyle AI (`lib/lifestyle.js`)
 Mifflin-St Jeor BMR/TDEE estimates, goal-adjusted calorie targets, 4-week progressive
 activity plans, 7-day vegetarian/non-veg/vegan meal grids filtered by recorded allergies,
 hydration targets derived from body weight, and week-over-week lifestyle insights.
 
+### Safety Layer
+Strips diagnostic/prescription language from all AI output, enforces explainability
+(no factors → no signal), attaches disclaimers, and frames every action as
+*"discuss with a qualified healthcare professional."*
+
 ---
-
-## ✨ Feature map (PRD coverage)
-
-| PRD section | Where to see it |
-|---|---|
-| 8.1 Auth & account mgmt | Register/login/logout, password change, delete account |
-| 8.2 Personal profile + metrics | **My Profile** |
-| 8.3 Family health tree | **Family History** (11 relationships, conditions w/ diagnosis ages) |
-| 8.4–8.6 Report upload + processing + explanation | **Medical Reports** (animated pipeline) |
-| 8.7 Longitudinal analysis | Trends everywhere; `/api/trends/:key` |
-| 8.8 Health timeline w/ filters | **Timeline** |
-| 8.9 Risk & preventive-care engine | **Insights & Risks** |
-| 8.10 Doctor specialty recommendation | Insights page, with reasons |
-| 8.11 Test/screening guidance | Insights page checklist |
-| 8.12 Reminders (auto + manual, snooze/complete/reschedule/disable) | **Reminders** |
-| 8.13–8.15 Exercise/diet/lifestyle engines | **Lifestyle Hub** |
-| 8.16–8.18 Emergency contacts + consent-gated import + care team | **Care Team** |
-| 8.19 Nearby healthcare discovery | **Nearby Care** (geo-permission or city fallback) |
-| 8.20 Emergency mode | Red full-screen mode: call buttons + emergency card |
-| §14 Security & privacy | scrypt password hashing, httpOnly sessions, audit log, consent toggles, JSON export, one-click deletion |
-| §16 Explainability | "Why am I seeing this?" on every signal |
 
 ## 🏗 System architecture
 
@@ -113,17 +129,79 @@ Node HTTP server (server.js)  ── lib/api.js route table (~40 endpoints)
    │
 lib/* services: auth · extraction · trends · rules · recommend ·
                 lifestyle · reminders · timeline · hospitals · seed
+   │                                    │
+   │                                    └── OpenStreetMap (Overpass + Nominatim, optional, keyless)
    │
 JSON persistence (data/db.json, atomic writes) + uploads/ storage
 ```
 
-Zero npm dependencies = instant startup, offline-capable, nothing to break during a demo.
-Swap points for production: PostgreSQL via the same service layer, S3 for uploads,
-real OCR (e.g. Textract/Textract-class API) behind `processDocument()`, maps/places API
-behind `searchFacilities()`.
+## 📁 Project structure
+
+```
+HealthSphere_AI/
+├── server.js              # HTTP server, static files, SPA fallback (Vercel-compatible)
+├── lib/
+│   ├── api.js             # Route table (~40 REST endpoints), auth middleware
+│   ├── auth.js            # scrypt password hashing, session cookies
+│   ├── extraction.js      # Report parsing: analytes, ranges, units, dates
+│   ├── pdftext.js         # Dependency-free PDF text miner (zlib-based)
+│   ├── trends.js          # Slopes, sudden change, anomalies, staleness
+│   ├── rules.js           # Clinical rule engine → risk signals
+│   ├── recommend.js       # Specialty + screening recommendations
+│   ├── lifestyle.js       # Diet/activity/hydration engines
+│   ├── reminders.js       # Auto + manual reminder generation
+│   ├── timeline.js        # Unified event timeline
+│   ├── hospitals.js       # Nearby care: OSM live discovery + sample fallback
+│   └── seed.js            # Realistic 2-year demo dataset
+├── public/
+│   ├── index.html         # Single-page app shell
+│   ├── css/               # Design system + emergency mode styles
+│   └── js/                # Hash router, API client, view modules
+├── scripts/reset.mjs      # Demo data reset
+├── tests/                 # Extraction / trends / rules suites (plain Node asserts)
+└── data/db.json           # JSON persistence (auto-created)
+```
+
+## 🔌 API overview (selected)
+
+| Method + path | Purpose |
+|---|---|
+| `POST /api/auth/register` · `/login` · `/logout` | Account lifecycle |
+| `GET/PUT /api/profile` | Personal profile |
+| `GET/POST/DELETE /api/family` | Family health tree |
+| `POST /api/reports/upload` → `GET /api/reports/:id` | Upload → pipeline status → explained report |
+| `GET /api/trends/:key` | Longitudinal analysis for a metric |
+| `GET /api/timeline` | Unified filtered timeline |
+| `GET /api/insights` | Risk signals + factors + screening checklist |
+| `GET/PUT /api/lifestyle/*` | Plans, meals, logs, insights |
+| `GET/POST/PATCH/DELETE /api/reminders` | Reminder CRUD + actions |
+| `GET/POST/DELETE /api/doctors` · `/api/contacts` | Care team & emergency contacts |
+| `POST /api/contacts/import` | Consent-gated device-contact import |
+| `GET /api/hospitals?lat=&lng=` · `?place=` | Nearby care (live OSM, offline fallback) |
+| `GET /api/emergency` | Emergency card payload |
+| `PUT /api/settings` · `GET /api/export` · `DELETE /api/account` · `GET /api/audit` | Privacy & data rights |
+
+---
+
+## 🔒 Security & privacy (PRD §14)
+
+- scrypt-hashed passwords, httpOnly session cookies, same-origin credentials
+- Location is opt-in, used transiently for ranking only, never persisted
+- Explicit consent toggles (contacts import, location, report sharing, family view) with audit trail
+- One-click full data export (JSON) and immediate irreversible account deletion
+- Every sensitive access (emergency card, exports, consent changes) is audited
+
+## ☁️ Deploy (Vercel)
+
+`vercel.json` is included; the server detects `process.env.VERCEL` and exports a
+serverless handler instead of listening. No environment variables or API keys needed.
 
 ## ⚠️ Medical disclaimer
 
 HealthSphere AI organizes and explains health information. It does not diagnose
 diseases, prescribe medication, or replace healthcare professionals. Every insight is
 informational and encourages professional evaluation.
+
+## 📄 License
+
+MIT

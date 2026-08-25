@@ -236,6 +236,12 @@
    "userId": "usr_75700e97ede1ca9e",
    "createdAt": "2026-08-25T14:45:24.326Z",
    "expiresAt": "2026-09-01T14:45:24.326Z"
+  },
+  {
+   "token": "9849f28e66795aa8cfb0069019abb4530abb892ab2b1ecb26c9b790d2721b44f",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T15:01:35.043Z",
+   "expiresAt": "2026-09-01T15:01:35.045Z"
   }
  ],
  "profiles": {
@@ -375,7 +381,8 @@
   ],
   "usr_3ad4d9724c23e619": [],
   "usr_f5da01d8969cda1f": [],
-  "usr_704e74dbaa1c6d62": []
+  "usr_704e74dbaa1c6d62": [],
+  "usr_75700e97ede1ca9e": []
  },
  "reports": {
   "usr_54b52e030d04bd03": [
@@ -728,7 +735,8 @@
   ],
   "usr_3ad4d9724c23e619": [],
   "usr_f5da01d8969cda1f": [],
-  "usr_704e74dbaa1c6d62": []
+  "usr_704e74dbaa1c6d62": [],
+  "usr_75700e97ede1ca9e": []
  },
  "metrics": {
   "usr_54b52e030d04bd03": [
@@ -1068,7 +1076,8 @@
   ],
   "usr_3ad4d9724c23e619": [],
   "usr_f5da01d8969cda1f": [],
-  "usr_704e74dbaa1c6d62": []
+  "usr_704e74dbaa1c6d62": [],
+  "usr_75700e97ede1ca9e": []
  },
  "logs": {
   "usr_54b52e030d04bd03": [
@@ -1459,7 +1468,8 @@
   ],
   "usr_3ad4d9724c23e619": [],
   "usr_f5da01d8969cda1f": [],
-  "usr_704e74dbaa1c6d62": []
+  "usr_704e74dbaa1c6d62": [],
+  "usr_75700e97ede1ca9e": []
  },
  "plans": {
   "usr_54b52e030d04bd03": {
@@ -1703,7 +1713,8 @@
   ],
   "usr_3ad4d9724c23e619": [],
   "usr_f5da01d8969cda1f": [],
-  "usr_704e74dbaa1c6d62": []
+  "usr_704e74dbaa1c6d62": [],
+  "usr_75700e97ede1ca9e": []
  },
  "contacts": {
   "usr_54b52e030d04bd03": [
@@ -1839,7 +1850,8 @@
    }
   ],
   "usr_f5da01d8969cda1f": [],
-  "usr_704e74dbaa1c6d62": []
+  "usr_704e74dbaa1c6d62": [],
+  "usr_75700e97ede1ca9e": []
  },
  "settings": {
   "usr_54b52e030d04bd03": {
@@ -2013,6 +2025,11 @@
    {
     "ts": "2026-08-25T14:16:14.129Z",
     "action": "lifestyle_plan_regenerated",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T15:01:35.060Z",
+    "action": "login",
     "detail": ""
    }
   ],

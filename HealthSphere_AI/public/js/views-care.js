@@ -273,6 +273,7 @@ VIEWS.hospitals = async function (container) {
 /* ================= EMERGENCY MODE ================= */
 VIEWS.emergency = async function (container) {
   const card = await api('/api/emergency');
+  const sos = await api('/api/sos').catch(() => ({ alerts: [], primaryContact: null }));
   let erNearby = [];
   try {
     const r = await api('/api/hospitals?type=emergency&city=Mumbai');
@@ -293,6 +294,27 @@ VIEWS.emergency = async function (container) {
         CALL ${esc(c.name.toUpperCase())} (${esc(c.relation)}) — P${c.priority}<span>&rsaquo;</span></a>`).join('')}
     <a class="ebtn" href="#/hospitals">FIND NEARBY HOSPITALS<span>&rsaquo;</span></a>
 
+    <div class="ecard mt" style="text-align:center">
+      <h3>Emergency SOS</h3>
+      <p class="sos-sub">Alert your saved emergency contacts and open a pre-filled message to local services.</p>
+      <button class="sos-btn" id="sos-btn">SOS</button>
+      <p class="sos-caption">Pressing <b>SOS</b> records an alert and prepares a text-format message with your
+        location link (if permission is granted) for your <b>primary contact</b> first.
+        It does <b>not</b> replace calling your local emergency number.</p>
+    </div>
+
+    <div class="ecard mt">
+      <h3>Recent alerts</h3>
+      ${(sos.alerts || []).length ? sos.alerts.map(a => `
+        <div class="erow" style="align-items:flex-start">
+          <span><small style="color:#d99">${new Date(a.ts).toLocaleString()}</small>
+            <span class="chip ${a.status === 'cancelled' ? 'neutral' : 'bad'}" style="margin-left:8px">${esc(a.status)}</span><br>
+            <small style="color:#e8d5c4;word-break:break-word">${esc(a.message.length > 140 ? a.message.slice(0, 140) + '…' : a.message)}
+            ${a.hasLocation ? ' · 📍' : ''}</small></span>
+          ${a.status === 'active' ? `<button class="btn sm secondary" data-sos-cancel="${esc(a.id)}">Call off</button>` : ''}
+        </div>`).join('') : '<div class="sos-empty">No alerts triggered yet</div>'}
+    </div>
+
     <div class="ecard mt">
       <h3>My emergency information</h3>
       <div class="erow"><span>Blood group</span><b>${esc(card.bloodGroup || '—')}</b></div>
@@ -307,10 +329,62 @@ VIEWS.emergency = async function (container) {
       ${erNearby.map(f => `<div class="erow"><span>${esc(f.name)}<br><small style="color:#d99">${esc(f.address)} · ${esc(f.hours)}</small></span>
         <a href="tel:${esc((f.phone || '').replace(/\s/g, ''))}" style="color:#ffb4b4;font-weight:650">${esc(f.phone)}</a></div>`).join('')}
     </div>
+
+    <div class="sos-banner mt">In a real emergency, always call your local emergency number directly.
+      This feature is a notification aid, not a life-safety service.</div>
     <p style="font-size:11.5px;color:#c98;margin-top:16px">If this is a life-threatening emergency, call local emergency services immediately.</p>
   </div>`;
 
   container.querySelector('#exit-em').onclick = () => { location.hash = '#/dashboard'; };
+
+  /* ---- SOS trigger ---- */
+  const btn = container.querySelector('#sos-btn');
+  btn.onclick = async () => {
+    const go = await confirmDlg('Trigger SOS alert?',
+      'An alert will be recorded and you will get the pre-filled message to send to your primary contact. Continue only if you need urgent help.',
+      'Send SOS alert');
+    if (!go) return;
+    btn.disabled = true;
+    btn.textContent = '…';
+    const finish = () => { btn.disabled = false; btn.textContent = 'SOS'; };
+    const send = pos => {
+      api('/api/sos', {
+        method: 'POST',
+        body: pos ? { lat: pos.coords.latitude, lng: pos.coords.longitude } : {}
+      }).then(showDispatch).catch(e => { toast(e.message, 'err'); finish(); });
+    };
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(send, () => send(null), { timeout: 4500, maximumAge: 60000 });
+    } else send(null);
+  };
+
+  function showDispatch(r) {
+    const pc = r.primaryContact;
+    const digits = pc ? String(pc.phone).replace(/[^\d+]/g, '').replace(/^\+/, '') : '';
+    const m = openModal(`
+      <div class="spread"><h2 style="color:#7f1d1d">SOS alert recorded</h2></div>
+      <p class="page-sub">${esc(r.alert.message)}</p>
+      ${pc ? `
+        <div class="row mt" style="gap:8px;flex-wrap:wrap">
+          <a class="btn danger" href="sms:${esc(digits)}?body=${encodeURIComponent(r.alert.message)}">Send SMS to ${esc(pc.name)} (P${pc.priority})</a>
+          <a class="btn secondary" href="https://wa.me/${esc(digits)}?text=${encodeURIComponent(r.alert.message)}" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn primary-call" style="border-radius:10px;display:inline-flex;padding:10px 18px;font-size:13px" href="tel:112">Also call 112</a>
+        </div>`
+        : '<div class="empty">No emergency contacts saved yet — add one in Care Team so alerts can be sent.</div>'}
+      <div class="row mt" style="justify-content:flex-end">
+        <button class="btn secondary" id="sos-done">Done</button>
+      </div>`);
+    m.el.querySelector('#sos-done').onclick = () => { m.close(); VIEWS.emergency(container); };
+  }
+
+  container.querySelectorAll('[data-sos-cancel]').forEach(b => b.onclick = async () => {
+    b.disabled = true;
+    try {
+      await api(`/api/sos/${b.dataset.sosCancel}/cancel`, { method: 'POST' });
+      toast('Alert called off.');
+      VIEWS.emergency(container);
+    } catch (e) { toast(e.message, 'err'); b.disabled = false; }
+  });
 };
 
 /* ================= SETTINGS ================= */

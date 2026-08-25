@@ -1,44 +1,245 @@
 {
  "users": [
   {
-   "id": "usr_34748ffbf236c244",
+   "id": "usr_54b52e030d04bd03",
    "email": "demo@healthsphere.ai",
    "name": "Arjun Mehta",
-   "passwordSalt": "701717b1ac606419ff8142ab5c7ea113",
-   "passwordHash": "7e34cfd72724800ee4b73e466957ed6aa876e9abd35fadd3f00cda20887002c2b110779178fe52ea48175f7814b44a61e8e4afafa4392191fe9d4be7df6e6a3d",
-   "createdAt": "2026-08-24T20:01:32.284Z"
+   "passwordSalt": "cbcceb4ffd109ee102166f0212a44f62",
+   "passwordHash": "ef4fca2b7e907afbfc485cff19d39e784e2775d480581fea057222038cc39ebaf49e7a63e46f2d106054073debb5a801f63d1e5bc62dbc9f1d7bd1eb665dfeb1",
+   "createdAt": "2026-08-25T10:51:40.265Z"
   },
   {
-   "id": "usr_d85f5c4bfc6bbfa9",
-   "email": "judge-1787601725518@healthsphere.ai",
-   "name": "Judge Account",
-   "passwordSalt": "367f06d5af6428427378f0a928fb43d1",
-   "passwordHash": "cba9152bb7b540c9fd4fe6ad4d28bd5c4fb446cc624cb39d53046e9438d887f11bf84f3cb39d05b8ba8e73891486fb4dabf6c02a252ea0b92b28afc5e53c6caf",
-   "createdAt": "2026-08-24T20:02:05.852Z"
+   "id": "usr_78514e6ecfd36e5f",
+   "email": "patient@test.com",
+   "name": "Test Patient",
+   "passwordSalt": "e657d89b11abe2054c40660f8f4e34e9",
+   "passwordHash": "a4b9be2c5d9318fd4e8d8f5f249d6faafcd1402fcfe0b83c21ae180d57a192a33df924e52c8d27fd77b18c8119933ae95a206a3da7445f9fcb141daad905a36f",
+   "createdAt": "2026-08-25T11:13:31.238Z"
+  },
+  {
+   "id": "usr_3ad4d9724c23e619",
+   "email": "dipinroka24@gmail.com",
+   "name": "DipinRoka",
+   "passwordSalt": "6900542877723490eb6420c15eeda220",
+   "passwordHash": "1837e31a207155058f055b788eea088a3d6a00401a014bdfe74c9f2a9329b5a1960f32e806cfcff8ebe5cfce8c0c19eedc0914d2a9b39ab440f35d86abf2e5f9",
+   "createdAt": "2026-08-25T11:58:43.001Z"
+  },
+  {
+   "id": "usr_f5da01d8969cda1f",
+   "email": "dip@234.gmail.com",
+   "name": "DipinRoka",
+   "passwordSalt": "6d5bc86052b4b7bae5badd5c1facb33f",
+   "passwordHash": "5890ddfbd16f22bd0603ddae77ca2d8b8b1982eac2b9b7b1f7f9e6d91790e520196f110775bc86fca132603bfab5e24ab3c0ce1acd8b25c72af053203af982f8",
+   "createdAt": "2026-08-25T14:02:52.005Z"
+  },
+  {
+   "id": "usr_704e74dbaa1c6d62",
+   "email": "raj01@gmail.com",
+   "name": "DipinRoka",
+   "passwordSalt": "c0f7563d3f16f7182d398308a87b64f0",
+   "passwordHash": "44c39fad104d5187fdbe3403c5b25edab4f97b201b8b42d2593441ebc1cf5c663a3bf3dd61d966029a722b484ab34d01c6f7cc6c0575fdc7ab4bc8ed8e02d568",
+   "createdAt": "2026-08-25T14:08:38.092Z"
+  },
+  {
+   "id": "usr_75700e97ede1ca9e",
+   "email": "raj02@gmail.com",
+   "name": "raj",
+   "passwordSalt": "4d2cb14cd7eaf3c0155270e5a991e414",
+   "passwordHash": "09f34ae622b7c6f95f03fae261f8ec18d4dfae41147caf4b45aa10eaf52728a1aa09f9eccf7bdb2d14bd1dcd8140800d19d73fc54a454bc35d5e173e72d93fd1",
+   "createdAt": "2026-08-25T14:45:24.110Z"
   }
  ],
  "sessions": [
   {
-   "token": "87ee6482ab719f56352414496c2c57f49e2875e35f1b78723294dab94e186f03",
-   "userId": "usr_34748ffbf236c244",
-   "createdAt": "2026-08-24T20:01:36.538Z",
-   "expiresAt": "2026-08-31T20:01:36.538Z"
+   "token": "d0114c6fb8cead4372daf4101344ada292a014cab28c8bee434137ffc701ca7e",
+   "userId": "docacc_3869cc2586b4fe38",
+   "role": "doctor",
+   "createdAt": "2026-08-25T10:52:52.491Z",
+   "expiresAt": "2026-09-01T10:52:52.491Z"
   },
   {
-   "token": "dbb491e09a5ca0b6c755af2d2b616cf7aa0ec817a622af5c2d255634229f8fe0",
-   "userId": "usr_d85f5c4bfc6bbfa9",
-   "createdAt": "2026-08-24T20:02:05.977Z",
-   "expiresAt": "2026-08-31T20:02:05.977Z"
+   "token": "f0a32bcec340294f9507823959634367b3d6adb2c36344d1d8ff8b03954a34d0",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T10:58:57.525Z",
+   "expiresAt": "2026-09-01T10:58:57.525Z"
   },
   {
-   "token": "7f2e1d2ce3e97035594baf7cf875fad0755547f116bacbde5394e1b7a728d5c1",
-   "userId": "usr_34748ffbf236c244",
-   "createdAt": "2026-08-24T20:02:25.234Z",
-   "expiresAt": "2026-08-31T20:02:25.234Z"
+   "token": "99ea283dfeea3f6c12b6c7907990cd67d81685c6a18dd0b5a97deb8c3ad54910",
+   "userId": "docacc_3869cc2586b4fe38",
+   "role": "doctor",
+   "createdAt": "2026-08-25T10:59:24.503Z",
+   "expiresAt": "2026-09-01T10:59:24.503Z"
+  },
+  {
+   "token": "3cb780a8748fa8f767260c2ff085dff6db21e6e961da8b22bced9e30c45cd37f",
+   "userId": "storeown_4d991a4cf21cb771",
+   "role": "store-owner",
+   "createdAt": "2026-08-25T11:00:15.970Z",
+   "expiresAt": "2026-09-01T11:00:15.970Z"
+  },
+  {
+   "token": "b0601c4818ffefaae97c7719f0d153c36cd8a1e1ed96554682ad413e71e966e1",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T11:00:41.744Z",
+   "expiresAt": "2026-09-01T11:00:41.744Z"
+  },
+  {
+   "token": "d17658f8154941b75e1c218ac276026499c394cd7680123f96ebdf3b8bde1afb",
+   "userId": "usr_78514e6ecfd36e5f",
+   "createdAt": "2026-08-25T11:13:31.385Z",
+   "expiresAt": "2026-09-01T11:13:31.385Z"
+  },
+  {
+   "token": "b155094ab3c214eb5d046113b7822acce98953586ccf4bef779457098765eb30",
+   "userId": "docacc_ce6f2cb38ec69eec",
+   "role": "doctor",
+   "createdAt": "2026-08-25T11:13:32.120Z",
+   "expiresAt": "2026-09-01T11:13:32.120Z"
+  },
+  {
+   "token": "febdf33ca473623b6ce8a495b3b0044ed2a79bd06d7d6fe6e400d9a42392bacb",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T11:29:18.556Z",
+   "expiresAt": "2026-09-01T11:29:18.556Z"
+  },
+  {
+   "token": "c77f1f202605964844dc9dc0b91f2de025ad3ad272a76ce6c27f14c1e3220dcd",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T11:43:25.300Z",
+   "expiresAt": "2026-09-01T11:43:25.300Z"
+  },
+  {
+   "token": "710dc58cb1cd43d8de39fd10a93a29c51f46f4e65f46fa156342d5142047aee1",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T11:58:16.783Z",
+   "expiresAt": "2026-09-01T11:58:16.783Z"
+  },
+  {
+   "token": "61e96c78dc6e224c4248569b80b83ca924ae1a7757ff4ca8771de7260e637dd6",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T11:58:34.269Z",
+   "expiresAt": "2026-09-01T11:58:34.269Z"
+  },
+  {
+   "token": "06ecb08bb9b4302f07dd66647f64be46d9d486ba1af486065cd3326e8af73f8e",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T11:58:43.078Z",
+   "expiresAt": "2026-09-01T11:58:43.078Z"
+  },
+  {
+   "token": "4b53aa0ec6ff0e46592bda2395cc19dca682ebc2fa6dbb911da5e5cf114a27ef",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T12:02:35.337Z",
+   "expiresAt": "2026-09-01T12:02:35.337Z"
+  },
+  {
+   "token": "ad93a63bdcad2aba23b4d6c8d26da84d27112ea03a8b1d778faa5bc45f120657",
+   "userId": "docacc_3869cc2586b4fe38",
+   "role": "doctor",
+   "createdAt": "2026-08-25T12:25:30.209Z",
+   "expiresAt": "2026-09-01T12:25:30.209Z"
+  },
+  {
+   "token": "af78890e8a5eb990cdcbd6c9e1f270a64781502e2e838959722636da57060704",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T12:25:41.460Z",
+   "expiresAt": "2026-09-01T12:25:41.460Z"
+  },
+  {
+   "token": "1b544f4167f0abbb1032ac316eca2cf8d66b82099c94b5080f7ef22610d9bcb4",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T12:29:19.584Z",
+   "expiresAt": "2026-09-01T12:29:19.584Z"
+  },
+  {
+   "token": "993160d002232cd31c2c72279403665977d27762ded66b6be837534ff035dc74",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T13:52:44.102Z",
+   "expiresAt": "2026-09-01T13:52:44.102Z"
+  },
+  {
+   "token": "1ce8b52bcf9b31aff1e0fb1226232818ebd287bcb1d5f2befd0cba1a3cd1baae",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T13:53:10.689Z",
+   "expiresAt": "2026-09-01T13:53:10.689Z"
+  },
+  {
+   "token": "00838b7822dc97ac8c8ab12d27c8a87ddb5c4bd5be1e53c2f9e2b8d9afd7a6fe",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T13:56:51.698Z",
+   "expiresAt": "2026-09-01T13:56:51.698Z"
+  },
+  {
+   "token": "aa492ea50e907e728240ff70e10d3cd4ccb0ac828d806a70be2149b9b4d03af7",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T14:02:11.159Z",
+   "expiresAt": "2026-09-01T14:02:11.159Z"
+  },
+  {
+   "token": "c2dcae44691a0a3f516fff12f12b78171ea1989005e8a0869a0a2101fe62e832",
+   "userId": "usr_f5da01d8969cda1f",
+   "createdAt": "2026-08-25T14:02:52.145Z",
+   "expiresAt": "2026-09-01T14:02:52.145Z"
+  },
+  {
+   "token": "85fa949b011a70c398a280b44200d6dee061972bef230aca9a7996f62ef6c066",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T14:07:50.297Z",
+   "expiresAt": "2026-09-01T14:07:50.297Z"
+  },
+  {
+   "token": "a80c3e6d081e71db5c9c1b43406c733c3bf0a85349537643c5670a3db47c8b04",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T14:08:08.201Z",
+   "expiresAt": "2026-09-01T14:08:08.201Z"
+  },
+  {
+   "token": "de44cdc7133e9591ac60254c2c38a657264e84ff58e39afdda7fe11fee514581",
+   "userId": "usr_704e74dbaa1c6d62",
+   "createdAt": "2026-08-25T14:08:38.217Z",
+   "expiresAt": "2026-09-01T14:08:38.217Z"
+  },
+  {
+   "token": "a109eb871f1665991948e06af948fab6aff9d1c9a5b9417df01e24dc748b5fa8",
+   "userId": "storeown_4d991a4cf21cb771",
+   "role": "store-owner",
+   "createdAt": "2026-08-25T14:14:17.273Z",
+   "expiresAt": "2026-09-01T14:14:17.273Z"
+  },
+  {
+   "token": "35bdca4ca3d767cffd2fb985c4f6e608aa29780ab65dfbbc58858aea6ee6f0f4",
+   "userId": "storeown_4d991a4cf21cb771",
+   "role": "store-owner",
+   "createdAt": "2026-08-25T14:14:25.874Z",
+   "expiresAt": "2026-09-01T14:14:25.874Z"
+  },
+  {
+   "token": "61e6e5daa37b5a35e6e3f79a9e64013a7a216d70464501beca000e38b770f392",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T14:15:42.301Z",
+   "expiresAt": "2026-09-01T14:15:42.301Z"
+  },
+  {
+   "token": "2c1c01c55715a9937a014fe44c9184c7cafa403492e51e4f50f03e3b00d4eea9",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T14:38:28.505Z",
+   "expiresAt": "2026-09-01T14:38:28.505Z"
+  },
+  {
+   "token": "50fb1a403c73798d8b84a18acd92bf027398f377798fa59e3a8082b262b0db5c",
+   "userId": "usr_3ad4d9724c23e619",
+   "createdAt": "2026-08-25T14:44:06.956Z",
+   "expiresAt": "2026-09-01T14:44:06.956Z"
+  },
+  {
+   "token": "89ff5699103a60a06bff893cb490322d29f57700319ed5b76ebe8b594e897f65",
+   "userId": "usr_75700e97ede1ca9e",
+   "createdAt": "2026-08-25T14:45:24.326Z",
+   "expiresAt": "2026-09-01T14:45:24.326Z"
   }
  ],
  "profiles": {
-  "usr_34748ffbf236c244": {
+  "usr_54b52e030d04bd03": {
    "dob": "1988-04-12",
    "sex": "male",
    "heightCm": 172,
@@ -70,12 +271,16 @@
     "Maintain healthy weight"
    ]
   },
-  "usr_d85f5c4bfc6bbfa9": {}
+  "usr_78514e6ecfd36e5f": {},
+  "usr_3ad4d9724c23e619": {},
+  "usr_f5da01d8969cda1f": {},
+  "usr_704e74dbaa1c6d62": {},
+  "usr_75700e97ede1ca9e": {}
  },
  "families": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "id": "fam_bea84db41a6a38fa",
+    "id": "fam_c2df33123226d7a3",
     "relation": "Grandfather",
     "name": "Ramesh Mehta",
     "ageOrYear": "~84",
@@ -94,10 +299,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-21T20:01:32.301Z"
+    "recordedAt": "2026-08-22T10:51:40.296Z"
    },
    {
-    "id": "fam_18d59151827a1647",
+    "id": "fam_3cb13c4d7f776e50",
     "relation": "Father",
     "name": "Suresh Mehta",
     "ageOrYear": "61",
@@ -116,10 +321,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-20T20:01:32.301Z"
+    "recordedAt": "2026-08-21T10:51:40.296Z"
    },
    {
-    "id": "fam_a6774dd4f756964f",
+    "id": "fam_4944ae6195f79e93",
     "relation": "Mother",
     "name": "Nirmala Mehta",
     "ageOrYear": "58",
@@ -134,10 +339,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-19T20:01:32.302Z"
+    "recordedAt": "2026-08-20T10:51:40.296Z"
    },
    {
-    "id": "fam_87a8ae533b1c31cd",
+    "id": "fam_24f575888817c5cf",
     "relation": "Uncle",
     "name": "Mahesh Mehta",
     "ageOrYear": "57",
@@ -152,10 +357,10 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-18T20:01:32.302Z"
+    "recordedAt": "2026-08-19T10:51:40.296Z"
    },
    {
-    "id": "fam_3b24bac71828bc14",
+    "id": "fam_f4636c1543d686f0",
     "relation": "Sister",
     "name": "Priya Shah",
     "ageOrYear": "33",
@@ -165,28 +370,17 @@
     "geneticConditions": [],
     "events": [],
     "notes": "",
-    "recordedAt": "2026-08-17T20:01:32.302Z"
-   },
-   {
-    "id": "fam_7dd409fe60c7c432",
-    "relation": "Aunt",
-    "name": "Sunita",
-    "ageOrYear": "",
-    "conditions": [],
-    "surgeries": [],
-    "cancerHistory": false,
-    "geneticConditions": [],
-    "events": [],
-    "notes": "",
-    "recordedAt": "2026-08-24T20:02:05.388Z"
+    "recordedAt": "2026-08-18T10:51:40.296Z"
    }
   ],
-  "usr_d85f5c4bfc6bbfa9": []
+  "usr_3ad4d9724c23e619": [],
+  "usr_f5da01d8969cda1f": [],
+  "usr_704e74dbaa1c6d62": []
  },
  "reports": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "id": "rep_1c2f51eae75f26a3",
+    "id": "rep_5cb0e1f6d754cb6d",
     "filename": "health-check-2025.txt",
     "storedName": null,
     "mime": "text/plain",
@@ -339,12 +533,12 @@
       }
      ],
      "flags": [],
-     "extractedAt": "2026-08-24T20:01:32.320Z"
+     "extractedAt": "2026-08-25T10:51:40.316Z"
     },
     "summaryText": "Processed 9 value(s); 4 outside their typical band.\n• Fasting blood glucose: 104 mg/dL (high)\n• Total cholesterol: 210 mg/dL (high)\n• LDL cholesterol: 126 mg/dL (high)\n• AST (SGOT): 104 U/L (high)\nInformational summary — please discuss results with a qualified professional."
    },
    {
-    "id": "rep_91a1cf6119698ab2",
+    "id": "rep_088004429ac405b7",
     "filename": "metabolic-panel-aug2026.txt",
     "storedName": null,
     "mime": "text/plain",
@@ -527,127 +721,19 @@
       }
      ],
      "flags": [],
-     "extractedAt": "2026-08-24T20:01:32.330Z"
+     "extractedAt": "2026-08-25T10:51:40.330Z"
     },
     "summaryText": "Processed 10 value(s); 9 outside their typical band.\n• HbA1c: 6 % (high)\n• Fasting blood glucose: 112 mg/dL (high)\n• Total cholesterol: 218 mg/dL (high)\n• LDL cholesterol: 131 mg/dL (high)\n• Triglycerides: 158 mg/dL (high)\nInformational summary — please discuss results with a qualified professional."
-   },
-   {
-    "id": "rep_aacd4eb3fe846ba1",
-    "filename": "Pasted report text",
-    "storedName": null,
-    "mime": "text/plain",
-    "size": 150,
-    "uploadedAt": "2026-08-24T20:01:36.785Z",
-    "status": "processed",
-    "pipeline": [
-     {
-      "stage": "File validation",
-      "status": "ok",
-      "detail": "manual-entry.txt · 0 KB"
-     },
-     {
-      "stage": "OCR / document parsing",
-      "status": "ok",
-      "detail": "Plain text ingested"
-     },
-     {
-      "stage": "Safety pre-check",
-      "status": "ok",
-      "detail": "Embedded instructions detected and ignored (prompt-injection guard)"
-     },
-     {
-      "stage": "Medical entity extraction",
-      "status": "ok",
-      "detail": "4 analytes recognized"
-     },
-     {
-      "stage": "Value normalization & reference ranges",
-      "status": "ok",
-      "detail": "4 value(s) outside typical reference band"
-     },
-     {
-      "stage": "Structured health data",
-      "status": "ok",
-      "detail": "Saved to your health graph"
-     }
-    ],
-    "structured": {
-     "reportDate": "2026-08-22",
-     "labName": "Apex Pathology Laboratory",
-     "tests": [
-      {
-       "key": "hba1c",
-       "name": "HbA1c",
-       "value": 6.2,
-       "unit": "%",
-       "refLow": 4,
-       "refHigh": 5.7,
-       "flag": "high",
-       "category": "Metabolic"
-      },
-      {
-       "key": "ldl",
-       "name": "LDL cholesterol",
-       "value": 145,
-       "unit": "mg/dL",
-       "refLow": 40,
-       "refHigh": 100,
-       "flag": "high",
-       "category": "Lipid"
-      },
-      {
-       "key": "bp_systolic",
-       "name": "Systolic blood pressure",
-       "value": 142,
-       "unit": "mmHg",
-       "refLow": 90,
-       "refHigh": 120,
-       "flag": "high",
-       "category": "Vitals"
-      },
-      {
-       "key": "bp_diastolic",
-       "name": "Diastolic blood pressure",
-       "value": 91,
-       "unit": "mmHg",
-       "refLow": 60,
-       "refHigh": 80,
-       "flag": "high",
-       "category": "Vitals"
-      }
-     ],
-     "observations": [
-      {
-       "key": "hba1c",
-       "message": "HbA1c is above the typical range (6.2 %, usual band 4–5.7)."
-      },
-      {
-       "key": "ldl",
-       "message": "LDL cholesterol is above the typical range (145 mg/dL, usual band 40–100)."
-      },
-      {
-       "key": "bp_systolic",
-       "message": "Systolic blood pressure is above the typical range (142 mmHg, usual band 90–120)."
-      },
-      {
-       "key": "bp_diastolic",
-       "message": "Diastolic blood pressure is above the typical range (91 mmHg, usual band 60–80)."
-      }
-     ],
-     "flags": [
-      "possible_prompt_injection_ignored"
-     ],
-     "extractedAt": "2026-08-24T20:01:36.785Z"
-    },
-    "summaryText": "Report dated 22 Aug 2026 · Apex Pathology Laboratory\nHbA1c (6.2 %) is above the laboratory's usual band — this reflects average blood sugar over the past ~3 months.\nLDL cholesterol (145 mg/dL) is above the laboratory's usual band — this \"bad\" cholesterol that can build up in arteries.\nSystolic blood pressure (142 mmHg) is above the laboratory's usual band — this pressure when the heart beats.\nDiastolic blood pressure (91 mmHg) is above the laboratory's usual band — this pressure between heartbeats.\nInterpretation depends on your clinical context. Please discuss these results with a qualified healthcare professional — this summary is informational, not a diagnosis."
    }
   ],
-  "usr_d85f5c4bfc6bbfa9": []
+  "usr_3ad4d9724c23e619": [],
+  "usr_f5da01d8969cda1f": [],
+  "usr_704e74dbaa1c6d62": []
  },
  "metrics": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "id": "met_9147f7957512e24f",
+    "id": "met_c55dd0fa609733af",
     "key": "weight_kg",
     "value": 82,
     "unit": "kg",
@@ -656,7 +742,7 @@
     "label": null
    },
    {
-    "id": "met_18a887d58bcb60bb",
+    "id": "met_65523301fbdee15d",
     "key": "weight_kg",
     "value": 80.5,
     "unit": "kg",
@@ -665,7 +751,7 @@
     "label": null
    },
    {
-    "id": "met_10bc2347cb500d54",
+    "id": "met_019708373719bf71",
     "key": "weight_kg",
     "value": 79.5,
     "unit": "kg",
@@ -674,7 +760,7 @@
     "label": null
    },
    {
-    "id": "met_24f8b6b88b5a66fa",
+    "id": "met_77346ae4db007350",
     "key": "weight_kg",
     "value": 78.8,
     "unit": "kg",
@@ -683,7 +769,7 @@
     "label": null
    },
    {
-    "id": "met_70232956d0fe755f",
+    "id": "met_f69a4c70200f7cf4",
     "key": "weight_kg",
     "value": 78,
     "unit": "kg",
@@ -692,7 +778,7 @@
     "label": null
    },
    {
-    "id": "met_f13c189a52005faf",
+    "id": "met_4bfc93670f42b0e0",
     "key": "hba1c",
     "value": 5.4,
     "unit": "%",
@@ -701,7 +787,7 @@
     "label": null
    },
    {
-    "id": "met_6d4150b9ae42192a",
+    "id": "met_c9cc4bcb46d450e6",
     "key": "hba1c",
     "value": 5.7,
     "unit": "%",
@@ -710,7 +796,7 @@
     "label": null
    },
    {
-    "id": "met_58dd1642e09fea66",
+    "id": "met_054a3b70940dd555",
     "key": "hba1c",
     "value": 6,
     "unit": "%",
@@ -719,7 +805,7 @@
     "label": null
    },
    {
-    "id": "met_84059f117d828bd6",
+    "id": "met_cec071e31bf4e1d5",
     "key": "glucose_fasting",
     "value": 98,
     "unit": "mg/dL",
@@ -728,7 +814,7 @@
     "label": null
    },
    {
-    "id": "met_ddeee5a984148177",
+    "id": "met_dc4606f289aaa470",
     "key": "glucose_fasting",
     "value": 104,
     "unit": "mg/dL",
@@ -737,7 +823,7 @@
     "label": null
    },
    {
-    "id": "met_d63e282659de5594",
+    "id": "met_6e8ac8316d428f50",
     "key": "glucose_fasting",
     "value": 112,
     "unit": "mg/dL",
@@ -746,7 +832,7 @@
     "label": null
    },
    {
-    "id": "met_21b49b65443e4ef2",
+    "id": "met_82b176ffe1e87ad1",
     "key": "total_cholesterol",
     "value": 205,
     "unit": "mg/dL",
@@ -755,7 +841,7 @@
     "label": null
    },
    {
-    "id": "met_33eedf23ea0c3f82",
+    "id": "met_4daae2d726c6db94",
     "key": "total_cholesterol",
     "value": 210,
     "unit": "mg/dL",
@@ -764,7 +850,7 @@
     "label": null
    },
    {
-    "id": "met_d6076ef4be0f4d44",
+    "id": "met_0b01c1cdaf2b5fd4",
     "key": "total_cholesterol",
     "value": 218,
     "unit": "mg/dL",
@@ -773,7 +859,7 @@
     "label": null
    },
    {
-    "id": "met_4c7e08f869d4456f",
+    "id": "met_3a8267fa79e44cb5",
     "key": "ldl",
     "value": 118,
     "unit": "mg/dL",
@@ -782,7 +868,7 @@
     "label": null
    },
    {
-    "id": "met_0a82412c7138cc18",
+    "id": "met_2bee22a000d0d9ea",
     "key": "ldl",
     "value": 126,
     "unit": "mg/dL",
@@ -791,7 +877,7 @@
     "label": null
    },
    {
-    "id": "met_7e41e869205e780e",
+    "id": "met_8db55ff188c51e31",
     "key": "ldl",
     "value": 131,
     "unit": "mg/dL",
@@ -800,7 +886,7 @@
     "label": null
    },
    {
-    "id": "met_cfc875c1bc1302c2",
+    "id": "met_069b6d36df71d78d",
     "key": "hdl",
     "value": 46,
     "unit": "mg/dL",
@@ -809,7 +895,7 @@
     "label": null
    },
    {
-    "id": "met_47d211f4c04c74ba",
+    "id": "met_8570140cb33736d8",
     "key": "hdl",
     "value": 44,
     "unit": "mg/dL",
@@ -818,7 +904,7 @@
     "label": null
    },
    {
-    "id": "met_5e667e969f4cbb2d",
+    "id": "met_f69e4e77cfff2579",
     "key": "hdl",
     "value": 42,
     "unit": "mg/dL",
@@ -827,7 +913,7 @@
     "label": null
    },
    {
-    "id": "met_3a5e4dfaaa7c67b0",
+    "id": "met_42c4f5789334e1fa",
     "key": "triglycerides",
     "value": 138,
     "unit": "mg/dL",
@@ -836,7 +922,7 @@
     "label": null
    },
    {
-    "id": "met_4ebcbc6100e9d993",
+    "id": "met_50d258a3dab1398a",
     "key": "triglycerides",
     "value": 142,
     "unit": "mg/dL",
@@ -845,7 +931,7 @@
     "label": null
    },
    {
-    "id": "met_83304c4a159e317e",
+    "id": "met_24b2bce4adc4cb12",
     "key": "triglycerides",
     "value": 158,
     "unit": "mg/dL",
@@ -854,7 +940,7 @@
     "label": null
    },
    {
-    "id": "met_111ad0a94d50de3c",
+    "id": "met_507d22fa28c5bc86",
     "key": "bp_systolic",
     "value": 128,
     "unit": "mmHg",
@@ -863,7 +949,7 @@
     "label": null
    },
    {
-    "id": "met_2b719b2a5bc17550",
+    "id": "met_65e44b7dce6489bd",
     "key": "bp_systolic",
     "value": 130,
     "unit": "mmHg",
@@ -872,7 +958,7 @@
     "label": null
    },
    {
-    "id": "met_860ceb79d56f9f9f",
+    "id": "met_17267b5465d5cf99",
     "key": "bp_systolic",
     "value": 134,
     "unit": "mmHg",
@@ -881,7 +967,7 @@
     "label": null
    },
    {
-    "id": "met_56481789b914208a",
+    "id": "met_e9e3ebb01f2f76a2",
     "key": "bp_systolic",
     "value": 138,
     "unit": "mmHg",
@@ -890,7 +976,7 @@
     "label": null
    },
    {
-    "id": "met_891d36bb10a0c616",
+    "id": "met_12833d69bf86ae7a",
     "key": "bp_diastolic",
     "value": 84,
     "unit": "mmHg",
@@ -899,7 +985,7 @@
     "label": null
    },
    {
-    "id": "met_ebca16d74ba5d08b",
+    "id": "met_6abee2738031691e",
     "key": "bp_diastolic",
     "value": 85,
     "unit": "mmHg",
@@ -908,7 +994,7 @@
     "label": null
    },
    {
-    "id": "met_2b68371b8a511eda",
+    "id": "met_1766729f28a2bc04",
     "key": "bp_diastolic",
     "value": 86,
     "unit": "mmHg",
@@ -917,7 +1003,7 @@
     "label": null
    },
    {
-    "id": "met_2900cc3270212abd",
+    "id": "met_c8cbd3e481f6cc88",
     "key": "bp_diastolic",
     "value": 88,
     "unit": "mmHg",
@@ -926,7 +1012,7 @@
     "label": null
    },
    {
-    "id": "met_85e3d2572c1b77f8",
+    "id": "met_1d6233ec39f00898",
     "key": "heart_rate",
     "value": 74,
     "unit": "bpm",
@@ -935,7 +1021,7 @@
     "label": null
    },
    {
-    "id": "met_4d722cffbab53868",
+    "id": "met_f1164818aa6824a3",
     "key": "tsh",
     "value": 2.3,
     "unit": "µIU/mL",
@@ -944,7 +1030,7 @@
     "label": null
    },
    {
-    "id": "met_0c02a24260e82522",
+    "id": "met_6bee0fc9b2159034",
     "key": "tsh",
     "value": 2.1,
     "unit": "µIU/mL",
@@ -953,7 +1039,7 @@
     "label": null
    },
    {
-    "id": "met_4876f549a387d8e7",
+    "id": "met_2e9b550011f69174",
     "key": "hemoglobin",
     "value": 14.2,
     "unit": "g/dL",
@@ -962,7 +1048,7 @@
     "label": null
    },
    {
-    "id": "met_5e9d6065e2f2b284",
+    "id": "met_6ee3a5dffcbccb96",
     "key": "vitamin_d",
     "value": 18,
     "unit": "ng/mL",
@@ -971,456 +1057,414 @@
     "label": null
    },
    {
-    "id": "met_6dfc3673fcd55541",
+    "id": "met_36fa08a500f8d063",
     "key": "creatinine",
     "value": 0.9,
     "unit": "mg/dL",
     "date": "2025-02-10",
     "source": "report",
     "label": null
-   },
-   {
-    "id": "met_d8d073815de1b77a",
-    "key": "hba1c",
-    "value": 6.2,
-    "unit": "%",
-    "date": "2026-08-22",
-    "source": "report:rep_aacd4eb3fe846ba1",
-    "flag": "high",
-    "label": "HbA1c — %"
-   },
-   {
-    "id": "met_4f985cd999700b19",
-    "key": "ldl",
-    "value": 145,
-    "unit": "mg/dL",
-    "date": "2026-08-22",
-    "source": "report:rep_aacd4eb3fe846ba1",
-    "flag": "high",
-    "label": "LDL cholesterol — mg/dL"
-   },
-   {
-    "id": "met_79663c6856c2c0f6",
-    "key": "bp_systolic",
-    "value": 142,
-    "unit": "mmHg",
-    "date": "2026-08-22",
-    "source": "report:rep_aacd4eb3fe846ba1",
-    "flag": "high",
-    "label": "Systolic blood pressure — mmHg"
-   },
-   {
-    "id": "met_17e3eb566fcdd73a",
-    "key": "bp_diastolic",
-    "value": 91,
-    "unit": "mmHg",
-    "date": "2026-08-22",
-    "source": "report:rep_aacd4eb3fe846ba1",
-    "flag": "high",
-    "label": "Diastolic blood pressure — mmHg"
    }
   ],
-  "usr_d85f5c4bfc6bbfa9": []
+  "usr_3ad4d9724c23e619": [],
+  "usr_f5da01d8969cda1f": [],
+  "usr_704e74dbaa1c6d62": []
  },
  "logs": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "id": "log_a1613f870c2fbb00",
+    "id": "log_2550dddc3be2f7f6",
     "type": "exercise_minutes",
     "value": 0,
-    "date": "2026-08-08"
+    "date": "2026-08-09"
    },
    {
-    "id": "log_1e482dbbbda6984f",
+    "id": "log_a1e667a4e1c7cffb",
     "type": "sleep_hours",
     "value": 7,
-    "date": "2026-08-08"
+    "date": "2026-08-09"
    },
    {
-    "id": "log_9d4f0786d8c9d3de",
+    "id": "log_c3c32993c892368d",
     "type": "hydration_liters",
     "value": 2.5,
-    "date": "2026-08-08"
+    "date": "2026-08-09"
    },
    {
-    "id": "log_cda8c327e9951a85",
+    "id": "log_7a7870b3e1830168",
     "type": "mood_score",
     "value": 4,
-    "date": "2026-08-08"
+    "date": "2026-08-09"
    },
    {
-    "id": "log_319902007741973b",
+    "id": "log_bded2c3a2679e881",
     "type": "exercise_minutes",
     "value": 25,
-    "date": "2026-08-09"
-   },
-   {
-    "id": "log_010e13d41fc6a153",
-    "type": "sleep_hours",
-    "value": 6,
-    "date": "2026-08-09"
-   },
-   {
-    "id": "log_e3344b788669b532",
-    "type": "hydration_liters",
-    "value": 1.8,
-    "date": "2026-08-09"
-   },
-   {
-    "id": "log_0f8d8c7a9d773813",
-    "type": "mood_score",
-    "value": 3,
-    "date": "2026-08-09"
-   },
-   {
-    "id": "log_b7909aca3d8dff4c",
-    "type": "exercise_minutes",
-    "value": 20,
     "date": "2026-08-10"
    },
    {
-    "id": "log_196506fc17f32dce",
+    "id": "log_26926f63d4adc376",
+    "type": "sleep_hours",
+    "value": 6,
+    "date": "2026-08-10"
+   },
+   {
+    "id": "log_d54847bb0bc46acc",
+    "type": "hydration_liters",
+    "value": 1.8,
+    "date": "2026-08-10"
+   },
+   {
+    "id": "log_a2bc0bd6e679d6d2",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-10"
+   },
+   {
+    "id": "log_5027c51b24c42c51",
+    "type": "exercise_minutes",
+    "value": 20,
+    "date": "2026-08-11"
+   },
+   {
+    "id": "log_79af4a261f4e1cc5",
     "type": "sleep_hours",
     "value": 6.5,
-    "date": "2026-08-10"
+    "date": "2026-08-11"
    },
    {
-    "id": "log_bc14dee041d6a3b5",
+    "id": "log_99f585f3ac89c3c5",
     "type": "hydration_liters",
     "value": 2.2,
-    "date": "2026-08-10"
-   },
-   {
-    "id": "log_d627c6db10185817",
-    "type": "mood_score",
-    "value": 4,
-    "date": "2026-08-10"
-   },
-   {
-    "id": "log_87f3dae2c4a0493a",
-    "type": "exercise_minutes",
-    "value": 0,
     "date": "2026-08-11"
    },
    {
-    "id": "log_c9dbf49360a17c70",
+    "id": "log_10fc0bd0be97c864",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-11"
+   },
+   {
+    "id": "log_8ebde4f3c361b7de",
+    "type": "exercise_minutes",
+    "value": 0,
+    "date": "2026-08-12"
+   },
+   {
+    "id": "log_59267cbde3e712aa",
     "type": "sleep_hours",
     "value": 6.2,
-    "date": "2026-08-11"
+    "date": "2026-08-12"
    },
    {
-    "id": "log_f4c8a1080c4cd844",
+    "id": "log_bac07f5ba9c1c9da",
     "type": "hydration_liters",
     "value": 2.1,
-    "date": "2026-08-11"
-   },
-   {
-    "id": "log_5b972879bdc536c4",
-    "type": "mood_score",
-    "value": 3,
-    "date": "2026-08-11"
-   },
-   {
-    "id": "log_0928863c8d958a33",
-    "type": "exercise_minutes",
-    "value": 20,
     "date": "2026-08-12"
    },
    {
-    "id": "log_f5fde88174265c5c",
+    "id": "log_52b660f8f0a5c239",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-12"
+   },
+   {
+    "id": "log_843a0e689a8572af",
+    "type": "exercise_minutes",
+    "value": 20,
+    "date": "2026-08-13"
+   },
+   {
+    "id": "log_d9b12c94d6d19c79",
     "type": "sleep_hours",
     "value": 7.2,
-    "date": "2026-08-12"
+    "date": "2026-08-13"
    },
    {
-    "id": "log_64e8d2d6b91f1733",
+    "id": "log_cd2cb7f22694a085",
     "type": "hydration_liters",
     "value": 2.4,
-    "date": "2026-08-12"
+    "date": "2026-08-13"
    },
    {
-    "id": "log_152590df914c74fe",
+    "id": "log_405696d8a8a52cde",
     "type": "mood_score",
     "value": 5,
-    "date": "2026-08-12"
+    "date": "2026-08-13"
    },
    {
-    "id": "log_2f0762db1c0f13e9",
+    "id": "log_e6a01f3039e1cc59",
     "type": "exercise_minutes",
     "value": 35,
-    "date": "2026-08-13"
+    "date": "2026-08-14"
    },
    {
-    "id": "log_950534c312acdb03",
+    "id": "log_8a13ba4ca4584bc1",
     "type": "sleep_hours",
     "value": 6.8,
-    "date": "2026-08-13"
+    "date": "2026-08-14"
    },
    {
-    "id": "log_686e83fd44785b8b",
+    "id": "log_f0eac6286d420c7b",
     "type": "hydration_liters",
     "value": 1.6,
-    "date": "2026-08-13"
+    "date": "2026-08-14"
    },
    {
-    "id": "log_f825950f0e62b974",
+    "id": "log_31d6697c15e2e1f4",
     "type": "mood_score",
     "value": 4,
-    "date": "2026-08-13"
+    "date": "2026-08-14"
    },
    {
-    "id": "log_a660c963fc1a46c8",
+    "id": "log_7ab1e12ab42eb102",
     "type": "exercise_minutes",
     "value": 30,
-    "date": "2026-08-14"
+    "date": "2026-08-15"
    },
    {
-    "id": "log_9502ff836fff7f8c",
+    "id": "log_f7a32c080fa99363",
     "type": "sleep_hours",
     "value": 5.8,
-    "date": "2026-08-14"
+    "date": "2026-08-15"
    },
    {
-    "id": "log_bec5abd9a9662bd6",
+    "id": "log_bf84b59b7454b7fe",
     "type": "hydration_liters",
     "value": 2,
-    "date": "2026-08-14"
+    "date": "2026-08-15"
    },
    {
-    "id": "log_0637006390d683c8",
+    "id": "log_bf921325074bda7a",
     "type": "mood_score",
     "value": 3,
-    "date": "2026-08-14"
+    "date": "2026-08-15"
    },
    {
-    "id": "log_91b0c55b062306ea",
+    "id": "log_629fd9e5d3f81f3c",
     "type": "exercise_minutes",
     "value": 0,
-    "date": "2026-08-15"
+    "date": "2026-08-16"
    },
    {
-    "id": "log_96293e60d5184376",
+    "id": "log_c0705b072f0037db",
     "type": "sleep_hours",
     "value": 7,
-    "date": "2026-08-15"
+    "date": "2026-08-16"
    },
    {
-    "id": "log_5d6b68b69a45c231",
+    "id": "log_9f46ddb74ed44582",
     "type": "hydration_liters",
     "value": 2.5,
-    "date": "2026-08-15"
+    "date": "2026-08-16"
    },
    {
-    "id": "log_f9267b6049e7340a",
+    "id": "log_e2abf16f88ff0285",
     "type": "mood_score",
     "value": 4,
-    "date": "2026-08-15"
+    "date": "2026-08-16"
    },
    {
-    "id": "log_6d73e215228b9446",
+    "id": "log_96b8aa82412ef74c",
     "type": "exercise_minutes",
     "value": 25,
-    "date": "2026-08-16"
-   },
-   {
-    "id": "log_95f533737582bdfb",
-    "type": "sleep_hours",
-    "value": 6,
-    "date": "2026-08-16"
-   },
-   {
-    "id": "log_a1ae92ea4612dee0",
-    "type": "hydration_liters",
-    "value": 1.8,
-    "date": "2026-08-16"
-   },
-   {
-    "id": "log_02af66dc0a402c98",
-    "type": "mood_score",
-    "value": 3,
-    "date": "2026-08-16"
-   },
-   {
-    "id": "log_eaef7b4f6df66d65",
-    "type": "exercise_minutes",
-    "value": 20,
     "date": "2026-08-17"
    },
    {
-    "id": "log_5e9dbe45ef42be5e",
+    "id": "log_3d9eb9df67924646",
+    "type": "sleep_hours",
+    "value": 6,
+    "date": "2026-08-17"
+   },
+   {
+    "id": "log_3a406423aa3c91dc",
+    "type": "hydration_liters",
+    "value": 1.8,
+    "date": "2026-08-17"
+   },
+   {
+    "id": "log_93742eba8565413d",
+    "type": "mood_score",
+    "value": 3,
+    "date": "2026-08-17"
+   },
+   {
+    "id": "log_bb4526b83a9f138c",
+    "type": "exercise_minutes",
+    "value": 20,
+    "date": "2026-08-18"
+   },
+   {
+    "id": "log_b3b4e07f23049184",
     "type": "sleep_hours",
     "value": 6.5,
-    "date": "2026-08-17"
+    "date": "2026-08-18"
    },
    {
-    "id": "log_8ace515a038f4fc6",
+    "id": "log_ae6526fcdb842323",
     "type": "hydration_liters",
     "value": 2.2,
-    "date": "2026-08-17"
-   },
-   {
-    "id": "log_2810717a0bcdfdd6",
-    "type": "mood_score",
-    "value": 4,
-    "date": "2026-08-17"
-   },
-   {
-    "id": "log_8adb40a4e8ed96cf",
-    "type": "exercise_minutes",
-    "value": 0,
     "date": "2026-08-18"
    },
    {
-    "id": "log_563fcee568f2aad3",
+    "id": "log_c2be0e52e6fbfbc2",
+    "type": "mood_score",
+    "value": 4,
+    "date": "2026-08-18"
+   },
+   {
+    "id": "log_1fa1fb72762c29a4",
+    "type": "exercise_minutes",
+    "value": 0,
+    "date": "2026-08-19"
+   },
+   {
+    "id": "log_a61f73b06291e2f5",
     "type": "sleep_hours",
     "value": 6.2,
-    "date": "2026-08-18"
+    "date": "2026-08-19"
    },
    {
-    "id": "log_9f9f15c0f200303c",
+    "id": "log_38bf98a20a7c8400",
     "type": "hydration_liters",
     "value": 2.1,
-    "date": "2026-08-18"
+    "date": "2026-08-19"
    },
    {
-    "id": "log_8370025ea28e36dd",
+    "id": "log_84b766f291c13876",
     "type": "mood_score",
     "value": 3,
-    "date": "2026-08-18"
+    "date": "2026-08-19"
    },
    {
-    "id": "log_14a3369be91449bf",
+    "id": "log_16d3c17caf1d5842",
     "type": "exercise_minutes",
     "value": 20,
-    "date": "2026-08-19"
+    "date": "2026-08-20"
    },
    {
-    "id": "log_cd98bfb8f7056d19",
+    "id": "log_8e36c9ca15afaeda",
     "type": "sleep_hours",
     "value": 7.2,
-    "date": "2026-08-19"
+    "date": "2026-08-20"
    },
    {
-    "id": "log_983be816908dd2ad",
+    "id": "log_8ce4c9ce74de93dc",
     "type": "hydration_liters",
     "value": 2.4,
-    "date": "2026-08-19"
+    "date": "2026-08-20"
    },
    {
-    "id": "log_851d60afa63d7fff",
+    "id": "log_db8ee4122c9bf154",
     "type": "mood_score",
     "value": 5,
-    "date": "2026-08-19"
+    "date": "2026-08-20"
    },
    {
-    "id": "log_98280edbb320db73",
+    "id": "log_67ac8c9a3d033efd",
     "type": "exercise_minutes",
     "value": 35,
-    "date": "2026-08-20"
+    "date": "2026-08-21"
    },
    {
-    "id": "log_4e3ea81fafa6150a",
+    "id": "log_38951f076d4ccf93",
     "type": "sleep_hours",
     "value": 6.8,
-    "date": "2026-08-20"
+    "date": "2026-08-21"
    },
    {
-    "id": "log_102e5284bce0022e",
+    "id": "log_908489669a2f466d",
     "type": "hydration_liters",
     "value": 1.6,
-    "date": "2026-08-20"
+    "date": "2026-08-21"
    },
    {
-    "id": "log_0c4a95500e662a43",
+    "id": "log_d932e4902aa75ede",
     "type": "mood_score",
     "value": 4,
-    "date": "2026-08-20"
+    "date": "2026-08-21"
    },
    {
-    "id": "log_edcabab93a146c5f",
+    "id": "log_1fd88cc808bfb7d1",
     "type": "exercise_minutes",
     "value": 30,
-    "date": "2026-08-21"
+    "date": "2026-08-22"
    },
    {
-    "id": "log_08a2b5a01bce418d",
+    "id": "log_77777c443617d3eb",
     "type": "sleep_hours",
     "value": 5.8,
-    "date": "2026-08-21"
+    "date": "2026-08-22"
    },
    {
-    "id": "log_8dfc246661a59cb0",
+    "id": "log_8170436437b45d98",
     "type": "hydration_liters",
     "value": 2,
-    "date": "2026-08-21"
+    "date": "2026-08-22"
    },
    {
-    "id": "log_e5005d664cfbbb69",
+    "id": "log_4af3d5e9ae03a1b4",
     "type": "mood_score",
     "value": 3,
-    "date": "2026-08-21"
+    "date": "2026-08-22"
    },
    {
-    "id": "log_c01e83d5ac80fc89",
+    "id": "log_d3eb54f04d23e5a3",
     "type": "exercise_minutes",
     "value": 0,
-    "date": "2026-08-22"
+    "date": "2026-08-23"
    },
    {
-    "id": "log_705bf2ae19f08d77",
+    "id": "log_eb12995ee7fd9dbe",
     "type": "sleep_hours",
     "value": 7,
-    "date": "2026-08-22"
+    "date": "2026-08-23"
    },
    {
-    "id": "log_178464202d89c76b",
+    "id": "log_f368b264b9fcc2cd",
     "type": "hydration_liters",
     "value": 2.5,
-    "date": "2026-08-22"
+    "date": "2026-08-23"
    },
    {
-    "id": "log_542db2872ec406b1",
+    "id": "log_b0c624a2b90cf30e",
     "type": "mood_score",
     "value": 4,
-    "date": "2026-08-22"
+    "date": "2026-08-23"
    },
    {
-    "id": "log_edb3e52f443d32db",
+    "id": "log_2e3b02ff9d32ac1a",
     "type": "exercise_minutes",
     "value": 25,
-    "date": "2026-08-23"
+    "date": "2026-08-24"
    },
    {
-    "id": "log_8d7a3af6e4e09f66",
+    "id": "log_815a07eec8eb2ce9",
     "type": "sleep_hours",
     "value": 6,
-    "date": "2026-08-23"
+    "date": "2026-08-24"
    },
    {
-    "id": "log_e99d3924869aa897",
+    "id": "log_c361afc7b625c8c1",
     "type": "hydration_liters",
     "value": 1.8,
-    "date": "2026-08-23"
+    "date": "2026-08-24"
    },
    {
-    "id": "log_5c55cd066df13ce2",
+    "id": "log_5d232452bbc247f8",
     "type": "mood_score",
     "value": 3,
-    "date": "2026-08-23"
-   },
-   {
-    "id": "log_a76331aec102291f",
-    "type": "exercise_minutes",
-    "value": 45,
     "date": "2026-08-24"
    }
   ],
-  "usr_d85f5c4bfc6bbfa9": []
+  "usr_3ad4d9724c23e619": [],
+  "usr_f5da01d8969cda1f": [],
+  "usr_704e74dbaa1c6d62": []
  },
  "plans": {
-  "usr_34748ffbf236c244": {
+  "usr_54b52e030d04bd03": {
    "activity": {
-    "generatedAt": "2026-08-24T20:01:36.875Z",
+    "generatedAt": "2026-08-25T14:16:14.114Z",
     "goal": "Improve stamina",
     "weeklyTargetMinutes": 150,
     "weeks": [
@@ -1504,7 +1548,7 @@
     ]
    },
    "nutrition": {
-    "generatedAt": "2026-08-24T20:01:36.875Z",
+    "generatedAt": "2026-08-25T14:16:14.129Z",
     "preference": "vegetarian",
     "estimatedDailyCalories": 1896,
     "tdeeEstimate": 2296,
@@ -1631,12 +1675,13 @@
      "AI-generated nutrition ideas are educational — not medical nutrition therapy."
     ]
    }
-  }
+  },
+  "usr_3ad4d9724c23e619": {}
  },
  "doctors": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "id": "doc_8ec7866b1366c3f4",
+    "id": "doc_98364cbbcab98a03",
     "name": "Dr. Kavita Rao",
     "role": "Family Doctor",
     "specialty": "General Physician",
@@ -1646,7 +1691,7 @@
     "addedAt": "2025-01-10T10:00:00Z"
    },
    {
-    "id": "doc_e1d1b53388547bdc",
+    "id": "doc_5c2b719e76a4e0ff",
     "name": "Dr. Sameer Menon",
     "role": "Specialist",
     "specialty": "Cardiologist",
@@ -1654,24 +1699,16 @@
     "clinic": "Lifeline Heart Institute",
     "notes": "Consulted 2025 for BP review",
     "addedAt": "2025-06-14T10:00:00Z"
-   },
-   {
-    "id": "doc_28216451f1e2f3a7",
-    "name": "Dr. Test",
-    "role": "Specialist",
-    "specialty": "Dermatologist",
-    "phone": "+91 90000 00000",
-    "clinic": "",
-    "notes": "",
-    "addedAt": "2026-08-24T20:01:36.946Z"
    }
   ],
-  "usr_d85f5c4bfc6bbfa9": []
+  "usr_3ad4d9724c23e619": [],
+  "usr_f5da01d8969cda1f": [],
+  "usr_704e74dbaa1c6d62": []
  },
  "contacts": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "id": "ct_0bcf8edcb60db3c2",
+    "id": "ct_9e96f36ec66ab33c",
     "name": "Suresh Mehta",
     "relation": "Father",
     "phone": "+91 98200 77889",
@@ -1679,7 +1716,7 @@
     "priority": 1
    },
    {
-    "id": "ct_7fc3ad284104e266",
+    "id": "ct_ce45aa342767a6fa",
     "name": "Nirmala Mehta",
     "relation": "Mother",
     "phone": "+91 98200 99001",
@@ -1687,7 +1724,7 @@
     "priority": 1
    },
    {
-    "id": "ct_f03ce842809bf4d3",
+    "id": "ct_c4205aea2106db1d",
     "name": "Anjali Mehta",
     "relation": "Spouse",
     "phone": "+91 98200 55447",
@@ -1695,7 +1732,7 @@
     "priority": 2
    },
    {
-    "id": "ct_5626ba31726a89e8",
+    "id": "ct_49163bf5770d0fe9",
     "name": "Rohit Kumar",
     "relation": "Friend",
     "phone": "+91 98200 33221",
@@ -1705,117 +1742,110 @@
   ]
  },
  "reminders": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "id": "rem_f6e4412965922ee6",
-    "userId": "usr_34748ffbf236c244",
+    "id": "rem_78e6d39caeddbb58",
+    "userId": "usr_54b52e030d04bd03",
     "title": "Follow up on HbA1c trend with your doctor",
     "type": "health",
-    "dueDate": "2026-09-03",
+    "dueDate": "2026-09-04",
     "notes": "",
     "status": "active",
     "source": "auto:hba1c_followup",
     "repeatable": false,
-    "createdAt": "2026-08-24T20:01:32.532Z",
+    "createdAt": "2026-08-25T10:51:40.528Z",
     "actionLog": []
    },
    {
-    "id": "rem_1ec4869a32ec3aae",
-    "userId": "usr_34748ffbf236c244",
+    "id": "rem_e1cb3caacd8160ca",
+    "userId": "usr_54b52e030d04bd03",
     "title": "Record a blood-pressure reading",
     "type": "measurement",
-    "dueDate": "2026-08-29",
+    "dueDate": "2026-08-27",
     "notes": "",
-    "status": "completed",
+    "status": "active",
     "source": "auto:bp_check",
     "repeatable": false,
-    "createdAt": "2026-08-24T20:01:32.532Z",
-    "actionLog": [
-     {
-      "ts": "2026-08-24T20:01:36.895Z",
-      "action": "snooze",
-      "detail": "+5d"
-     },
-     {
-      "ts": "2026-08-24T20:01:36.909Z",
-      "action": "complete"
-     }
-    ]
+    "createdAt": "2026-08-25T10:51:40.528Z",
+    "actionLog": []
    },
    {
-    "id": "rem_0d310a4a1a4370c8",
-    "userId": "usr_34748ffbf236c244",
+    "id": "rem_0dfcfc3f47d5ca4c",
+    "userId": "usr_54b52e030d04bd03",
     "title": "Weekly health review — check insights & lifestyle plan",
     "type": "lifestyle",
-    "dueDate": "2026-08-30",
+    "dueDate": "2026-08-31",
     "notes": "",
     "status": "active",
     "source": "auto:weekly_review",
     "repeatable": false,
-    "createdAt": "2026-08-24T20:01:32.533Z",
+    "createdAt": "2026-08-25T10:51:40.528Z",
     "actionLog": []
    },
    {
-    "id": "rem_1e2123d2150338b1",
+    "id": "rem_b1077a828d1fe7af",
     "userId": {
-     "id": "usr_34748ffbf236c244",
+     "id": "usr_54b52e030d04bd03",
      "email": "demo@healthsphere.ai",
      "name": "Arjun Mehta",
-     "passwordSalt": "701717b1ac606419ff8142ab5c7ea113",
-     "passwordHash": "7e34cfd72724800ee4b73e466957ed6aa876e9abd35fadd3f00cda20887002c2b110779178fe52ea48175f7814b44a61e8e4afafa4392191fe9d4be7df6e6a3d",
-     "createdAt": "2026-08-24T20:01:32.284Z"
+     "passwordSalt": "cbcceb4ffd109ee102166f0212a44f62",
+     "passwordHash": "ef4fca2b7e907afbfc485cff19d39e784e2775d480581fea057222038cc39ebaf49e7a63e46f2d106054073debb5a801f63d1e5bc62dbc9f1d7bd1eb665dfeb1",
+     "createdAt": "2026-08-25T10:51:40.265Z"
     },
     "title": "Discuss HbA1c trend & family history with Dr. Kavita Rao",
     "type": "followup",
-    "dueDate": "2026-09-03",
+    "dueDate": "2026-09-04",
     "notes": "",
     "status": "active",
     "source": "auto:hba1c_followup",
     "repeatable": false,
-    "createdAt": "2026-08-24T20:01:32.533Z",
+    "createdAt": "2026-08-25T10:51:40.528Z",
     "actionLog": []
    },
    {
-    "id": "rem_ef6ca1561b80b714",
+    "id": "rem_6cc3ba0ca4dd03c0",
     "userId": {
-     "id": "usr_34748ffbf236c244",
+     "id": "usr_54b52e030d04bd03",
      "email": "demo@healthsphere.ai",
      "name": "Arjun Mehta",
-     "passwordSalt": "701717b1ac606419ff8142ab5c7ea113",
-     "passwordHash": "7e34cfd72724800ee4b73e466957ed6aa876e9abd35fadd3f00cda20887002c2b110779178fe52ea48175f7814b44a61e8e4afafa4392191fe9d4be7df6e6a3d",
-     "createdAt": "2026-08-24T20:01:32.284Z"
+     "passwordSalt": "cbcceb4ffd109ee102166f0212a44f62",
+     "passwordHash": "ef4fca2b7e907afbfc485cff19d39e784e2775d480581fea057222038cc39ebaf49e7a63e46f2d106054073debb5a801f63d1e5bc62dbc9f1d7bd1eb665dfeb1",
+     "createdAt": "2026-08-25T10:51:40.265Z"
     },
     "title": "Record blood pressure",
     "type": "measurement",
-    "dueDate": "2026-08-26",
+    "dueDate": "2026-08-27",
     "notes": "",
     "status": "active",
     "source": "auto:bp_check",
     "repeatable": true,
-    "createdAt": "2026-08-24T20:01:32.533Z",
-    "actionLog": []
-   },
-   {
-    "id": "rem_27d9c273f2a88ebf",
-    "userId": "usr_34748ffbf236c244",
-    "title": "Book eye checkup",
-    "type": "health",
-    "dueDate": "2026-09-15",
-    "notes": "",
-    "status": "active",
-    "source": "user",
-    "repeatable": false,
-    "createdAt": "2026-08-24T20:01:36.919Z",
+    "createdAt": "2026-08-25T10:51:40.528Z",
     "actionLog": []
    }
   ],
-  "usr_d85f5c4bfc6bbfa9": []
+  "usr_3ad4d9724c23e619": [
+   {
+    "id": "rem_1377ffdbe72b868a",
+    "userId": "usr_3ad4d9724c23e619",
+    "title": "Weekly health review — check insights & lifestyle plan",
+    "type": "lifestyle",
+    "dueDate": "2026-08-31",
+    "notes": "",
+    "status": "active",
+    "source": "auto:weekly_review",
+    "repeatable": false,
+    "createdAt": "2026-08-25T12:25:47.992Z",
+    "actionLog": []
+   }
+  ],
+  "usr_f5da01d8969cda1f": [],
+  "usr_704e74dbaa1c6d62": []
  },
  "settings": {
-  "usr_34748ffbf236c244": {
+  "usr_54b52e030d04bd03": {
    "consents": {
-    "contactsImport": true,
-    "location": true,
+    "contactsImport": false,
+    "location": false,
     "shareReports": false,
     "familyView": true
    },
@@ -1829,7 +1859,63 @@
     "analyticsOptOut": true
    }
   },
-  "usr_d85f5c4bfc6bbfa9": {
+  "usr_78514e6ecfd36e5f": {
+   "consents": {
+    "contactsImport": false,
+    "location": false,
+    "shareReports": false,
+    "familyView": false
+   },
+   "notifications": {
+    "health": true,
+    "lifestyle": true,
+    "healthcare": true,
+    "emergency": true
+   }
+  },
+  "usr_3ad4d9724c23e619": {
+   "consents": {
+    "contactsImport": false,
+    "location": false,
+    "shareReports": false,
+    "familyView": false
+   },
+   "notifications": {
+    "health": true,
+    "lifestyle": true,
+    "healthcare": true,
+    "emergency": true
+   }
+  },
+  "usr_f5da01d8969cda1f": {
+   "consents": {
+    "contactsImport": false,
+    "location": false,
+    "shareReports": false,
+    "familyView": false
+   },
+   "notifications": {
+    "health": true,
+    "lifestyle": true,
+    "healthcare": true,
+    "emergency": true
+   }
+  },
+  "usr_704e74dbaa1c6d62": {
+   "consents": {
+    "contactsImport": false,
+    "location": false,
+    "shareReports": false,
+    "familyView": false
+   },
+   "notifications": {
+    "health": true,
+    "lifestyle": true,
+    "healthcare": true,
+    "emergency": true
+   }
+  },
+  "usr_75700e97ede1ca9e": {
    "consents": {
     "contactsImport": false,
     "location": false,
@@ -1844,75 +1930,258 @@
    }
   }
  },
+ "sos": {
+  "usr_54b52e030d04bd03": []
+ },
  "audit": {
-  "usr_34748ffbf236c244": [
+  "usr_54b52e030d04bd03": [
    {
-    "ts": "2026-08-24T20:01:32.537Z",
+    "ts": "2026-08-25T10:51:40.532Z",
     "action": "seed",
     "detail": "Demo data created"
    },
    {
-    "ts": "2026-08-24T20:01:36.543Z",
+    "ts": "2026-08-25T10:58:57.533Z",
     "action": "login",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T20:01:36.787Z",
-    "action": "report_manual_entry",
+    "ts": "2026-08-25T11:00:41.746Z",
+    "action": "login",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T20:01:36.875Z",
+    "ts": "2026-08-25T11:12:59.615Z",
+    "action": "store_approved",
+    "detail": "qwe"
+   },
+   {
+    "ts": "2026-08-25T11:15:04.905Z",
     "action": "lifestyle_plan_regenerated",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T20:01:36.895Z",
-    "action": "reminder_snooze",
-    "detail": "Record a blood-pressure reading"
+    "ts": "2026-08-25T11:29:18.562Z",
+    "action": "login",
+    "detail": ""
    },
    {
-    "ts": "2026-08-24T20:01:36.909Z",
-    "action": "reminder_complete",
-    "detail": "Record a blood-pressure reading"
-   },
-   {
-    "ts": "2026-08-24T20:01:36.934Z",
-    "action": "contacts_imported",
-    "detail": "0 contact(s)"
-   },
-   {
-    "ts": "2026-08-24T20:02:05.332Z",
+    "ts": "2026-08-25T11:29:28.719Z",
     "action": "emergency_card_accessed",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T20:02:05.388Z",
-    "action": "family_member_added",
-    "detail": "Aunt"
-   },
-   {
-    "ts": "2026-08-24T20:02:05.470Z",
-    "action": "settings_updated",
-    "detail": "consents"
-   },
-   {
-    "ts": "2026-08-24T20:02:05.501Z",
-    "action": "data_exported",
+    "ts": "2026-08-25T11:43:25.314Z",
+    "action": "login",
     "detail": ""
    },
    {
-    "ts": "2026-08-24T20:02:25.237Z",
+    "ts": "2026-08-25T11:58:16.788Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T11:58:34.271Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T12:02:35.343Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T12:20:42.902Z",
+    "action": "emergency_card_accessed",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T12:29:19.587Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T14:07:50.338Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T14:15:42.305Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T14:16:14.129Z",
+    "action": "lifestyle_plan_regenerated",
+    "detail": ""
+   }
+  ],
+  "usr_78514e6ecfd36e5f": [
+   {
+    "ts": "2026-08-25T11:13:31.258Z",
+    "action": "account_created",
+    "detail": ""
+   }
+  ],
+  "usr_3ad4d9724c23e619": [
+   {
+    "ts": "2026-08-25T11:58:43.006Z",
+    "action": "account_created",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T12:25:41.462Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T13:52:44.275Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T13:53:10.697Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T13:56:51.736Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T14:02:11.307Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T14:08:08.214Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T14:38:28.619Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T14:44:06.963Z",
     "action": "login",
     "detail": ""
    }
   ],
-  "usr_d85f5c4bfc6bbfa9": [
+  "usr_f5da01d8969cda1f": [
    {
-    "ts": "2026-08-24T20:02:05.893Z",
+    "ts": "2026-08-25T14:02:52.029Z",
+    "action": "account_created",
+    "detail": ""
+   }
+  ],
+  "usr_704e74dbaa1c6d62": [
+   {
+    "ts": "2026-08-25T14:08:38.101Z",
+    "action": "account_created",
+    "detail": ""
+   }
+  ],
+  "usr_75700e97ede1ca9e": [
+   {
+    "ts": "2026-08-25T14:45:24.174Z",
     "action": "account_created",
     "detail": ""
    }
   ]
- }
+ },
+ "doctorAccounts": [
+  {
+   "id": "docacc_3869cc2586b4fe38",
+   "email": "dipinroka24@gmail.com",
+   "name": "DipinRoka",
+   "passwordSalt": "9dae222956e38f8879184c003d821bf7",
+   "passwordHash": "52ab1c69da97891ec04fb7f0c8154323a89c43e45762e0f69e1b8fac52acd8f31b39099505c037e630907d7a3fe29ad88d6b9673b0b854b6161e4384f68759ee",
+   "qualification": "mbbs",
+   "specialization": "Cardiologist",
+   "licenseNumber": "12345678",
+   "idProof": "244679898",
+   "yearsExp": 8,
+   "fee": 500,
+   "verificationStatus": "pending",
+   "availabilityStatus": "offline",
+   "createdAt": "2026-08-25T10:52:52.484Z"
+  },
+  {
+   "id": "docacc_ce6f2cb38ec69eec",
+   "email": "doc@test.com",
+   "name": "Dr. Sharma",
+   "passwordSalt": "71ab8e3c5b1de8dc9153c1e3a4045e1b",
+   "passwordHash": "990acf4452de48629b2cdc34092aab177955f81129b782a6be3d66d906296fca606d2cf72a44e76194813f404747c68acd584b54851471f4083e65a7d4a19f3c",
+   "qualification": "MBBS",
+   "specialization": "General Physician",
+   "licenseNumber": "DOC123",
+   "idProof": "",
+   "yearsExp": 10,
+   "fee": 500,
+   "verificationStatus": "pending",
+   "availabilityStatus": "offline",
+   "createdAt": "2026-08-25T11:13:32.115Z"
+  }
+ ],
+ "storeOwnerAccounts": [
+  {
+   "id": "storeown_4d991a4cf21cb771",
+   "email": "dipinroka24@gmail.com",
+   "ownerName": "Dipin Roka",
+   "storeName": "qwe",
+   "passwordSalt": "382a32fb66d7bc5fd39fe4748d2ce181",
+   "passwordHash": "006dcf545a154d11af26c5597adaed8a3ac005d261f4156898104c53f2ccdfd97b134af00b6a22d950a6f3fb68a1810be604b38d5e66e66f90cb47a3f5fbcaa9",
+   "licenseNumber": "2345",
+   "address": "ssfds",
+   "contact": "+911234567890",
+   "hours": "",
+   "photos": [],
+   "verificationStatus": "verified",
+   "createdAt": "2026-08-25T11:00:15.965Z",
+   "storeId": "store_dcb1de9c0f33759a"
+  }
+ ],
+ "adminAccounts": [],
+ "consultTickets": [
+  {
+   "id": "ctk_3ec9b4c6722418f0",
+   "patientId": "usr_54b52e030d04bd03",
+   "patientName": "Arjun Mehta",
+   "specialization": "General Physician",
+   "symptoms": "dfghj",
+   "preferredSlots": [
+    "wert"
+   ],
+   "urgency": "urgent",
+   "status": "expired",
+   "assignedDoctorId": null,
+   "createdAt": "2026-08-25T10:59:16.046Z",
+   "expiresAt": "2026-08-25T11:14:16.046Z"
+  }
+ ],
+ "consultAppointments": [],
+ "consultMessages": {},
+ "stores": [
+  {
+   "id": "store_dcb1de9c0f33759a",
+   "ownerId": "storeown_4d991a4cf21cb771",
+   "name": "qwe",
+   "category": "Pharmacy",
+   "address": "ssfds",
+   "lat": null,
+   "lng": null,
+   "hours": "",
+   "contact": "+911234567890",
+   "photos": [],
+   "logo": "",
+   "offers": [],
+   "status": "approved",
+   "views": 1,
+   "clicks": 7,
+   "createdAt": "2026-08-25T11:00:15.966Z"
+  }
+ ]
 }

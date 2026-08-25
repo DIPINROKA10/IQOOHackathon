@@ -20,7 +20,9 @@
   },
   "keywords": [],
   "author": "",
-  "dependencies": {},
+  "dependencies": {
+    "pg": "^8.23.0"
+  },
   "devDependencies": {
     "jsdom": "^29.1.1"
   }

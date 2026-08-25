@@ -1,19 +1,25 @@
 ﻿import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { db, persist, coll, objColl, UPLOAD_DIR } from './db.js';
+import { db, persist, coll, objColl, UPLOAD_DIR, storageMode, DATA_DIR } from './db.js';
 import {
   registerUser, loginUser, logoutToken, getAuthedUser,
-  changePassword, audit
+  changePassword, audit, isAdmin
 } from './auth.js';
 import { processDocument, explainReport } from './extraction.js';
 import { buildSeries, analyzeSeries, labelOf } from './trends.js';
 import { getInsights, emergencyCard } from './insights.js';
 import { createReminder, reminderAction, syncAutoReminders } from './reminders.js';
 import { buildTimeline, TYPE_META } from './timeline.js';
-import { generateActivityPlan, generateNutritionPlan, weeklyInsight } from './lifestyle.js';
+import { generateActivityPlan, generateNutritionPlan, weeklyInsight, MEALS, getMealAlternatives } from './lifestyle.js';
 import { CITIES, searchFacilities, fetchNearbyLive, geocodePlace } from './hospitals.js';
+import { askAssistant } from './assistant.js';
 import { uid, todayISO } from './util.js';
+import { doctorRoutes } from './api-doctor.js';
+import { storeRoutes } from './api-store.js';
+import { admin2Routes } from './api-admin2.js';
+import { ensureSeed } from './seed.js';
+import { consultRoutes } from './api-consult.js';
 
 /* ============================ API ROUTES ============================ */
 
@@ -37,7 +43,7 @@ route('POST', /^\/api\/auth\/register$/, (req, res, p) => {
     audit(user.id, 'account_created');
     const { token } = loginUser({ email: p.body.email, password: p.body.password });
     setAuth(res, token);
-    ok(res, { user: pub(user), token });
+    ok(res, { user: pub(user), token, isAdmin: isAdmin(user) });
   } catch (e) { bad(res, e); }
 }, { auth: false });
 
@@ -46,7 +52,7 @@ route('POST', /^\/api\/auth\/login$/, (req, res, p) => {
     const { user, token } = loginUser(p.body || {});
     audit(user.id, 'login');
     setAuth(res, token);
-    ok(res, { user: pub(user), token });
+    ok(res, { user: pub(user), token, isAdmin: isAdmin(user) });
   } catch (e) { bad(res, e, 401); }
 }, { auth: false });
 
@@ -65,7 +71,7 @@ route('POST', /^\/api\/auth\/password$/, (req, res, p) => {
 });
 
 route('GET', /^\/api\/me$/, (req, res, p) => {
-  ok(res, { user: pub(p.user), profile: objColl('profiles', p.user.id), settings: objColl('settings', p.user.id) });
+  ok(res, { user: pub(p.user), profile: objColl('profiles', p.user.id), settings: objColl('settings', p.user.id), isAdmin: isAdmin(p.user) });
 });
 
 /* ---------- PROFILE ---------- */
@@ -390,6 +396,96 @@ route('POST', /^\/api\/lifestyle\/logs$/, (req, res, p) => {
   ok(res, { log });
 });
 
+/* ---------- NUTRITION PLAN EDITING ---------- */
+route('POST', /^\/api\/lifestyle\/nutrition\/edit$/, (req, res, p) => {
+  const b = p.body || {};
+  const plans = objColl('plans', p.user.id);
+  const nut = plans.nutrition;
+  if (!nut) return bad(res, new Error('No nutrition plan yet. Generate one first.'));
+  const dayIndex = Number(b.dayIndex);
+  const slot = b.slot; // 'breakfast', 'lunch', 'dinner', 'snacks'
+  const newName = String(b.name || '').trim();
+  const newKcal = String(b.kcal || '').trim();
+  if (!Number.isFinite(dayIndex) || dayIndex < 0 || dayIndex > 6) return bad(res, new Error('dayIndex must be 0-6.'));
+  if (!['breakfast', 'lunch', 'dinner', 'snacks'].includes(slot)) return bad(res, new Error('slot must be breakfast, lunch, dinner, or snacks.'));
+  if (!newName) return bad(res, new Error('Meal name is required.'));
+  const day = nut.weekPlan[dayIndex];
+  if (!day) return bad(res, new Error('Invalid day index.'));
+  if (slot === 'snacks') {
+    day.snacks = newName;
+  } else {
+    day[slot] = [newName, newKcal || ''];
+  }
+  nut.editedByUser = true;
+  nut.lastEditedAt = new Date().toISOString();
+  audit(p.user.id, 'nutrition_meal_edited', `${day.day} ${slot}`);
+  persist();
+  ok(res, { weekPlan: nut.weekPlan });
+});
+
+route('POST', /^\/api\/lifestyle\/nutrition\/swap$/, (req, res, p) => {
+  const b = p.body || {};
+  const plans = objColl('plans', p.user.id);
+  const nut = plans.nutrition;
+  if (!nut) return bad(res, new Error('No nutrition plan yet.'));
+  const dayIndex = Number(b.dayIndex);
+  const slot = b.slot;
+  const withIndex = Number(b.withIndex);
+  if (!Number.isFinite(dayIndex) || !Number.isFinite(withIndex)) return bad(res, new Error('dayIndex and withIndex required.'));
+  if (!['breakfast', 'lunch', 'dinner'].includes(slot)) return bad(res, new Error('slot must be breakfast, lunch, or dinner.'));
+  const pref = nut.preference || 'vegetarian';
+  const menu = MEALS[pref] || MEALS.vegetarian;
+  const pool = menu[slot] || [];
+  if (withIndex < 0 || withIndex >= pool.length) return bad(res, new Error('Invalid swap index.'));
+  const day = nut.weekPlan[dayIndex];
+  if (!day) return bad(res, new Error('Invalid day index.'));
+  const alternative = pool[withIndex];
+  if (!alternative) return bad(res, new Error('Alternative not found.'));
+  day[slot] = [alternative[0].replace(/\b\w/g, c => c.toUpperCase()), alternative[1]];
+  nut.editedByUser = true;
+  nut.lastEditedAt = new Date().toISOString();
+  audit(p.user.id, 'nutrition_meal_swapped', `${day.day} ${slot}`);
+  persist();
+  ok(res, { meal: day[slot], weekPlan: nut.weekPlan });
+});
+
+route('GET', /^\/api\/lifestyle\/nutrition\/alternatives$/, (req, res, p) => {
+  const url = new URL(req.url, 'http://localhost');
+  const q = Object.fromEntries(url.searchParams);
+  const plans = objColl('plans', p.user.id);
+  const nut = plans.nutrition;
+  if (!nut) return bad(res, new Error('No nutrition plan yet.'));
+  const slot = q.slot || 'breakfast';
+  const dayIndex = Number(q.dayIndex) || 0;
+  const pref = nut.preference || 'vegetarian';
+  const day = nut.weekPlan[dayIndex];
+  const currentName = day && day[slot] && Array.isArray(day[slot]) ? day[slot][0] : '';
+  const menu = MEALS[pref] || MEALS.vegetarian;
+  const pool = menu[slot] || [];
+  const alts = pool
+    .map(([name, kcal], idx) => ({ name: name.replace(/\b\w/g, c => c.toUpperCase()), kcal, _poolIndex: idx }))
+    .filter(a => a.name.toLowerCase() !== (currentName || '').toLowerCase());
+  ok(res, { alternatives: alts, slot, dayIndex });
+});
+
+route('POST', /^\/api\/lifestyle\/nutrition\/regenerate-day$/, (req, res, p) => {
+  const b = p.body || {};
+  const plans = objColl('plans', p.user.id);
+  const nut = plans.nutrition;
+  if (!nut) return bad(res, new Error('No nutrition plan yet.'));
+  const dayIndex = Number(b.dayIndex);
+  if (!Number.isFinite(dayIndex) || dayIndex < 0 || dayIndex > 6) return bad(res, new Error('dayIndex must be 0-6.'));
+  const ctxProfile = objColl('profiles', p.user.id);
+  const signals = getInsights(p.user.id).signals;
+  const newPlan = generateNutritionPlan(ctxProfile, signals);
+  nut.weekPlan[dayIndex] = newPlan.weekPlan[dayIndex];
+  nut.editedByUser = true;
+  nut.lastEditedAt = new Date().toISOString();
+  audit(p.user.id, 'nutrition_day_regenerated', nut.weekPlan[dayIndex].day);
+  persist();
+  ok(res, { day: nut.weekPlan[dayIndex] });
+});
+
 /* ---------- REMINDERS ---------- */
 route('GET', /^\/api\/reminders$/, (req, res, p) => {
   const list = coll('reminders', p.user.id).slice().sort((a, b) => (a.dueDate < b.dueDate ? -1 : 1));
@@ -520,6 +616,54 @@ route('GET', /^\/api\/emergency$/, (req, res, p) => {
   ok(res, emergencyCard(p.user.id));
 });
 
+/* ---------- EMERGENCY SOS ----------
+   Notification aid, not a life-safety service: records an alert, builds a
+   shareable message (+location link when permitted), and hands the client
+   the primary contact so it can open sms:/WhatsApp. Never auto-sends. */
+function primaryContactOf(id) {
+  return coll('contacts', id).slice().sort((a, b) => (a.priority || 3) - (b.priority || 3))[0] || null;
+}
+route('GET', /^\/api\/sos$/, (req, res, p) => {
+  ok(res, {
+    alerts: coll('sos', p.user.id).slice().sort((a, b) => (a.ts < b.ts ? 1 : -1)),
+    primaryContact: primaryContactOf(p.user.id)
+  });
+});
+route('POST', /^\/api\/sos$/, (req, res, p) => {
+  const b = p.body || {};
+  let locLink = '';
+  if (Number.isFinite(+b.lat) && Number.isFinite(+b.lng)) {
+    locLink = `https://maps.google.com/?q=${+b.lat},${+b.lng}`;
+  }
+  const alert = {
+    id: uid('sos'),
+    ts: new Date().toISOString(),
+    status: 'active',
+    hasLocation: !!locLink,
+    message: `EMERGENCY ALERT — ${p.user.name} needs urgent help. Please attempt to reach them and send help to their last known location.${locLink ? ' Location: ' + locLink : ''}`
+  };
+  coll('sos', p.user.id).push(alert);
+  audit(p.user.id, 'sos_triggered', locLink ? 'with location' : 'without location');
+  persist();
+  ok(res, { alert, primaryContact: primaryContactOf(p.user.id) });
+});
+route('POST', /^\/api\/sos\/([\w-]+)\/cancel$/, (req, res, p) => {
+  const a = coll('sos', p.user.id).find(x => x.id === p.params[0]);
+  if (!a) return bad(res, new Error('Alert not found.'), 404);
+  if (a.status !== 'active') return bad(res, new Error('Alert is not active.'));
+  a.status = 'cancelled';
+  a.cancelledAt = new Date().toISOString();
+  audit(p.user.id, 'sos_cancelled', a.id);
+  persist();
+  ok(res, { alert: a });
+});
+
+/* ---------- AI ASSISTANT (rule-based, reads only this user's records) ---------- */
+route('POST', /^\/api\/assistant$/, (req, res, p) => {
+  const q = String(p.body?.q || '').slice(0, 300);
+  ok(res, { answer: askAssistant(p.user.id, q) });
+});
+
 /* ---------- SETTINGS / PRIVACY / DATA RIGHTS ---------- */
 route('PUT', /^\/api\/settings$/, (req, res, p) => {
   const s = objColl('settings', p.user.id);
@@ -570,6 +714,108 @@ route('DELETE', /^\/api\/account$/, (req, res, p) => {
   ok(res, { ok: true, message: 'Account and all associated data deleted.' });
 });
 
+/* ---------------- ADMIN PANEL ----------------
+   Read-heavy oversight endpoints. Every route re-checks isAdmin() —
+   membership is controlled by ADMIN_EMAILS (see lib/auth.js). */
+function adminOnly(res, p) {
+  if (!isAdmin(p.user)) { bad(res, new Error('Admin access required.'), 403); return false; }
+  return true;
+}
+
+const sumLen = obj => Object.values(obj || {}).reduce((n, a) => n + (a?.length || 0), 0);
+function lastLoginTs(id) {
+  const logins = (db.audit[id] || []).filter(a => a.action === 'login');
+  return logins.length ? logins[logins.length - 1].ts : null;
+}
+function userCounts(id) {
+  return {
+    familyMembers: (db.families[id] || []).length,
+    reports: (db.reports[id] || []).length,
+    metrics: (db.metrics[id] || []).length,
+    lifestyleLogs: (db.logs[id] || []).length,
+    doctors: (db.doctors[id] || []).length,
+    contacts: (db.contacts[id] || []).length,
+    reminders: (db.reminders[id] || []).length,
+    auditEvents: (db.audit[id] || []).length
+  };
+}
+
+route('GET', /^\/api\/admin\/overview$/, (req, res, p) => {
+  if (!adminOnly(res, p)) return;
+  ok(res, {
+    stats: {
+      users: db.users.length,
+      activeSessions: db.sessions.filter(s => new Date(s.expiresAt) > new Date()).length,
+      reports: sumLen(db.reports),
+      metrics: sumLen(db.metrics),
+      lifestyleLogs: sumLen(db.logs),
+      reminders: sumLen(db.reminders),
+      careTeamEntries: sumLen(db.doctors) + sumLen(db.contacts),
+      auditEvents: sumLen(db.audit)
+    },
+    storage: { mode: storageMode(), dataDir: DATA_DIR },
+    runtime: { node: process.version, uptimeSec: Math.round(process.uptime()) },
+    recentUsers: db.users.slice().sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1)).slice(0, 5)
+      .map(u => ({ id: u.id, name: u.name, email: u.email, createdAt: u.createdAt }))
+  });
+});
+
+route('GET', /^\/api\/admin\/users$/, (req, res, p) => {
+  if (!adminOnly(res, p)) return;
+  ok(res, {
+    users: db.users.map(u => ({
+      id: u.id, name: u.name, email: u.email, createdAt: u.createdAt,
+      lastLogin: lastLoginTs(u.id), isAdmin: isAdmin(u), counts: userCounts(u.id)
+    })).sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
+  });
+});
+
+route('GET', /^\/api\/admin\/users\/([\w-]+)$/, (req, res, p) => {
+  if (!adminOnly(res, p)) return;
+  const u = db.users.find(x => x.id === p.params[0]);
+  if (!u) return bad(res, new Error('User not found.'), 404);
+  ok(res, {
+    user: pub(u),
+    counts: userCounts(u.id),
+    profile: db.profiles[u.id] || {},
+    settings: db.settings[u.id] || {},
+    familyHistory: db.families[u.id] || [],
+    reports: db.reports[u.id] || [],
+    metrics: db.metrics[u.id] || [],
+    lifestyleLogs: db.logs[u.id] || [],
+    plans: db.plans[u.id] || {},
+    doctors: db.doctors[u.id] || [],
+    contacts: db.contacts[u.id] || [],
+    reminders: db.reminders[u.id] || [],
+    audit: (db.audit[u.id] || []).slice(-100).reverse()
+  });
+});
+
+route('DELETE', /^\/api\/admin\/users\/([\w-]+)$/, (req, res, p) => {
+  if (!adminOnly(res, p)) return;
+  const id = p.params[0];
+  if (id === p.user.id) return bad(res, new Error('Use Settings → Delete account to remove your own account.'), 400);
+  const u = db.users.find(x => x.id === id);
+  if (!u) return bad(res, new Error('User not found.'), 404);
+  db.users = db.users.filter(x => x.id !== id);
+  db.sessions = db.sessions.filter(s => s.userId !== id);
+  for (const k of ['profiles', 'families', 'reports', 'metrics', 'logs', 'plans', 'doctors', 'contacts', 'reminders', 'settings', 'audit']) delete db[k][id];
+  audit(p.user.id, 'admin_deleted_user', `${u.email} (${id})`);
+  persist();
+  ok(res, { ok: true, message: `Deleted ${u.email} and all associated data.` });
+});
+
+route('GET', /^\/api\/admin\/audit$/, (req, res, p) => {
+  if (!adminOnly(res, p)) return;
+  const byEmail = Object.fromEntries(db.users.map(u => [u.id, u.email]));
+  const all = [];
+  for (const [id, list] of Object.entries(db.audit)) {
+    for (const a of list) all.push({ ...a, userEmail: byEmail[id] || id });
+  }
+  all.sort((a, b) => (a.ts < b.ts ? 1 : -1));
+  ok(res, { audit: all.slice(0, 150), totalTracked: all.length });
+});
+
 /* ---------------- helpers ---------------- */
 function pub(u) { return { id: u.id, email: u.email, name: u.name, createdAt: u.createdAt }; }
 function pick(obj, keys) { const o = {}; if (!obj) return o; for (const k of keys) if (k in obj) o[k] = obj[k]; return o; }
@@ -585,6 +831,7 @@ function setAuth(res, token) {
 
 /* ---------------- dispatcher ---------------- */
 export async function handleApi(req, res, pathname, query, body) {
+  // Check main routes first
   for (const r of routes) {
     if (r.method !== req.method) continue;
     const m = pathname.match(r.pattern);
@@ -601,5 +848,65 @@ export async function handleApi(req, res, pathname, query, body) {
     }
     return true;
   }
+
+  // Check doctor routes
+  for (const r of doctorRoutes) {
+    if (r.method !== req.method) continue;
+    const m = pathname.match(r.pattern);
+    if (!m) continue;
+    try {
+      await r.handler(req, res, { params: m.slice(1), query, body, req });
+    } catch (e) {
+      console.error('[api-doctor]', e);
+      bad(res, e, 500);
+    }
+    return true;
+  }
+
+  // Check store routes
+  for (const r of storeRoutes) {
+    if (r.method !== req.method) continue;
+    const m = pathname.match(r.pattern);
+    if (!m) continue;
+    try {
+      await r.handler(req, res, { params: m.slice(1), query, body, req });
+    } catch (e) {
+      console.error('[api-store]', e);
+      bad(res, e, 500);
+    }
+    return true;
+  }
+
+  // Check consultation routes (patient-facing)
+  for (const r of consultRoutes) {
+    if (r.method !== req.method) continue;
+    const m = pathname.match(r.pattern);
+    if (!m) continue;
+    const user = getAuthedUser(req);
+    if (!user) { send(res, 401, { error: 'Please sign in.' }); return true; }
+    try {
+      await r.handler(req, res, { params: m.slice(1), query, body, user, req });
+    } catch (e) {
+      console.error('[api-consult]', e);
+      bad(res, e, 500);
+    }
+    return true;
+  }
+
+  // Check extended admin routes
+  for (const r of admin2Routes) {
+    if (r.method !== req.method) continue;
+    const m = pathname.match(r.pattern);
+    if (!m) continue;
+    const user = getAuthedUser(req);
+    try {
+      await r.handler(req, res, { params: m.slice(1), query, body, user, req });
+    } catch (e) {
+      console.error('[api-admin2]', e);
+      bad(res, e, 500);
+    }
+    return true;
+  }
+
   return false;
 }

@@ -44,23 +44,66 @@ VIEWS.lifestyle = async function (container) {
     </div>
 
     <div class="card mb">
-      <h2>Nutrition plan&nbsp;&nbsp;${nut ? `<span class="chip info">${esc(nut.preference)}${nut.estimatedDailyCalories ? ` · ~${nut.estimatedDailyCalories} kcal/day target` : ''}</span>` : ''}</h2>
+      <div class="spread mb">
+        <h2 style="display:flex;align-items:center;gap:8px">Nutrition plan
+          ${nut ? `<span class="chip info">${esc(nut.preference)}${nut.estimatedDailyCalories ? ` · ~${nut.estimatedDailyCalories} kcal/day target` : ''}</span>` : ''}
+          ${nut?.editedByUser ? '<span class="chip ok" style="font-size:10px">Customized</span>' : ''}
+        </h2>
+        <div class="row" style="gap:8px">
+          ${nut ? `
+            <button class="btn sm secondary" id="export-pdf">📄 Export PDF</button>
+            <button class="btn sm secondary" id="export-json">💾 Export JSON</button>
+            <button class="btn sm" id="regen-nutrition">🔄 Regenerate</button>
+          ` : ''}
+        </div>
+      </div>
       ${nut ? `
-        <div class="row mb" style="gap:8px">
+        <div class="row mb" style="gap:8px;flex-wrap:wrap">
           <span class="chip neutral">Hydration target: ${esc(nut.hydrationTarget)}</span>
           <span class="chip neutral">Goal: ${esc(nut.goal)}${nut.tdeeEstimate ? ` · TDEE est. ${nut.tdeeEstimate} kcal` : ''}</span>
         </div>
-        <table class="tbl"><thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Snacks</th></tr></thead>
-        <tbody>${nut.weekPlan.map(day => `
-          <tr><td><b>${esc(day.day)}</b></td>
-          <td>${mealHtml(day.breakfast)}</td><td>${mealHtml(day.lunch)}</td><td>${mealHtml(day.dinner)}</td>
-          <td style="color:var(--ink-soft);font-size:12.5px">${esc(day.snacks)}</td></tr>`).join('')}</tbody></table>
-        <div class="disclaimer">${nut.notes.map(esc).join('<br>')}</div>`
-        : '<div class="empty">No nutrition plan yet.</div>'}
+        <div style="overflow-x:auto">
+        <table class="tbl" id="nutrition-table"><thead><tr>
+          <th style="width:60px">Day</th>
+          <th>Breakfast <button class="btn-icon" data-slot-filter="breakfast" title="Filter breakfast options">🔄</button></th>
+          <th>Lunch <button class="btn-icon" data-slot-filter="lunch" title="Filter lunch options">🔄</button></th>
+          <th>Dinner <button class="btn-icon" data-slot-filter="dinner" title="Filter dinner options">🔄</button></th>
+          <th>Snacks</th>
+        </tr></thead>
+        <tbody>${nut.weekPlan.map((day, di) => `
+          <tr>
+            <td><b>${esc(day.day)}</b>
+              <div style="margin-top:4px"><button class="btn-icon sm" data-regen-day="${di}" title="Regenerate this day">🔄</button></div>
+            </td>
+            <td class="meal-cell" data-day="${di}" data-slot="breakfast">${mealCell(day.breakfast, di, 'breakfast')}</td>
+            <td class="meal-cell" data-day="${di}" data-slot="lunch">${mealCell(day.lunch, di, 'lunch')}</td>
+            <td class="meal-cell" data-day="${di}" data-slot="dinner">${mealCell(day.dinner, di, 'dinner')}</td>
+            <td class="meal-cell" data-day="${di}" data-slot="snacks" style="color:var(--ink-soft);font-size:12.5px">
+              <span class="meal-text">${esc(day.snacks)}</span>
+              <button class="btn-icon sm meal-edit-btn" data-day="${di}" data-slot="snacks" title="Edit">✏️</button>
+            </td>
+          </tr>`).join('')}</tbody></table>
+        </div>
+        <div class="disclaimer mt">${nut.notes.map(esc).join('<br>')}
+          ${nut.lastEditedAt ? `<br><small>Last customized: ${new Date(nut.lastEditedAt).toLocaleString()}</small>` : ''}
+        </div>`
+        : '<div class="empty">No nutrition plan yet. Set your profile and goals, then regenerate.</div>'}
     </div>`;
 
-  function mealHtml([name, kcal]) { return `${esc(name)}<br><small class="tl-detail">${esc(kcal || '')}</small>`; }
+  function mealCell(meal, dayIndex, slot) {
+    if (slot === 'snacks') {
+      return `<span class="meal-text">${esc(meal)}</span>
+        <button class="btn-icon sm meal-edit-btn" data-day="${dayIndex}" data-slot="snacks" title="Edit">✏️</button>`;
+    }
+    const [name, kcal] = Array.isArray(meal) ? meal : [meal, ''];
+    return `<span class="meal-text">${esc(name)}<br><small class="tl-detail">${esc(kcal || '')}</small></span>
+      <div class="meal-actions">
+        <button class="btn-icon sm meal-edit-btn" data-day="${dayIndex}" data-slot="${slot}" title="Edit this meal">✏️</button>
+        <button class="btn-icon sm meal-swap-btn" data-day="${dayIndex}" data-slot="${slot}" title="Swap with alternative">🔄</button>
+      </div>`;
+  }
 
+  /* ---- Logging forms ---- */
   const logTypes = { 'log-ex': 'exercise_minutes', 'log-sl': 'sleep_hours', 'log-hy': 'hydration_liters' };
   for (const [id, type] of Object.entries(logTypes)) {
     container.querySelector('#' + id).onsubmit = async e => {
@@ -81,85 +124,238 @@ VIEWS.lifestyle = async function (container) {
     await api('/api/lifestyle/regenerate', { method: 'POST' });
     toast('Plans regenerated from your latest data.'); VIEWS.lifestyle(container);
   };
-};
-
-/* ================= REMINDERS ================= */
-const REM_TYPE_LABEL = {
-  followup: 'Follow-up', measurement: 'Measurement', report: 'Report', screening: 'Screening',
-  medication: 'Medication', exercise: 'Exercise', sleep: 'Sleep', lifestyle: 'Lifestyle'
-};
-
-VIEWS.reminders = async function (container) {
-  let tab = 'active';
-  const { reminders } = await api('/api/reminders');
-
-  container.innerHTML = `
-    <div class="topbar"><div><h1>Health Reminders</h1>
-      <div class="page-sub">Auto-generated from your risk signals, plus your own follow-ups.</div></div></div>
-
-    <div class="grid g2">
-      <div class="card">
-        <div class="tabs"><button class="tab active" data-t="active">Active (${reminders.filter(r => r.status === 'active').length})</button>
-        <button class="tab" data-t="done">Completed / disabled (${reminders.filter(r => r.status !== 'active').length})</button></div>
-        <div id="remlist"></div>
-      </div>
-      <div class="card">
-        <h2>Add reminder</h2>
-        <form id="f-rem">
-          <label>Title</label><input name="title" required placeholder="e.g. Call lab for thyroid retest">
-          <div class="grid g2 mt">
-            <div><label>Type</label><select name="type">
-              ${Object.entries(REM_TYPE_LABEL).map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}
-            </select></div>
-            <div><label>Due date</label><input name="dueDate" type="date" value="${new Date().toISOString().slice(0, 10)}"></div>
-          </div>
-          <div class="mt"></div><label>Notes</label><input name="notes" placeholder="Optional">
-          <button class="btn mt" type="submit">Add reminder</button>
-        </form>
-      </div>
-    </div>`;
-
-  function renderList() {
-    const list = reminders.filter(r => tab === 'active' ? r.status === 'active' : r.status !== 'active');
-    const today = new Date().toISOString().slice(0, 10);
-    document.getElementById('remlist').innerHTML = list.map(r => `
-      <div class="tl-event ${r.dueDate <= today && r.status === 'active' ? 'rem-overdue' : ''}">
-        <div style="flex:1"><div class="tl-title">${esc(r.title)}</div>
-          <div class="rem-due">${r.status === 'completed' ? 'Completed' : r.status === 'disabled' ? 'Disabled' : 'Due ' + fmtDateUI(r.dueDate)}
-          &nbsp;<span class="chip neutral" style="font-size:9.5px;padding:1px 5px">${REM_TYPE_LABEL[r.type] || r.type}</span>
-          ${r.source !== 'user' ? '<span class="chip info" style="margin-left:6px;font-size:9.5px;padding:1px 5px">auto</span>' : ''}</div>
-          ${r.notes ? `<div class="tl-detail">${esc(r.notes)}</div>` : ''}
-        </div>
-        ${r.status === 'active' ? `<div class="row" style="gap:5px">
-          <button class="btn sm" data-act="complete" data-id="${r.id}">Complete</button>
-          <button class="btn sm secondary" data-act="snooze" data-id="${r.id}" title="Snooze 3 days">Snooze</button>
-          <input type="date" class="resched" data-id="${r.id}" style="width:130px;padding:4px 6px" title="Reschedule to date">
-          <button class="btn sm danger-outline" data-act="disable" data-id="${r.id}">Disable</button>
-        </div>` : ''}
-      </div>`).join('') || '<div class="empty">Nothing here</div>';
-
-    document.getElementById('remlist').querySelectorAll('[data-act]').forEach(b => b.onclick = async () => {
-      await api(`/api/reminders/${b.dataset.id}/action`, { method: 'POST', body: { action: b.dataset.act, days: b.dataset.act === 'snooze' ? 3 : undefined } });
-      toast({ complete: 'Marked complete.', snooze: 'Snoozed 3 days.', disable: 'Reminder disabled.' }[b.dataset.act]);
-      VIEWS.reminders(container);
-    });
-    document.getElementById('remlist').querySelectorAll('.resched').forEach(inp => inp.onchange = async () => {
-      if (!inp.value) return;
-      await api(`/api/reminders/${inp.dataset.id}/action`, { method: 'POST', body: { action: 'reschedule', date: inp.value } });
-      toast('Rescheduled.'); VIEWS.reminders(container);
-    });
+  if (container.querySelector('#regen-nutrition')) {
+    container.querySelector('#regen-nutrition').onclick = async () => {
+      await api('/api/lifestyle/regenerate', { method: 'POST' });
+      toast('Nutrition plan regenerated.'); VIEWS.lifestyle(container);
+    };
   }
-  renderList();
 
-  container.querySelectorAll('.tab').forEach(t => t.onclick = () => {
-    container.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-    t.classList.add('active'); tab = t.dataset.t; renderList();
+  /* ---- Meal edit buttons ---- */
+  container.querySelectorAll('.meal-edit-btn').forEach(btn => {
+    btn.onclick = () => openEditMealModal(Number(btn.dataset.day), btn.dataset.slot, nut);
   });
 
-  container.querySelector('#f-rem').onsubmit = async e => {
-    e.preventDefault();
-    const fd = new FormData(e.target);
-    await api('/api/reminders', { method: 'POST', body: Object.fromEntries(fd) });
-    toast('Reminder added.'); VIEWS.reminders(container);
-  };
+  /* ---- Meal swap buttons ---- */
+  container.querySelectorAll('.meal-swap-btn').forEach(btn => {
+    btn.onclick = () => openSwapMealModal(Number(btn.dataset.day), btn.dataset.slot, nut);
+  });
+
+  /* ---- Regenerate single day ---- */
+  container.querySelectorAll('[data-regen-day]').forEach(btn => {
+    btn.onclick = async () => {
+      const dayIndex = Number(btn.dataset.regenDay);
+      btn.disabled = true;
+      try {
+        await api('/api/lifestyle/nutrition/regenerate-day', { method: 'POST', body: { dayIndex } });
+        toast('Day regenerated.'); VIEWS.lifestyle(container);
+      } catch (e) { toast(e.message, 'err'); btn.disabled = false; }
+    };
+  });
+
+  /* ---- PDF Export ---- */
+  if (container.querySelector('#export-pdf')) {
+    container.querySelector('#export-pdf').onclick = () => exportNutritionPDF(nut);
+  }
+
+  /* ---- JSON Export ---- */
+  if (container.querySelector('#export-json')) {
+    container.querySelector('#export-json').onclick = () => {
+      const blob = new Blob([JSON.stringify(nut, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'nutrition-plan.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      toast('JSON exported.');
+    };
+  }
 };
+
+/* =================== EDIT MEAL MODAL =================== */
+function openEditMealModal(dayIndex, slot, nut) {
+  const day = nut.weekPlan[dayIndex];
+  const current = slot === 'snacks' ? day.snacks : (Array.isArray(day[slot]) ? day[slot][0] : day[slot] || '');
+  const currentKcal = slot === 'snacks' ? '' : (Array.isArray(day[slot]) ? day[slot][1] : '');
+
+  const m = openModal(`
+    <h2>Edit ${day.day} — ${slot.charAt(0).toUpperCase() + slot.slice(1)}</h2>
+    <p class="page-sub mb">Customize this meal to your preference.</p>
+    <label>Meal name</label>
+    <input id="edit-meal-name" value="${esc(current)}" placeholder="e.g. Oats with berries">
+    ${slot !== 'snacks' ? `
+      <div class="mt"></div>
+      <label>Approx. calories</label>
+      <input id="edit-meal-kcal" value="${esc(currentKcal)}" placeholder="e.g. ~350 kcal">
+    ` : ''}
+    <div class="row mt" style="justify-content:flex-end">
+      <button class="btn secondary" id="edit-cancel">Cancel</button>
+      <button class="btn" id="edit-save">Save</button>
+    </div>
+  `, { wide: true });
+
+  m.el.querySelector('#edit-cancel').onclick = () => m.close();
+  m.el.querySelector('#edit-save').onclick = async () => {
+    const name = m.el.querySelector('#edit-meal-name').value.trim();
+    const kcal = slot !== 'snacks' ? (m.el.querySelector('#edit-meal-kcal')?.value || '').trim() : '';
+    if (!name) { toast('Meal name is required.', 'err'); return; }
+    try {
+      await api('/api/lifestyle/nutrition/edit', {
+        method: 'POST', body: { dayIndex, slot, name, kcal }
+      });
+      toast('Meal updated.');
+      m.close();
+      VIEWS.lifestyle(document.getElementById('app'));
+    } catch (e) { toast(e.message, 'err'); }
+  };
+}
+
+/* =================== SWAP MEAL MODAL =================== */
+async function openSwapMealModal(dayIndex, slot, nut) {
+  const day = nut.weekPlan[dayIndex];
+  const currentName = Array.isArray(day[slot]) ? day[slot][0] : day[slot] || '';
+  let alts = [];
+  try {
+    const r = await api(`/api/lifestyle/nutrition/alternatives?slot=${slot}&dayIndex=${dayIndex}`);
+    alts = r.alternatives || [];
+  } catch (e) { toast('Could not load alternatives.', 'err'); return; }
+
+  if (alts.length === 0) { toast('No alternatives available.', 'err'); return; }
+
+  const m = openModal(`
+    <h2>Swap ${day.day} — ${slot.charAt(0).toUpperCase() + slot.slice(1)}</h2>
+    <p class="page-sub mb">Current: <b>${esc(currentName)}</b> — choose a replacement:</p>
+    <div id="swap-options" style="max-height:350px;overflow-y:auto">
+      ${alts.map((a, i) => `
+        <div class="swap-option" data-index="${i}" style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;cursor:pointer;transition:all .15s">
+          <div>
+            <b style="font-size:13.5px">${esc(a.name)}</b>
+            <span style="font-size:12px;color:var(--ink-soft);margin-left:6px">${esc(a.kcal)}</span>
+          </div>
+          <span style="font-size:18px;color:var(--primary)">→</span>
+        </div>
+      `).join('')}
+    </div>
+    <div class="row mt" style="justify-content:flex-end">
+      <button class="btn secondary" id="swap-cancel">Cancel</button>
+    </div>
+  `, { wide: true });
+
+  m.el.querySelector('#swap-cancel').onclick = () => m.close();
+  m.el.querySelectorAll('.swap-option').forEach(opt => {
+    opt.onmouseenter = () => { opt.style.borderColor = 'var(--primary)'; opt.style.background = 'var(--primary-soft, #f0fdf4)'; };
+    opt.onmouseleave = () => { opt.style.borderColor = 'var(--line)'; opt.style.background = ''; };
+    opt.onclick = async () => {
+      const withIndex = alts[Number(opt.dataset.index)]._poolIndex ?? Number(opt.dataset.index);
+      try {
+        await api('/api/lifestyle/nutrition/swap', {
+          method: 'POST', body: { dayIndex, slot, withIndex }
+        });
+        toast('Meal swapped!');
+        m.close();
+        VIEWS.lifestyle(document.getElementById('app'));
+      } catch (e) { toast(e.message, 'err'); }
+    };
+  });
+}
+
+/* =================== PDF EXPORT =================== */
+function exportNutritionPDF(nut) {
+  if (typeof window.jspdf === 'undefined') {
+    toast('PDF library is loading. Please try again in a moment.', 'err');
+    return;
+  }
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF('p', 'mm', 'a4');
+
+  // Header
+  doc.setFontSize(20);
+  doc.setTextColor(14, 110, 100);
+  doc.text('HealthSphere AI', 14, 18);
+  doc.setFontSize(11);
+  doc.setTextColor(100);
+  doc.text('Personalized Nutrition Plan', 14, 25);
+
+  // Meta info
+  doc.setFontSize(10);
+  doc.setTextColor(60);
+  const prefLabel = nut.preference ? nut.preference.charAt(0).toUpperCase() + nut.preference.slice(1) : 'General';
+  const lines = [
+    `Diet preference: ${prefLabel}`,
+    nut.estimatedDailyCalories ? `Daily calorie target: ~${nut.estimatedDailyCalories} kcal` : '',
+    nut.tdeeEstimate ? `TDEE estimate: ${nut.tdeeEstimate} kcal` : '',
+    `Goal: ${nut.goal || 'maintain'}`,
+    `Hydration target: ${nut.hydrationTarget || '2-2.5 L/day'}`,
+    nut.editedByUser ? 'Status: Customized by user' : 'Status: AI-generated'
+  ].filter(Boolean);
+  let y = 31;
+  for (const line of lines) { doc.text(line, 14, y); y += 5; }
+  y += 2;
+
+  // Meal plan table
+  const headers = [['Day', 'Breakfast', 'Lunch', 'Dinner', 'Snacks']];
+  const rows = nut.weekPlan.map(d => [
+    d.day,
+    Array.isArray(d.breakfast) ? `${d.breakfast[0]} (${d.breakfast[1] || ''})` : d.breakfast || '',
+    Array.isArray(d.lunch) ? `${d.lunch[0]} (${d.lunch[1] || ''})` : d.lunch || '',
+    Array.isArray(d.dinner) ? `${d.dinner[0]} (${d.dinner[1] || ''})` : d.dinner || '',
+    d.snacks || ''
+  ]);
+
+  doc.autoTable({
+    startY: y,
+    head: headers,
+    body: rows,
+    theme: 'grid',
+    headStyles: { fillColor: [14, 110, 100], textColor: 255, fontSize: 9, fontStyle: 'bold' },
+    bodyStyles: { fontSize: 8.5, textColor: 40 },
+    columnStyles: {
+      0: { cellWidth: 18, fontStyle: 'bold' },
+      4: { cellWidth: 35, textColor: [120, 120, 120] }
+    },
+    margin: { left: 14, right: 14 },
+    didDrawPage: function (data) {
+      // Footer on every page
+      doc.setFontSize(7);
+      doc.setTextColor(160);
+      doc.text(
+        'HealthSphere AI - AI-generated nutrition ideas are educational, not medical nutrition therapy.',
+        14, doc.internal.pageSize.height - 8
+      );
+    }
+  });
+
+  y = doc.lastAutoTable.finalY + 8;
+
+  // Notes section
+  if (nut.notes && nut.notes.length > 0) {
+    doc.setFontSize(10);
+    doc.setTextColor(14, 110, 100);
+    doc.text('Important Notes', 14, y);
+    y += 6;
+    doc.setFontSize(8.5);
+    doc.setTextColor(80);
+    for (const note of nut.notes) {
+      const lines = doc.splitTextToSize(`• ${note}`, 175);
+      for (const line of lines) {
+        if (y > 275) { doc.addPage(); y = 20; }
+        doc.text(line, 14, y);
+        y += 4;
+      }
+    }
+  }
+
+  // Portion guide
+  y += 4;
+  if (y > 265) { doc.addPage(); y = 20; }
+  doc.setFontSize(9);
+  doc.setTextColor(14, 110, 100);
+  doc.text('Plate guide: ½ vegetables · ¼ protein · ¼ whole grains', 14, y);
+  y += 5;
+  doc.setFontSize(7.5);
+  doc.setTextColor(160);
+  doc.text(`Generated on ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })} by HealthSphere AI`, 14, y);
+
+  doc.save('HealthSphere-Nutrition-Plan.pdf');
+  toast('PDF exported successfully!');
+}

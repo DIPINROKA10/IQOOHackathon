@@ -107,3 +107,15 @@ function collSafe(userId) {
   if (!db.audit[userId]) db.audit[userId] = [];
   return db.audit[userId];
 }
+
+/* ---------------- Admin access ----------------
+   ADMIN_EMAILS env var (comma-separated) replaces the defaults when set. */
+const DEFAULT_ADMIN_EMAILS = ['dipinroka24@gmail.com', 'demo@healthsphere.ai'];
+
+export function isAdmin(user) {
+  if (!user || !user.email) return false;
+  const fromEnv = String(process.env.ADMIN_EMAILS || '')
+    .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  const list = fromEnv.length ? fromEnv : DEFAULT_ADMIN_EMAILS;
+  return list.includes(String(user.email).toLowerCase());
+}

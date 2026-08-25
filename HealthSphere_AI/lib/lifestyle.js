@@ -42,7 +42,7 @@ export function generateActivityPlan(profile, signals = []) {
   return { generatedAt: new Date().toISOString(), goal: goalLine, weeklyTargetMinutes: Math.round((base.walk * 5 + base.mobility * 3 + base.strength * 2)), weeks, safetyNotes: notes };
 }
 
-const MEALS = {
+export const MEALS = {
   vegetarian: {
     breakfast: [['Oats with milk, banana & nuts', '~350 kcal'], ['Vegetable poha/upma + curd', '~320 kcal'], ['Besan chilla with mint chutney', '~300 kcal'], ['Whole-grain toast, peanut butter & fruit', '~330 kcal'], ['Idli + sambar', '~300 kcal'], ['Greek yogurt bowl with seeds & berries', '~340 kcal'], ['Sprouts salad + buttermilk', '~290 kcal']],
     lunch: [['Rajma + brown rice + salad', '~520 kcal'], ['Paneer bhurji + 2 rotis + veggies', '~540 kcal'], ['Dal tadka + rice + bhindi', '~500 kcal'], ['Chole + rice + cucumber salad', '~530 kcal'], ['Veg pulao + raita', '~510 kcal'], ['Mixed-dal khichdi + kadhi', '~480 kcal'], ['Soya chunks curry + rotis', '~540 kcal']],
@@ -124,6 +124,22 @@ function filterMeal([name, kcal], allergies, restrictions) {
   return [titleCase(n), kcal];
 }
 function titleCase(s) { return s.replace(/\b\w/g, c => c.toUpperCase()); }
+
+export function getMealAlternatives(pref, slot, currentMealName) {
+  const menu = MEALS[pref] || MEALS.vegetarian;
+  const pool = menu[slot] || [];
+  return pool
+    .filter(([name]) => name.toLowerCase() !== (currentMealName || '').toLowerCase())
+    .map(([name, kcal]) => ({ name: titleCase(name), kcal }));
+}
+
+export function swapMeal(pref, slot, fromIndex, toIndex) {
+  const menu = MEALS[pref] || MEALS.vegetarian;
+  const pool = menu[slot] || [];
+  if (toIndex < 0 || toIndex >= pool.length) return null;
+  const target = pool[toIndex];
+  return { name: titleCase(target[0]), kcal: target[1] };
+}
 
 /** Weekly lifestyle insight: compare last 7 days vs previous 7. */
 export function weeklyInsight(logs = [], weightSeries = []) {

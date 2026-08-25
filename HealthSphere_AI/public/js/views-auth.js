@@ -41,9 +41,28 @@ VIEWS.login = function (container) {
       </form>
       <div class="row mt" style="justify-content:space-between">
         <a href="#/register">Create an account</a>
-        <button class="btn secondary sm" id="demo-btn">Explore the live demo</button>
+        <button class="btn secondary sm" id="demo-btn" data-loading-text="Loading...">Explore the live demo</button>
       </div>
       <div class="demo-note"><b>Demo workspace</b> — pre-loaded with two years of health data, family history and processed lab reports.</div>
+<div class="divider"></div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-faint);font-weight:700;margin-bottom:10px">Other Portals</div>
+      <div class="portal-links">
+        <a href="#/doctor/login" class="portal-link doctor">
+          <span class="portal-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+          <div class="portal-content"><b>Doctor</b></div>
+          <span class="portal-arrow">→</span>
+        </a>
+        <a href="#/store-owner/login" class="portal-link store">
+          <span class="portal-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></span>
+          <div class="portal-content"><b>Store</b></div>
+          <span class="portal-arrow">→</span>
+        </a>
+        <a href="#/admin/login" class="portal-link admin">
+          <span class="portal-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+          <div class="portal-content"><b>Admin</b></div>
+          <span class="portal-arrow">→</span>
+        </a>
+      </div>
     </div></div></div>
   </div>`;
 
@@ -52,14 +71,24 @@ VIEWS.login = function (container) {
     const fd = new FormData(e.target);
     try {
       const r = await api('/api/auth/login', { method: 'POST', body: { email: fd.get('email'), password: fd.get('password') } });
-      App.onAuthed(r.user);
+      App.onAuthed({ ...r.user, isAdmin: !!r.isAdmin });
     } catch (err) { toast(err.message, 'err'); }
   };
-  container.querySelector('#demo-btn').onclick = async () => {
+  const demoBtn = container.querySelector('#demo-btn');
+  demoBtn.onclick = async () => {
+    const originalText = demoBtn.textContent;
+    demoBtn.disabled = true;
+    demoBtn.textContent = demoBtn.dataset.loadingText || 'Loading...';
+    demoBtn.style.opacity = '.7';
     try {
       const r = await api('/api/auth/login', { method: 'POST', body: { email: 'demo@healthsphere.ai', password: 'demo1234' } });
-      App.onAuthed(r.user);
+      App.onAuthed({ ...r.user, isAdmin: !!r.isAdmin });
     } catch (err) { toast(err.message, 'err'); }
+    finally {
+      demoBtn.disabled = false;
+      demoBtn.textContent = originalText;
+      demoBtn.style.opacity = '';
+    }
   };
 };
 
@@ -92,7 +121,7 @@ VIEWS.register = function (container) {
     try {
       const r = await api('/api/auth/register', { method: 'POST', body: Object.fromEntries(fd) });
       toast('Account created. Welcome to HealthSphere.');
-      App.onAuthed(r.user);
+      App.onAuthed({ ...r.user, isAdmin: !!r.isAdmin });
     } catch (err) { toast(err.message, 'err'); }
   };
 };

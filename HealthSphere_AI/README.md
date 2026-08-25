@@ -53,6 +53,7 @@ npm test           # run extraction / trends / rules test suites
 | **Nearby Care** | Live hospitals/clinics/labs/pharmacies via OpenStreetMap around your location or any searched place (PRD 8.19) |
 | **Emergency Mode** | Full-screen red mode: 112 call button, family doctor, priority contacts, emergency card (PRD 8.20) |
 | **Settings & Privacy** | Consent toggles, notification prefs, password change, JSON data export, account deletion, audit log |
+| **Admin Panel** | Admin-only oversight: platform stats, all users + their complete data (view/delete), global activity feed |
 
 ### 📍 How Nearby Care works
 
@@ -179,6 +180,7 @@ HealthSphere_AI/
 | `POST /api/contacts/import` | Consent-gated device-contact import |
 | `GET /api/hospitals?lat=&lng=` · `?place=` | Nearby care (live OSM, offline fallback) |
 | `GET /api/emergency` | Emergency card payload |
+| `GET /api/admin/overview` · `/users` · `/users/:id` · `DELETE /users/:id` · `/audit` | Admin panel (role-gated) |
 | `PUT /api/settings` · `GET /api/export` · `DELETE /api/account` · `GET /api/audit` | Privacy & data rights |
 
 ---
@@ -191,10 +193,39 @@ HealthSphere_AI/
 - One-click full data export (JSON) and immediate irreversible account deletion
 - Every sensitive access (emergency card, exports, consent changes) is audited
 
+### Admin access
+
+The **Admin Panel** (`#/admin`) is visible only to admins — every `/api/admin/*` route
+is re-checked server-side. Admins are set via the `ADMIN_EMAILS` env var
+(comma-separated); when unset it defaults to `dipinroka24@gmail.com` and the demo
+account. Change it before any real deployment.
+
 ## ☁️ Deploy (Vercel)
 
 `vercel.json` is included; the server detects `process.env.VERCEL` and exports a
 serverless handler instead of listening. No environment variables or API keys needed.
+
+### Optional: persistent cloud database (Supabase)
+
+By default data lives in `data/db.json` (and in ephemeral `/tmp` on Vercel — demo data
+re-seeds per cold start). To persist for real across restarts/deploys:
+
+1. Create a free project at [supabase.com](https://supabase.com) (Postgres, 500 MB free).
+2. Copy **Settings → Database → Connection string** (Session pooler URI) and insert your password.
+3. Set it as an environment variable — no code changes needed, `lib/db.js` auto-detects it:
+
+   ```powershell
+   # local
+   $env:SUPABASE_DB_URL = "postgresql://postgres.xxxx:PASSWORD@aws-0-REGION.pooler.supabase.com:5432/postgres"
+   npm start
+   ```
+
+   On Vercel: Project → Settings → Environment Variables → `SUPABASE_DB_URL` → Redeploy.
+
+The entire state is stored as one JSONB row (`app_state`) created automatically on first
+boot; if the connection fails at startup the app falls back to the local file store.
+Report file uploads remain on local disk (`uploads/`) — move them to Supabase Storage
+for a fully stateless deployment.
 
 ## ⚠️ Medical disclaimer
 

@@ -109,6 +109,7 @@ function fmt(p) {
 export function labelOf(key) {
   return ({
     weight: 'Weight', bmi: 'BMI', hba1c: 'HbA1c', glucose_fasting: 'Fasting glucose', glucose_random: 'Random glucose',
+    weight_kg: 'Weight',
     total_cholesterol: 'Total cholesterol', ldl: 'LDL cholesterol', hdl: 'HDL cholesterol', triglycerides: 'Triglycerides',
     bp_systolic: 'Systolic BP', bp_diastolic: 'Diastolic BP', heart_rate: 'Heart rate', hemoglobin: 'Hemoglobin',
     steps: 'Daily steps', exercise_minutes: 'Exercise minutes', sleep_hours: 'Sleep duration', hydration_liters: 'Hydration',

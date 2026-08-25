@@ -93,7 +93,7 @@ export const FACILITIES = [
 /* Offline results are only meaningful within this range of the origin.
    Beyond it we switch to the nearest city's dataset instead of showing
    hospitals hundreds of kilometres away as "closest". */
-const SAMPLE_RADIUS_KM = 60;
+const SAMPLE_RADIUS_KM = 80;
 
 export function searchFacilities({ lat, lng, city, type = '', q = '', maxResults = 12 }) {
   let list = FACILITIES.slice();

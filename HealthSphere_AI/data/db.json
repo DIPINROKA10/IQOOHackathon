@@ -242,6 +242,12 @@
    "userId": "usr_54b52e030d04bd03",
    "createdAt": "2026-08-25T15:01:35.043Z",
    "expiresAt": "2026-09-01T15:01:35.045Z"
+  },
+  {
+   "token": "fdeb801243d527c2aa27a6cbc676ee11f25e2eee92524416723aafceb6f71498",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T15:06:09.118Z",
+   "expiresAt": "2026-09-01T15:06:09.118Z"
   }
  ],
  "profiles": {
@@ -2029,6 +2035,11 @@
    },
    {
     "ts": "2026-08-25T15:01:35.060Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T15:06:09.122Z",
     "action": "login",
     "detail": ""
    }

@@ -156,8 +156,10 @@ VIEWS.hospitals = async function (container) {
     const b = $('#src-badge');
     if (src === 'live') b.innerHTML = '<span class="chip ok">Live OpenStreetMap data</span>';
     else if (src === 'error') b.innerHTML = '<span class="chip bad">' + esc(originLabel || 'Search failed') + '</span>';
-    else b.innerHTML = '<span class="chip neutral">Offline sample dataset</span>';
-    $('#loc-label').textContent = originLabel && src !== 'error' ? 'Origin: ' + originLabel : '';
+    else b.innerHTML = '<span class="chip warn">Sample data — search a place or enable live location for accurate nearby results</span>';
+    if (src === 'live' && originLabel) $('#loc-label').textContent = 'Origin: ' + originLabel;
+    else if (originLabel && originLabel.includes('your location')) $('#loc-label').textContent = 'Origin: ' + originLabel;
+    else $('#loc-label').textContent = '';
   }
 
   function renderMap(lat, lng) {
@@ -170,13 +172,15 @@ VIEWS.hospitals = async function (container) {
     return `https://www.google.com/maps/dir/?api=1&destination=${f.lat},${f.lng}`;
   }
 
-  function facilityCard(f, compact) {
+  function facilityCard(f, compact, isLive) {
+    const showDist = isLive && f.distanceKm != null;
     return `
       ${compact ? '' : `<div class="spread"><b>${esc(f.name)}</b><span class="chip neutral">${FACILITY_LABEL[f.type] || f.type}</span></div>`}
       ${compact ? `<div class="tl-title">${esc(f.name)}</div>` : ''}
       <div class="page-sub" style="margin:3px 0 6px">${esc(f.address)}</div>
       <div class="row" style="gap:6px">
-        ${f.distanceKm != null ? `<span class="chip ok">${f.distanceKm} km away</span>` : ''}
+        ${showDist ? `<span class="chip ok">${f.distanceKm} km away</span>` : ''}
+        ${!isLive && f.city ? `<span class="chip neutral">${esc(f.city)}</span>` : ''}
         ${f.hours && f.hours !== 'Hours not listed' ? `<span class="page-sub" style="font-size:11.5px;margin:0">${esc(f.hours)}</span>` : ''}
       </div>
       <div class="row mt" style="gap:5px">${(f.services || []).slice(0, 3).map(s => `<span class="chip info">${esc(s)}</span>`).join('')}</div>
@@ -186,11 +190,11 @@ VIEWS.hospitals = async function (container) {
       </div>`;
   }
 
-  function renderNear(facilities) {
+  function renderNear(facilities, isLive) {
     $('#near-list').innerHTML = facilities.slice(0, 10).map((f, i) => `
       <div class="tl-event">
         <div class="initials" ${i === 0 ? 'style="background:var(--primary-soft);color:var(--primary-dark)"' : ''}>${String(i + 1).padStart(2, '0')}</div>
-        <div style="flex:1">${facilityCard(f, true)}</div>
+        <div style="flex:1">${facilityCard(f, true, isLive)}</div>
       </div>`).join('') || '<div class="empty">No facilities found in this area</div>';
   }
 
@@ -216,10 +220,10 @@ VIEWS.hospitals = async function (container) {
 
     const list = r.facilities || [];
     const isLive = r.source === 'live';
-    if ((isLive || r.origin) && r.origin) { renderMap(r.origin.lat, r.origin.lng); renderNear(list); }
+    if ((isLive || r.origin) && r.origin) { renderMap(r.origin.lat, r.origin.lng); renderNear(list, isLive); }
     else $('#live-area').style.display = 'none';
     $('#browse-head').style.display = list.length ? 'block' : 'none';
-    $('#results').innerHTML = list.map(f => `<div class="card hoverable">${facilityCard(f, false)}</div>`).join('')
+    $('#results').innerHTML = list.map(f => `<div class="card hoverable">${facilityCard(f, false, isLive)}</div>`).join('')
       || '<div class="empty">Nothing found — widen your filters or try another place</div>';
   }
 

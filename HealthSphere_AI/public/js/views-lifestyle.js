@@ -259,12 +259,35 @@ async function openSwapMealModal(dayIndex, slot, nut) {
   });
 }
 
-/* =================== PDF EXPORT =================== */
-function exportNutritionPDF(nut) {
-  try {
-  const ns = window.jspdf || window.jsPDF || window.jspPDF;
+function loadScriptOnce(src) {
+  return new Promise((res, rej) => {
+    if (document.querySelector(`script[src="${src}"]`)) return res();
+    const s = document.createElement('script'); s.src = src; s.async = false;
+    s.onload = res; s.onerror = rej; document.head.appendChild(s);
+  });
+}
+async function ensurePdfLibs() {
+  let ns = window.jspdf || window.jsPDF || window.jspPDF;
+  if (ns && typeof (ns.jsPDF || ns) === 'function') return ns;
+  toast('Loading PDF library...', '');
+  try { await loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js'); } catch {}
+  try { await loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js'); } catch {}
+  ns = window.jspdf || window.jsPDF || window.jspPDF;
   if (!ns) {
-    toast('PDF library not loaded. Check internet / ad-blocker and refresh.', 'err');
+    // fallback CDN
+    try { await loadScriptOnce('https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js'); } catch {}
+    try { await loadScriptOnce('https://unpkg.com/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js'); } catch {}
+    ns = window.jspdf || window.jsPDF || window.jspPDF;
+  }
+  return ns;
+}
+/* =================== PDF EXPORT =================== */
+async function exportNutritionPDF(nut) {
+  try {
+  let ns = window.jspdf || window.jsPDF || window.jspPDF;
+  if (!ns || typeof (ns.jsPDF || ns) !== 'function') ns = await ensurePdfLibs();
+  if (!ns) {
+    toast('PDF library failed to load. Disable ad-blocker and refresh.', 'err');
     console.error('jsPDF global missing. window keys:', Object.keys(window).filter(k=>/pdf/i.test(k)));
     return;
   }

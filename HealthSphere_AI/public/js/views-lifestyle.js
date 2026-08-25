@@ -270,13 +270,12 @@ async function ensurePdfLibs() {
   let ns = window.jspdf || window.jsPDF || window.jspPDF;
   if (ns && typeof (ns.jsPDF || ns) === 'function') return ns;
   toast('Loading PDF library...', '');
-  try { await loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js'); } catch {}
-  try { await loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js'); } catch {}
+  try { await loadScriptOnce('/js/jspdf.umd.min.js'); } catch {}
+  try { await loadScriptOnce('/js/jspdf.plugin.autotable.min.js'); } catch {}
   ns = window.jspdf || window.jsPDF || window.jspPDF;
   if (!ns) {
-    // fallback CDN
-    try { await loadScriptOnce('https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js'); } catch {}
-    try { await loadScriptOnce('https://unpkg.com/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js'); } catch {}
+    try { await loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js'); } catch {}
+    try { await loadScriptOnce('https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js'); } catch {}
     ns = window.jspdf || window.jsPDF || window.jspPDF;
   }
   return ns;

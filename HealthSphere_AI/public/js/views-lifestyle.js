@@ -261,12 +261,25 @@ async function openSwapMealModal(dayIndex, slot, nut) {
 
 /* =================== PDF EXPORT =================== */
 function exportNutritionPDF(nut) {
-  if (typeof window.jspdf === 'undefined') {
-    toast('PDF library is loading. Please try again in a moment.', 'err');
+  try {
+  const ns = window.jspdf || window.jsPDF || window.jspPDF;
+  if (!ns) {
+    toast('PDF library not loaded. Check internet / ad-blocker and refresh.', 'err');
+    console.error('jsPDF global missing. window keys:', Object.keys(window).filter(k=>/pdf/i.test(k)));
     return;
   }
-  const { jsPDF } = window.jspdf;
+  const jsPDF = ns.jsPDF || ns.default?.jsPDF || ns;
+  if (typeof jsPDF !== 'function') {
+    toast('PDF library failed to initialize.', 'err');
+    console.error('jsPDF constructor not found in', ns);
+    return;
+  }
   const doc = new jsPDF('p', 'mm', 'a4');
+  const hasDocAutoTable = typeof doc.autoTable === 'function';
+  const hasNsAutoTable = typeof (ns.autoTable || window.autoTable) === 'function';
+  if (!hasDocAutoTable && !hasNsAutoTable) {
+    console.warn('autoTable plugin not detected - table will be rendered manually');
+  }
 
   // Header
   doc.setFontSize(20);
@@ -302,7 +315,7 @@ function exportNutritionPDF(nut) {
     d.snacks || ''
   ]);
 
-  doc.autoTable({
+  const tableOpts = {
     startY: y,
     head: headers,
     body: rows,
@@ -315,7 +328,6 @@ function exportNutritionPDF(nut) {
     },
     margin: { left: 14, right: 14 },
     didDrawPage: function (data) {
-      // Footer on every page
       doc.setFontSize(7);
       doc.setTextColor(160);
       doc.text(
@@ -323,9 +335,25 @@ function exportNutritionPDF(nut) {
         14, doc.internal.pageSize.height - 8
       );
     }
-  });
+  };
+  if (typeof doc.autoTable === 'function') {
+    doc.autoTable(tableOpts);
+  } else if (typeof ns.autoTable === 'function') {
+    ns.autoTable(doc, tableOpts);
+  } else if (typeof window.autoTable === 'function') {
+    window.autoTable(doc, tableOpts);
+  } else {
+    // Fallback manual table if plugin missing
+    let ty = y + 6;
+    doc.setFontSize(9); doc.setTextColor(255);
+    doc.setFillColor(14,110,100); doc.rect(14, ty-5, 182, 7, 'F');
+    doc.text(headers[0].join(' | '), 15, ty);
+    ty += 8; doc.setTextColor(40); doc.setFontSize(8);
+    rows.forEach(r => { if (ty > 280) { doc.addPage(); ty = 15; } doc.text(r.join(' | ').slice(0,110), 14, ty); ty += 5; });
+    doc.lastAutoTable = { finalY: ty };
+  }
 
-  y = doc.lastAutoTable.finalY + 8;
+  y = (doc.lastAutoTable?.finalY || y + 60) + 8;
 
   // Notes section
   if (nut.notes && nut.notes.length > 0) {
@@ -358,4 +386,8 @@ function exportNutritionPDF(nut) {
 
   doc.save('HealthSphere-Nutrition-Plan.pdf');
   toast('PDF exported successfully!');
+  } catch (e) {
+    console.error('PDF export failed', e);
+    toast('PDF export failed: ' + (e.message || e), 'err');
+  }
 }

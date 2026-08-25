@@ -2042,6 +2042,16 @@
     "ts": "2026-08-25T15:06:09.122Z",
     "action": "login",
     "detail": ""
+   },
+   {
+    "ts": "2026-08-25T15:17:41.922Z",
+    "action": "settings_updated",
+    "detail": "consents"
+   },
+   {
+    "ts": "2026-08-25T15:17:42.774Z",
+    "action": "settings_updated",
+    "detail": "consents"
    }
   ],
   "usr_78514e6ecfd36e5f": [

@@ -248,6 +248,24 @@
    "userId": "usr_54b52e030d04bd03",
    "createdAt": "2026-08-25T15:06:09.118Z",
    "expiresAt": "2026-09-01T15:06:09.118Z"
+  },
+  {
+   "token": "f43e327feb09178b584263927cd3dcdacbf21d7414b1cffabeaebaae1a96c282",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T17:18:42.463Z",
+   "expiresAt": "2026-09-01T17:18:42.463Z"
+  },
+  {
+   "token": "6f288a7f3b3471056b4cf204ff5ea211a53c685554650fcfdc7fd0364e2de608",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T17:29:29.499Z",
+   "expiresAt": "2026-09-01T17:29:29.499Z"
+  },
+  {
+   "token": "d2d68d9da4f8230213acae0367da215cf9ea6c492b028d40685375fce581dc99",
+   "userId": "usr_54b52e030d04bd03",
+   "createdAt": "2026-08-25T17:42:21.237Z",
+   "expiresAt": "2026-09-01T17:42:21.237Z"
   }
  ],
  "profiles": {
@@ -1949,7 +1967,22 @@
   }
  },
  "sos": {
-  "usr_54b52e030d04bd03": []
+  "usr_54b52e030d04bd03": [
+   {
+    "id": "sos_5ae921e0ace8a33a",
+    "ts": "2026-08-25T17:38:20.433Z",
+    "status": "active",
+    "hasLocation": true,
+    "message": "EMERGENCY ALERT — Arjun Mehta needs urgent help. Please attempt to reach them and send help to their last known location. Location: https://maps.google.com/?q=12.757484183508932,77.70183259634645"
+   },
+   {
+    "id": "sos_e8a58bfd63675272",
+    "ts": "2026-08-25T17:48:30.760Z",
+    "status": "active",
+    "hasLocation": true,
+    "message": "EMERGENCY ALERT — Arjun Mehta needs urgent help. Please attempt to reach them and send help to their last known location. Location: https://maps.google.com/?q=12.757489397530282,77.70182390056053"
+   }
+  ]
  },
  "audit": {
   "usr_54b52e030d04bd03": [
@@ -2052,6 +2085,51 @@
     "ts": "2026-08-25T15:17:42.774Z",
     "action": "settings_updated",
     "detail": "consents"
+   },
+   {
+    "ts": "2026-08-25T17:18:42.852Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T17:29:30.081Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T17:38:06.116Z",
+    "action": "emergency_card_accessed",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T17:38:20.434Z",
+    "action": "sos_triggered",
+    "detail": "with location"
+   },
+   {
+    "ts": "2026-08-25T17:41:19.932Z",
+    "action": "emergency_card_accessed",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T17:42:21.254Z",
+    "action": "login",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T17:48:18.759Z",
+    "action": "emergency_card_accessed",
+    "detail": ""
+   },
+   {
+    "ts": "2026-08-25T17:48:30.760Z",
+    "action": "sos_triggered",
+    "detail": "with location"
+   },
+   {
+    "ts": "2026-08-25T17:48:49.271Z",
+    "action": "emergency_card_accessed",
+    "detail": ""
    }
   ],
   "usr_78514e6ecfd36e5f": [
